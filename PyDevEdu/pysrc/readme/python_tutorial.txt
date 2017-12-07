@@ -27,3 +27,6 @@ add entry의 key, value에 다음과 같이 넣자.
 
 7. pip install 에서 SSL:CERTIFICATE_VERIFY_FAILED 에러나면
 install --trusted-host pypi.python.org bs4 
+
+
+
