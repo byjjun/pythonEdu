@@ -1,0 +1,29 @@
+1. python 설치
+ - anaconda2 좋네
+ - 설치하면 끝.
+
+2. 개발환경
+eclipse + pydev
+eclipse 설치
+pydev는 eclipse 마켓에서 안됨.
+소스포지에서 zip파일 다운로드.
+압축풀어서 eclise plugin / features 에 덮어씌우기
+
+3. eclipse 설정
+인터프리터 환경설정 
+- anaconda2 설치폴더로 지정.
+
+4. 여러곳에서 써먹으니 github 연결하려니 근데 에러 발생!!
+eclipse : cannot open git-upload-pack
+window > preference > team > git > configuration
+add entry의 key, value에 다음과 같이 넣자.
+ - key : http.sslVerify
+ - value : false
+
+5. 로컬에 git 설치해서 git init remote로 origin설정하고 push
+ - git init 먼저 되어야함.
+
+6. eclipse에서 github 리파지토리 clone
+
+7. pip install 에서 SSL:CERTIFICATE_VERIFY_FAILED 에러나면
+install --trusted-host pypi.python.org bs4 
