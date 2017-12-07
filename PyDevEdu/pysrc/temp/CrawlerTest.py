@@ -23,6 +23,8 @@ driver.find_element_by_xpath('//*[@class="submit"]').click()
 
 driver.implicitly_wait(2)
 
+driver.get("http://daishin.ubob.com/Home/Index")
+driver.implicitly_wait(2)
 
 
 #soup = BeautifulSoup(html, 'html.parser')
