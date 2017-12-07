@@ -30,3 +30,6 @@ install --trusted-host pypi.python.org bs4
 
 
 
+
+driver.find_element_by_xpath('//*[@id="loginForm"]/fieldset/input').click()
+loginForm
