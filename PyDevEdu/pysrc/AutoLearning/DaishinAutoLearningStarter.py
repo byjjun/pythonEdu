@@ -2,6 +2,7 @@
 
 import sys # 동기화 임포트
 import DaishinAutoLearning
+import thread
 from PyQt4.QtGui import * # PyQt4 라이브러리 GUI설정 임포트
 from PyQt4.QtCore import * # PyQt4 라이브러리 핵심 설정 임포트
 
@@ -30,7 +31,7 @@ class MyWindow(QMainWindow): # 메인 윈도우 선언
         mdtext = QLabel(self)
         mdtext.text()
         mdtext.resize(120,15)
-        mdtext.setText("Made By JJuN. v0.9")
+        mdtext.setText("Made By JJuN. v1.0")
         mdtext.move(80,180)
                 
         #ID Textbox 추가
@@ -65,8 +66,8 @@ class MyWindow(QMainWindow): # 메인 윈도우 선언
         #print(inputid)
         #print(inputpw)
         #텍스트박스에서는 QString으로 입력.str로 변환.
-        DaishinAutoLearning.webmodule(str(inputid), str(inputpw))
-        
+        thread.start_new_thread(DaishinAutoLearning.webmodule,(str(inputid), str(inputpw)),)
+                
     
 def main():
     app = QApplication(sys.argv)

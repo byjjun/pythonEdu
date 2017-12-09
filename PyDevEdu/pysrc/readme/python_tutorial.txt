@@ -45,7 +45,26 @@ pyinstaller --onefile DaishinAutoLearningStarter.py
 
 11. 콘솔창 안뜨게하면 크롬호출안되네.->확인중.
 pyinstaller --noconsole --onefile DaishinAutoLearningStarter.py
-이걸로 됨.
+이걸로 됨. selenium에서 지원을 안해줌. service.py에서 수정 했지만(stdin 추가) 
+호출은 되나 호출되면 뜸.
+
+12. time.sleep 하면 완전 먹통.
+thread 호출로 변경
+v1.0 배포판완성
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --trusted-host repo.continuum.io

@@ -34,6 +34,7 @@ def webmodule(login_id,login_pw):
     else:
         return 0
     time.sleep(60)
+    
 #
 #    driver.find_element_by_xpath('//*[@class="btn_speed_up"]').click()
 #    
