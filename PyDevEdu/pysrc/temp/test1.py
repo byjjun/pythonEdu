@@ -4,6 +4,11 @@ Created on 2017. 12. 6.
 @author: 073860
 '''
 
+import sys
+
+print sys.path
+
+
 list_a = ["a", 0, 2, 14, "T", "GG"]
 
 print(list_a)

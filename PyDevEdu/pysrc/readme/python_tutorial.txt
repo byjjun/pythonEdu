@@ -28,8 +28,53 @@ add entry의 key, value에 다음과 같이 넣자.
 7. pip install 에서 SSL:CERTIFICATE_VERIFY_FAILED 에러나면
 install --trusted-host pypi.python.org bs4 
 
+8. PyQt import 못하면
+환경설정에 Library(PYTHONPATH) 강제추가 이것도 안되네.
+버전문제로 생각.
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4 여기서 whl 파일 다운받아서
+cd C:\ProgramData\Anaconda2\Scripts
+pip install C:\Users\073860\Downloads\PyQt4-4.11.4-cp27-cp27m-win32.whl
 
+9. py2exe는 쓰레기 개삽질했음.
+
+10. pyinstaller로 해결 - 졸라편함
+디렉토리가서 
+pyinstaller --onefile DaishinAutoLearningStarter.py
+
+실행하면 dist폴더에 파일 생김.
+
+11. 콘솔창 안뜨게하면 크롬호출안되네.->확인중.
+pyinstaller --noconsole --onefile DaishinAutoLearningStarter.py
+이걸로 됨.
+
+
+--trusted-host repo.continuum.io
+
+import sys
+sys.path.append("C:\ProgramData\Anaconda2\Lib\site-packages\PyQt5")
+C:\ProgramData\Anaconda2\Lib\site-packages\PyQt5
 
 
 driver.find_element_by_xpath('//*[@id="loginForm"]/fieldset/input').click()
 loginForm
+
+
+
+python setup.py py2exe
+
+
+
+PATH에서 C:\Python27\;C:\Python27\Scripts;제외
+C:\ProgramData\Anaconda2\;C:\ProgramData\Anaconda2\Scripts 추가
+
+
+
+C:\GitArea\hub_pythonEdu\PyDevEdu\pysrc\AutoLearning\DaishinAutoLearningStarter.py
+
+exe파일만들기.
+
+C:\Users\073860>
+python C:\\GitArea\\hub_pythonEdu\\PyDevEdu\\pysrc\\AutoLearning\setup.py py2exe
+
+
+C:\GitArea\hub_pythonEdu\PyDevEdu\pysrc\AutoLearning\DaishinAutoLearningStarter.py py2exe
