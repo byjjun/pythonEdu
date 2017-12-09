@@ -1,0 +1,5 @@
+1. DaishinAutoLearningStarter 실행.
+2. ID / PW 입력 후 실행 클릭
+3. 크롬 자동 실행 후 아무 강의를 시작
+4. 강의가 끝날때까지 자동호출
+5. 개꿀.
