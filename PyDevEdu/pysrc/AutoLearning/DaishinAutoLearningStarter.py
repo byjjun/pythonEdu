@@ -3,16 +3,24 @@
 import sys # 동기화 임포트
 import DaishinAutoLearning
 import thread
+import ctypes
+
 from PyQt4.QtGui import * # PyQt4 라이브러리 GUI설정 임포트
 from PyQt4.QtCore import * # PyQt4 라이브러리 핵심 설정 임포트
 
 class MyWindow(QMainWindow): # 메인 윈도우 선언
 
     def __init__(self):
+        
+        #self.setWindowIcon(QIcon("icon.png"))
         QMainWindow.__init__(self)
+        
+        myappid = u'ds.daishin.autolearningApp.10' # arbitrary string
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
         
         #윈도우 특성 설정
         self.setWindowTitle('DaishinAutoLearning') # 윈도우 타이틀 지정 선언문
+        self.setWindowIcon(QIcon("icon.png"))
         self.setGeometry(600, 600, 200, 200) # 윈도우 위치/크기 설정 문법
         #self.statusBar().showMessage('ready')
         
