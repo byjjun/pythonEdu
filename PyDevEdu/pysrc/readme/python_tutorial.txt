@@ -48,14 +48,22 @@ pyinstaller --noconsole --onefile DaishinAutoLearningStarter.py
 이걸로 됨. selenium에서 지원을 안해줌. service.py에서 수정 했지만(stdin 추가) 
 호출은 되나 호출되면 뜸.
 
+
 12. time.sleep 하면 완전 먹통.
 thread 호출로 변경
 v1.0 배포판완성
 
 
+13. icon 설정
+import ctypes
+        myappid = u'ds.daishin.autolearningApp.10' # arbitrary string
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+이후에 
+	self.setWindowIcon(QIcon("icon.png"))
+설정하면 됨.
 
 
-
+pyinstaller --onefile --windowed --icon=icon.ico DaishinAutoLearningStarter.py
 
 
 
