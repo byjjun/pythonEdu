@@ -35,17 +35,52 @@ def webmodule(login_id,login_pw):
         return 0
     time.sleep(60)
     
+    #try :
+    #print("start speedup")
+    try :
+        driver.switch_to_frame(driver.find_element_by_tag_name("iframe"))
+        driver.implicitly_wait(5)
+        #print(driver.page_source)
+        #javascript 직접 호출
+        driver.execute_script("return changeSpeedRate(0.2)")
+        driver.implicitly_wait(1)
+        driver.execute_script("return changeSpeedRate(0.2)")
+        driver.switch_to_default_content()
+    except:
+        Pass    
+    #print("end speedup")
+    
+    #driver.implicitly_wait(10)
+    #driver.find_element_by_css_selector("#btn_speed_up").click()
+    #driver.switch_to_default_content()
+    #print("end speedup")
+    #except:
+     #   Pass
 #
-#    driver.find_element_by_xpath('//*[@class="btn_speed_up"]').click()
+
+
+#int ok_size=driver.findElements(By.xpath("//button[text()='OK']")).size();
+#driver.findElements(By.xpath("//button[text()='OK']")).get(ok_size-1).click();
+
+#    driver.find_element_by_xpath('//*[@id="btn_speed_up"]').click()
 #    
     while True:
         
         # 강의 끝났을때 나오는 다음강의 버튼 추출 / 없으면 다시 Pass 후 60초 대기
         try :
             driver.find_element_by_xpath('/html/body/div[5]/div/div/div[2]/button[1]').click()
+            driver.implicitly_wait(5)
+            driver.switch_to_frame(driver.find_element_by_tag_name("iframe"))
+            driver.implicitly_wait(5)
+            driver.execute_script("return changeSpeedRate(0.2)")
+            driver.implicitly_wait(1)
+            
+            driver.execute_script("return changeSpeedRate(0.2)")
+            driver.switch_to_default_content()
+            
         except:
             Pass
-        
+                
         # 잘 되고있는지 현재 URL 출력
         #print(driver.current_url)
         

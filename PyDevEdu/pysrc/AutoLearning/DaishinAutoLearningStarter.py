@@ -39,7 +39,7 @@ class MyWindow(QMainWindow): # 메인 윈도우 선언
         mdtext = QLabel(self)
         mdtext.text()
         mdtext.resize(120,15)
-        mdtext.setText("Made By JJuN. v1.0")
+        mdtext.setText("Made By JJuN. v1.1")
         mdtext.move(80,180)
                 
         #ID Textbox 추가
