@@ -27,10 +27,15 @@ tbody_main = driver.find_element_by_id("grdMain_body_tbody")
 grid_body = tbody_main.find_elements_by_class_name("grid_body_row")
 
 last_height = driver.execute_script("return document.body.scrollHeight")
-
+rownum = 1
+scroll_count = 1
 while True:
+    print "SCCOUNT = " , scroll_count
+    print "last_height : ", last_height
+    
     
     for body in grid_body:
+        print "ROW COUNT = " , rownum
         val1 = body.find_element_by_class_name("grdMain_columnstyle_1_")
         val2 = body.find_element_by_class_name("grdMain_columnstyle_2_")
         val3 = body.find_element_by_class_name("grdMain_columnstyle_3_")
@@ -41,13 +46,16 @@ while True:
         print(val3.get_attribute('innerHTML'))
         print(val4.get_attribute('innerHTML'))
         print(val5.get_attribute('innerHTML'))
-
+        rownum+=1
+        
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(PAUSE_TIME)
     new_height = driver.execute_script("return document.body.scrollHeight")
+    print "new_height : ", new_height
     if new_height == last_height:
         break
     last_height = new_height
+    
 #print(len(grid_body))
 
 #grid_body_row
