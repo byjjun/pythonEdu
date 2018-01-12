@@ -28,5 +28,6 @@ def get_current_els_xml():
     
     
     headers = {'Content-Type': 'text/xml'} # set what your server accepts
-    data = requests.post(request_url, data=request_xml, headers=headers).text
+    #data = requests.post(request_url, data=request_xml, headers=headers).text
+    data = requests.post(request_url, data=request_xml, headers=headers).content
     return data
