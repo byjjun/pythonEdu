@@ -9,5 +9,7 @@ Created on 2017. 12. 22.
 import XmlParser4ELS
 
 elsdiclist = XmlParser4ELS.elsparser()
-XmlParser4ELS.debug_els_dic(elsdiclist)
+rate_sorted = sorted(elsdiclist, key=lambda k: k['elsrate'], reverse=True)
+
+XmlParser4ELS.debug_els_dic(rate_sorted)
 
