@@ -59,8 +59,10 @@ def elsparser():
                                                 
                 #    
                 asset = oneels.find('val8')
-                if asset is not None:
+                if asset.text is not None:
                     els_dic['asset']=asset.text.replace('<br/>',', ')
+                else:
+                    els_dic['asset']=''
                 #
                 startdate = oneels.find('val26')
                 if startdate is not None:
