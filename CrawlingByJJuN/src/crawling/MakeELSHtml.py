@@ -35,7 +35,7 @@ def makeelshtml(els_dic_list):
         print "<td style=\"width: 116px; height: 29px; background-color: #dba67b;\">",elsdic['elsrate'],"% </td>"
         print "</tr>"
         print "<tr style=\"height: 29px;\">"
-        print "<td style=\"width: 109px; height: 29px; background-color: #c4e7e7;\">판매끝</td>"
+        print "<td style=\"width: 109px; height: 29px; background-color: #c4e7e7;\">판매종료</td>"
         print "<td style=\"width: 114px; height: 29px; background-color: #f2ede4;\">",elsdic['sale_e_date'],"</td>"
         print "<td style=\"width: 108px; height: 29px; background-color: #c4e7e7;\">만기일</td>"
         print "<td style=\"width: 116px; height: 29px; background-color: #f2ede4;\">",elsdic['enddate'],"</td>"
