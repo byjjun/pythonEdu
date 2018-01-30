@@ -8,7 +8,7 @@ Created on 2017. 12. 22.
 
 from datetime import datetime
 from operator import eq
-import GetElsXML
+from ELS import GetElsXML
 import xml.etree.ElementTree as ET
 from astropy.units import one
 from collections import namedtuple
