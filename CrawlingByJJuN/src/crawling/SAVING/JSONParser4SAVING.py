@@ -16,8 +16,23 @@ def savingparser():
     
     result_dic = json.loads(savingjson)
     baselist_dic = result_dic['result']
+    #pprint.pprint(baselist_dic)
     
-    pprint.pprint(baselist_dic)
+    product_dic = baselist_dic['optionList']
+        
+    #pprint.pprint(product_dic)
+    m12_product_list = []
+    
+    for _12m_produc in product_dic:
+        if _12m_produc['save_trm'] == u'12':
+            m12_product_list.append(_12m_produc)
+        
+    for m12_product in m12_product_list:
+        print m12_product['fin_prdt_cd']
+    
+     
+        
+    
     
     
     
