@@ -7,12 +7,12 @@ Created on 2017. 12. 22.
 '''
 
 from datetime import datetime
-from operator import eq
+#from operator import eq
 from ELS import GetElsXML
 import xml.etree.ElementTree as ET
-from astropy.units import one
-from collections import namedtuple
-from _ast import Continue
+#from astropy.units import one
+#from collections import namedtuple
+#from _ast import Continue
 #print(GetElsXML.get_current_els_xml())
 
 def elsparser():

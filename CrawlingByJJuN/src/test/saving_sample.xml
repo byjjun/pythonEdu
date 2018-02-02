@@ -1,0 +1,3557 @@
+<?xml version="1.0" encoding="euc-kr"?> 
+<result>  
+<err_cd>000</err_cd>  
+<err_msg>정상</err_msg>  
+<total_count>81</total_count>  
+<max_page_no>1</max_page_no>  
+<now_page_no>1</now_page_no>  
+	<products>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010001</fin_co_no> 
+<kor_co_nm>우리은행</kor_co_nm> 
+<fin_prdt_cd>WR0001A</fin_prdt_cd> 
+<fin_prdt_nm>위비SUPER주거래예금2
+(확정형)</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후
+- 1개월이내 : 만기시점약정이율×50%
+- 1개월초과 6개월이내: 만기시점약정이율×30%
+- 6개월초과 : 만기시점약정이율×20%
+
+※ 만기시점 약정이율 : 일반정기예금 금리</mtrt_int> 
+<spcl_cnd>최대 연 0.4%p 우대
+A. 최대 연 0.2%p우대
+1.첫거래 고객 : 연 0.2%p
+2.가입금액 3천만원 이상 : 연 0.1%p
+3. 만기재예치: 연 0.1%p
+B. 최대 연 0.2%p 우대
+1. 급여·연금/공과금/우리카드실적 중 1개 이상 충족 : 연 0.1%p
+2. 1의 조건 모두 충족시 : 연 0.1%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인</join_member> 
+<etc_note>-주거래조건 실적인정기간은 신규일이 포함된 달로부터 만기일이 속한 달의 전전달까지
+-실적인정기간 중 필수기간 이상 주거래조건 충족해야 우대금리 제공
+(※ 가입기간 1년 미만 : 3개월, 1년제 : 6개월)</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221648</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010001</fin_co_no> 
+<kor_co_nm>우리은행</kor_co_nm> 
+<fin_prdt_cd>WR0001B</fin_prdt_cd> 
+<fin_prdt_nm>우리웰리치100예금(회전형)</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후
+- 1개월이내 : 만기시점약정이율×50%
+- 1개월초과 6개월이내: 만기시점약정이율×30%
+- 6개월초과 : 만기시점약정이율×20%
+
+※ 만기시점 약정이율 : 일반정기예금 금리</mtrt_int> 
+<spcl_cnd>최고 연 0.2%p우대이율
+1. 연금이체실적보유 : 연0.1%p
+2. 신용/체크카드 보유 : 연0.1%p
+3. 당일 적금/예금/펀드 해지 후 신규시  : 연0.1%p
+4. 인터넷/스마트뱅킹으로 신규시 : 연 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인</join_member> 
+<etc_note>-가입자가 환갑, 칠순, 팔순, 구순, 백순 사유로 중도해지 시 기본이자율을 중도해지 이자율 적용
+※ 주민등록번호 기준으로 사유발생 전후3개월간 혜택제공</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221648</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010001</fin_co_no> 
+<kor_co_nm>우리은행</kor_co_nm> 
+<fin_prdt_cd>WR0001D</fin_prdt_cd> 
+<fin_prdt_nm>운수대통예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후
+- 1개월이내 : 만기시점약정이율×50%
+- 1개월초과 6개월이내: 만기시점약정이율×30%
+- 6개월초과 : 만기시점약정이율×20%
+
+※ 만기시점 약정이율 : 일반정기예금 금리</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인</join_member> 
+<etc_note>-영업점 신규시 1.8%/ 스마트(인터넷)뱅킹 신규시 2.0%</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221648</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010001</fin_co_no> 
+<kor_co_nm>우리은행</kor_co_nm> 
+<fin_prdt_cd>WR0001E</fin_prdt_cd> 
+<fin_prdt_nm>우리로모아
+정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후
+- 1개월이내 : 만기시점약정이율×50%
+- 1개월초과 6개월이내: 만기시점약정이율×30%
+- 6개월초과 : 만기시점약정이율×20%
+
+※ 만기시점 약정이율 : 일반정기예금 금리</mtrt_int> 
+<spcl_cnd>최고 연 0.2%p 적용 
+1. 우리닷컴통장에서 신규된 경우 : 연 0.2%p
+2. 스마트뱅킹에 가입한 고객 : 연 0.2%p
+3. WIN-CMS에 가입한 고객  : 연 0.2%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>인터넷뱅킹가입고객</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221648</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.1</intr_rate> 
+<intr_rate2>1.3</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.65</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.65</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010001</fin_co_no> 
+<kor_co_nm>우리은행</kor_co_nm> 
+<fin_prdt_cd>WR0001F</fin_prdt_cd> 
+<fin_prdt_nm>위비꿀마켓예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후
+- 1개월이내 : 만기시점약정이율×50%
+- 1개월초과 6개월이내: 만기시점약정이율×30%
+- 6개월초과 : 만기시점약정이율×20%
+
+※ 만기시점 약정이율 : 일반정기예금 금리</mtrt_int> 
+<spcl_cnd>최대 연 0.4%p 적용 
+1. 위비톡에서 가입-연 0.2%p
+2. 위비멤버스 가입고객-연 0.2%p
+3. 인터넷,스마트뱅킹을통해 금리우대쿠폰 등록-연 0.2%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인(1인1계좌)</join_member> 
+<etc_note>1백만원 이상 5천만원까지 가입가능</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221648</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010001</fin_co_no> 
+<kor_co_nm>우리은행</kor_co_nm> 
+<fin_prdt_cd>WR0001G</fin_prdt_cd> 
+<fin_prdt_nm>위비톡예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기 후
+- 1개월이내 : 만기시점약정이율×50%
+- 1개월초과 6개월이내: 만기시점약정이율×30%
+- 6개월초과 : 만기시점약정이율×20%
+
+※ 만기시점 약정이율 : 일반정기예금 금리</mtrt_int> 
+<spcl_cnd>최대 연 0.4%p 적용
+1. 위비톡에서 가입-연0.2%p
+2. 위비톡친구초대-최대 연0.2%p
+3.위비톡 금융상품아이디어제안- 연 0.1%p
+4. 스마트간편신규가입-연0.1%p
+5.첫거래고객-연0.2%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+(1인1계좌)</join_member> 
+<etc_note>-1백만원 이상 1억원까지 가입가능
+-위비뱅크로 가입</etc_note> 
+<max_limit>100000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221648</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010002</fin_co_no> 
+<kor_co_nm>한국스탠다드차타드은행</kor_co_nm> 
+<fin_prdt_cd>00320301</fin_prdt_cd> 
+<fin_prdt_nm>홈앤세이브예금</fin_prdt_nm> 
+<join_way>영업점,인터넷</join_way> 
+<mtrt_int>만기 후 1개월: 약정이율의 50%
+만기 후 1개월 초과 1년 이내: 약정이율의 30%
+만기 후 1년 초과: 약정이율의 10%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801301030</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010002</fin_co_no> 
+<kor_co_nm>한국스탠다드차타드은행</kor_co_nm> 
+<fin_prdt_cd>00320342</fin_prdt_cd> 
+<fin_prdt_nm>e-그린세이브예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월: 약정이율의 50%
+만기 후 1개월 초과 1년 이내: 약정이율의 30%
+만기 후 1년 초과: 약정이율의 10%</mtrt_int> 
+<spcl_cnd>2018.1.26~2.4 / 6개월 이상 12개월 미만 가입 시 연1.90%(세전, 만기지급식 기준) 적용</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>디지털채널 전용상품 (인터넷, 스마트폰, 셀프뱅크)</etc_note> 
+<max_limit>499999999</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801301030</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010002</fin_co_no> 
+<kor_co_nm>한국스탠다드차타드은행</kor_co_nm> 
+<fin_prdt_cd>00320396</fin_prdt_cd> 
+<fin_prdt_nm>퍼스트정기예금</fin_prdt_nm> 
+<join_way>영업점,모집인,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월: 약정이율의 50%
+만기 후 1개월 초과 1년 이내: 약정이율의 30%
+만기 후 1년 초과: 약정이율의 10%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801301030</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>1.3</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010006</fin_co_no> 
+<kor_co_nm>한국씨티은행</kor_co_nm> 
+<fin_prdt_cd>3127</fin_prdt_cd> 
+<fin_prdt_nm>프리스타일예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 이내 : 만기일 당시 고시한 1개월 정기예금 이율
+만기 후 1개월 초과 : 연 1.0%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 가입금액은 1백만원 이상 가입 가능
+2. 가입기간은 1개월 이상 3년 이내 일단위 가입 가능</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day>20180220</dcls_end_day> 
+<fin_co_subm_day>201801221323</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.35</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010006</fin_co_no> 
+<kor_co_nm>한국씨티은행</kor_co_nm> 
+<fin_prdt_cd>3129</fin_prdt_cd> 
+<fin_prdt_nm>자유회전예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 이내 : 만기일 당시 고시한 1개월 정기예금 이율
+만기 후 1개월 초과 : 연 1.0%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 가입금액은 1백만원 이상 가입 가능
+2. 가입기간은 1개월 이상 30년 이내 일단위 가입 가능</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day>20180220</dcls_end_day> 
+<fin_co_subm_day>201801221323</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.35</intr_rate> 
+<intr_rate2>1.45</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010016</fin_co_no> 
+<kor_co_nm>대구은행</kor_co_nm> 
+<fin_prdt_cd>10511008000845001</fin_prdt_cd> 
+<fin_prdt_nm>내손안에 예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만 경과: 약정이자율 x 50%
+만기 후 3개월 미만 경과: 약정이자율 x 25%
+만기 후 3개월 이상 경과: 약정이자율 x 10%</mtrt_int> 
+<spcl_cnd>* 최고우대금리 : 0.3%
+ - 최초가입 우대 : 0.1%
+ - 공과금 실적 우대 : 0.1%
+- 스마트뱅킹을 통한 체크카드 또는 펀드 가입 우대 : 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1.계좌당 가입최저한도 : 100만원 (최대 5천만원 이내)
+2. 스마트폰 가입 전용상품 
+3. 저축기간 중 적용금리 변동 : 자유적립식예금 기준 변동금리 적용</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221342</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.67</intr_rate> 
+<intr_rate2>1.97</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.81</intr_rate> 
+<intr_rate2>2.11</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.83</intr_rate> 
+<intr_rate2>2.13</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.85</intr_rate> 
+<intr_rate2>2.15</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010016</fin_co_no> 
+<kor_co_nm>대구은행</kor_co_nm> 
+<fin_prdt_cd>10511008000996000</fin_prdt_cd> 
+<fin_prdt_nm>DGB주거래우대예금(첫만남고객형)</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만 경과: 약정이자율 x 50%
+만기 후 3개월 미만 경과: 약정이자율 x 25%
+만기 후 3개월 이상 경과: 약정이자율 x 10%</mtrt_int> 
+<spcl_cnd>* 최고우대금리 : 0.25%
+ - 최초가입 우대 : 0.1%
+ - 신용(체크)카드 발급 우대 : 0.05%
+ - 인터넷,폰,스마트뱅킹 가입우대 : 0.05%
+ - 인터넷/스마트뱅킹을 통해 가입시 우대 : 0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 계좌당 가입최저한도 : 300만원
+2. 저축기간 중 적용금리 변동 : 자유적립식예금 기준 변동금리 적용</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221342</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.42</intr_rate> 
+<intr_rate2>1.67</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.56</intr_rate> 
+<intr_rate2>1.81</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.58</intr_rate> 
+<intr_rate2>1.83</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010016</fin_co_no> 
+<kor_co_nm>대구은행</kor_co_nm> 
+<fin_prdt_cd>10511008001166000</fin_prdt_cd> 
+<fin_prdt_nm>DGB함께예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만 경과: 약정이자율 x 50%
+만기 후 3개월 미만 경과: 약정이자율 x 25%
+만기 후 3개월 이상 경과: 약정이자율 x 10%</mtrt_int> 
+<spcl_cnd>* 최고우대금리 : 0.45%
+ - 거래실적 우대 : 0.1%
+ - 주택청약상품 보유 우대 : 0.1%
+ - 적금 동시 가입 후 만기까지 보유 우대 : 0.1%
+ - 타인추천계좌 및 추천받은계좌 우대 : 0.1%
+ - 인터넷/스마트뱅킹을 통해 가입시 우대 : 0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 계좌당 가입최저한도 : 100만원
+2. 저축기간 중 적용금리 변동 : 자유적립식예금 기준 변동금리 적용</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221342</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.61</intr_rate> 
+<intr_rate2>2.06</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010016</fin_co_no> 
+<kor_co_nm>대구은행</kor_co_nm> 
+<fin_prdt_cd>10511008001187000</fin_prdt_cd> 
+<fin_prdt_nm>아이M예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만 경과: 약정이자율 x 50%
+만기 후 3개월 미만 경과: 약정이자율 x 25%
+만기 후 3개월 이상 경과: 약정이자율 x 10%</mtrt_int> 
+<spcl_cnd>* 최고우대금리 : 0.6%
+ - 모바일지점 회원가입 후 신규 : 0.3%
+ - 거래실적 우대 : 0.1%
+ - 예금평잔 30만원 이상 우대 : 0.1%
+ - 신규 후 외화기프티콘 발급 우대 : 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 계좌당 가입최저한도 : 100만원
+3. 저축기간 중 적용금리 변동 : 자유적립식예금 기준 변동금리 적용</etc_note> 
+<max_limit>20000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221342</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.61</intr_rate> 
+<intr_rate2>2.21</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.68</intr_rate> 
+<intr_rate2>2.28</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.75</intr_rate> 
+<intr_rate2>2.35</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010016</fin_co_no> 
+<kor_co_nm>대구은행</kor_co_nm> 
+<fin_prdt_cd>10511014000001001</fin_prdt_cd> 
+<fin_prdt_nm>e-U(이유)예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월 미만 경과: 약정이자율 x 50%
+만기 후 3개월 미만 경과: 약정이자율 x 25%
+만기 후 3개월 이상 경과: 약정이자율 x 10%</mtrt_int> 
+<spcl_cnd>* 최고우대금리 : 0.5%
+ - 최초가입 우대 : 0.1%
+ - 재예치 우대 : 0.1%
+ - 거래실적 우대 : 0.2%
+ - 주택청약상품 보유 우대 : 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 계좌당 가입최저한도 : 100만원 (최대 1억원 이내)
+2. 인터넷뱅킹 및 스마트폰 가입 전용상품 
+3. 저축기간 중 적용금리 변동 : 자유적립식예금 기준 변동금리 적용</etc_note> 
+<max_limit>100000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221342</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.42</intr_rate> 
+<intr_rate2>1.92</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.56</intr_rate> 
+<intr_rate2>2.06</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.58</intr_rate> 
+<intr_rate2>2.08</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010017</fin_co_no> 
+<kor_co_nm>부산은행</kor_co_nm> 
+<fin_prdt_cd>01030500130002</fin_prdt_cd> 
+<fin_prdt_nm>메리트정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷</join_way> 
+<mtrt_int>- 만기후1년내: 가입기간별 일반정기예금이율 x 50%,
+- 만기후1년초과:가입기간별 일반정기예금이율 x 20%</mtrt_int> 
+<spcl_cnd>- 1년제, 1천만원이상: 1.70%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>제한없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801300855</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>.95</intr_rate> 
+<intr_rate2>.95</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.15</intr_rate> 
+<intr_rate2>1.15</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010017</fin_co_no> 
+<kor_co_nm>부산은행</kor_co_nm> 
+<fin_prdt_cd>01030500290002</fin_prdt_cd> 
+<fin_prdt_nm>e-푸른바다정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>- 만기후1년내: 가입기간별 일반정기예금이율 x 50%,
+- 만기후1년초과:가입기간별 일반정기예금이율 x 20%</mtrt_int> 
+<spcl_cnd>우대조건 없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입채널: 인터넷,스마트뱅킹,고객센터</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801300855</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010017</fin_co_no> 
+<kor_co_nm>부산은행</kor_co_nm> 
+<fin_prdt_cd>01030500400002</fin_prdt_cd> 
+<fin_prdt_nm>BNKe스마트정기예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>- 만기후1년내: 가입기간별 일반정기예금이율 x 50%,
+- 만기후1년초과:가입기간별 일반정기예금이율 x 20%</mtrt_int> 
+<spcl_cnd>우대조건 없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 개인및 개인사업자 가입가능
+2. 가입한도:3천만원이하
+3. 가입채널: 스마트,고객센터</etc_note> 
+<max_limit>30000000</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801300855</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010017</fin_co_no> 
+<kor_co_nm>부산은행</kor_co_nm> 
+<fin_prdt_cd>01030500470002</fin_prdt_cd> 
+<fin_prdt_nm>사랑방
+정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>- 만기후1년내: 가입기간별 일반정기예금이율 x 50%,
+- 만기후1년초과:가입기간별 일반정기예금이율 x 20%</mtrt_int> 
+<spcl_cnd>-예,적금 최초 신규고객: 0.10%
+-거래실적별 우대이율: 0.10% 
+-인터넷,스마트뱅킹으로 가입: 
+ 0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1.개인및 개인사업자 가입가능
+2.가입한도: 5천만원이하
+3.가입채널: 창구,인터넷,스마트,고객센터</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801300855</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010017</fin_co_no> 
+<kor_co_nm>부산은행</kor_co_nm> 
+<fin_prdt_cd>01030500490002</fin_prdt_cd> 
+<fin_prdt_nm>My SUM
+정기예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>지급일 당시 가입기간 별 일반정기예금의 만기 후 이율</mtrt_int> 
+<spcl_cnd>-10백만원 이상 신규시 : 0.10%
+-썸씽보내기 3회 이상 : 0.10%
+-썸출금 3회 이상 : 0.10%
+-썸뱅크 롯데카드 결제금액 300만원 이상 : 0.10% 
+-썸뱅크를 외화 환전 1회이상 : 0.10%   
+-신규가입시 LG U+이동통신이용 고객 : 0.10%
+(단, 만기자동갱신, MySUM포인트적금의 자동신규는 제외)</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명인 개인
+(만19세이상)</join_member> 
+<etc_note>1. 가입한도: 1억원이하
+2. 가입채널: 당행 썸뱅크(모바일) 통해 가입가능</etc_note> 
+<max_limit>100000000</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801300855</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2.6</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010017</fin_co_no> 
+<kor_co_nm>부산은행</kor_co_nm> 
+<fin_prdt_cd>01030500500002</fin_prdt_cd> 
+<fin_prdt_nm>BNK어울림</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>- 만기후1년내: 가입기간별 일반정기예금이율 x 50%,
+- 만기후1년초과:가입기간별 일반정기예금이율 x 20%</mtrt_int> 
+<spcl_cnd>-예적금 동시보유 : 0.10%
+-ISA가입: 0.05%
+-신규 및 장기고객우대: 0.10%
+-자동이체실적 등 : 0.10%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 개인및 개인사업자 가입가능
+2. 가입한도: 1억원이하</etc_note> 
+<max_limit>100000000</max_limit> 
+<dcls_strt_day>20180130</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801300855</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>2.05</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.75</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010019</fin_co_no> 
+<kor_co_nm>광주은행</kor_co_nm> 
+<fin_prdt_cd>TD11300021000</fin_prdt_cd> 
+<fin_prdt_nm>플러스다모아예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 이내 : 만기일 당시 최초 가입
+기간별 일반정기예금 고시금리의 1/2
+만기 후 1개월 초과 : 0.10%</mtrt_int> 
+<spcl_cnd>1. 1천만원 이상 가입시 최대 0.3%우대
+2. 최고 0.2% 우대(개인)
+- 적립식예금 6회 이상 납입 : 0.1%
+- 급여통장 보유 : 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 최소가입금액 : 100만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220839</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.29</intr_rate> 
+<intr_rate2>1.79</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.56</intr_rate> 
+<intr_rate2>2.06</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.84</intr_rate> 
+<intr_rate2>2.34</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.81</intr_rate> 
+<intr_rate2>2.31</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010019</fin_co_no> 
+<kor_co_nm>광주은행</kor_co_nm> 
+<fin_prdt_cd>TD11300025000</fin_prdt_cd> 
+<fin_prdt_nm>아파트사랑정기예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기 후 1개월 이내 : 만기일 당시 최초 가입
+기간별 일반정기예금 고시금리의 1/2
+만기 후 1개월 초과 : 0.10%</mtrt_int> 
+<spcl_cnd>1. 1천만원 이상 가입시 0.3%우대
+2. 조건 충족시 최대 0.25% 우대(개인)
+- 아파트관리비 6회 이상 자동이체: 0.1%
+- 자녀용돈통장개설: 0.05%
+- 정액적립식 6회 이상 납입: 최대 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 최소가입금액 : 100만원 이상
+2. 영업점 방문 가입만 가능
+3. 가입기간 : 1년 이상 3년 이내</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220839</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.29</intr_rate> 
+<intr_rate2>1.84</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.56</intr_rate> 
+<intr_rate2>2.11</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.84</intr_rate> 
+<intr_rate2>2.39</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.81</intr_rate> 
+<intr_rate2>2.36</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010019</fin_co_no> 
+<kor_co_nm>광주은행</kor_co_nm> 
+<fin_prdt_cd>TD11300028000</fin_prdt_cd> 
+<fin_prdt_nm>스마트모아Dream정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 이내 : 만기일 당시 최초 가입
+기간별 일반정기예금 고시금리의 1/2
+만기 후 1개월 초과 : 0.10%</mtrt_int> 
+<spcl_cnd>1. 1천만원 이상 가입시 0.3%우대
+2. 스마트뱅킹 신규시 0.2% 우대 : 고객당 2천만원까지</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인고객</join_member> 
+<etc_note>1. 인터넷/스마트폰뱅킹 가입 전용상품
+2. 최소가입금액 : 100만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220839</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.39</intr_rate> 
+<intr_rate2>1.89</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.66</intr_rate> 
+<intr_rate2>2.16</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.94</intr_rate> 
+<intr_rate2>2.44</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.91</intr_rate> 
+<intr_rate2>2.41</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010019</fin_co_no> 
+<kor_co_nm>광주은행</kor_co_nm> 
+<fin_prdt_cd>TD11300032000</fin_prdt_cd> 
+<fin_prdt_nm>쏠쏠한마이쿨예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 이내 : 만기일 당시 최초 가입
+기간별 일반정기예금 고시금리의 1/2
+만기 후 1개월 초과 : 0.10%</mtrt_int> 
+<spcl_cnd>해당없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인고객</join_member> 
+<etc_note>1.최소가입금액 : 100만원 이상
+2.가입기간 : 1년</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220839</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2.1</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010020</fin_co_no> 
+<kor_co_nm>제주은행</kor_co_nm> 
+<fin_prdt_cd>200000301</fin_prdt_cd> 
+<fin_prdt_nm>제주Dream정기예금(개인/만기지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>- 만기후 1개월 이내 : (일반)정기예금 기본이자율의 50%
+- 만기후 1개월 초과 3개월 이내 : (일반)정기예금 기본이자율의 30%
+- 만기후 3개월 초과 : 0.25%</mtrt_int> 
+<spcl_cnd>최고 연 0.1%p(항목별 0.1%p)
+①급여이체
+②적립식예금 잔액 10만원 이상 보유
+③탑스, 주거래 고객
+④결제계좌(가맹점) 전월 입금액 10만원 이상 
+⑤비과세종합저축 대상 고객
+⑥다자???(3인이상 자녀)가정</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입금액 : 1백만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221307</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010020</fin_co_no> 
+<kor_co_nm>제주은행</kor_co_nm> 
+<fin_prdt_cd>200000302</fin_prdt_cd> 
+<fin_prdt_nm>사이버우대정기예금(만기지급식-플러스)</fin_prdt_nm> 
+<join_way>인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>- 만기후 1개월 이내 : (일반)정기예금 기본이자율의 50%
+- 만기후 1개월 초과 3개월 이내 : (일반)정기예금 기본이자율의 30%
+- 만기후 3개월 초과 : 0.25%</mtrt_int> 
+<spcl_cnd>최고 연 0.1%p(중복불가)
+①사이버우대 정기예금 가입시점 기준 과거 3개월간 거치식예금 미보유고객
+②상기 ①의 고객이 해당예금 신규 후 추가 불입하는 경우</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인 및 개인사업자</join_member> 
+<etc_note>가입금액 : 30만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221307</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2.1</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2.15</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2.25</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-0024-0049-0000</fin_prdt_cd> 
+<fin_prdt_nm>JB리치100정기예금
+(월이자지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>①예금가입일 전전월 : -연 0.2%:급여 실적50만원이상 - 연0.1%:요구불평잔30만원이상,공과금자동이체및 당행신용카드 매입실적이 있는 경우②예금가입일: - 전자금융 정상고객 연 0.1% ③부부 동시 신규시 각 연0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 40세 이상 개인</join_member> 
+<etc_note>가입금액 300만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0001-0000</fin_prdt_cd> 
+<fin_prdt_nm>정기예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>.85</intr_rate> 
+<intr_rate2>.85</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.2</intr_rate> 
+<intr_rate2>1.2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0008-0000</fin_prdt_cd> 
+<fin_prdt_nm>맞춤형자유만기정기예금(월이자지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입금액 5백만원이상
+(생계형저축은 1백만원이상)</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>1.3</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.45</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0009-0000</fin_prdt_cd> 
+<fin_prdt_nm>맞춤형자유만기정기예금(만기일시지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입금액 5백만원이상
+(생계형저축은 1백만원이상)</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.4</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.55</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0016-0000</fin_prdt_cd> 
+<fin_prdt_nm>전북아이나라예금
+(월이자지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>3</join_deny> 
+<join_member>전라북도에 주소지를 둔 만 3세이하 개인</join_member> 
+<etc_note>가입금액 10만원이상 15백만원이하</etc_note> 
+<max_limit>15000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.75</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0017-0000</fin_prdt_cd> 
+<fin_prdt_nm>전북아이나라예금
+(만기일시지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>3</join_deny> 
+<join_member>전라북도에 주소지를 둔 만 3세이하 개인</join_member> 
+<etc_note>가입금액 10만원이상 15백만원이하</etc_note> 
+<max_limit>15000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.85</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0029-0000</fin_prdt_cd> 
+<fin_prdt_nm>실버보금자리예금
+(월이자지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>0.1%이하 추가 우대</spcl_cnd> 
+<join_deny>3</join_deny> 
+<join_member>만60세이상 실명의 개인으로
+전라북도 소재 영업점 : 주민등록상 주소지가 전라북도인 경우 
+전라북도 소재 이외 영업점 : 주민등록상 주소지, 원적지, 본적지가 전라북도인 경우</join_member> 
+<etc_note>가입금액 1백만원이상, 
+1인당 3억원이내</etc_note> 
+<max_limit>300000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0030-0000</fin_prdt_cd> 
+<fin_prdt_nm>실버보금자리예금
+(만기일시지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>0.1%이하 추가 우대</spcl_cnd> 
+<join_deny>3</join_deny> 
+<join_member>만60세이상 실명의 개인으로
+전라북도 소재 영업점 : 주민등록상 주소지가 전라북도인 경우 
+전라북도 소재 이외 영업점 : 주민등록상 주소지, 원적지, 본적지가 전라북도인 경우</join_member> 
+<etc_note>가입금액 1백만원이상, 1인당 3억원이내</etc_note> 
+<max_limit>300000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.75</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0037-0000</fin_prdt_cd> 
+<fin_prdt_nm>시장금리부정기예금
+(월이자지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입금액 3백만원이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>1.3</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.45</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0038-0000</fin_prdt_cd> 
+<fin_prdt_nm>시장금리부정기예금
+(만기일시지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입금액 3백만원이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.4</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.55</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0042-0021</fin_prdt_cd> 
+<fin_prdt_nm>스마트정기??금
+(만기일시지급식)</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>1.가입시JB급여플러스통장보유 연0.1%, 2.최근1개월이내신용카드사용고객 연0.1%,3.예금가입기간별우대금리:2년이상연0,1%,3년이상연0.2%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>가입금액 3백만원이상 5천만원이하,
+스마트폰뱅킹 가입상품</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.75</intr_rate> 
+<intr_rate2>2.05</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.85</intr_rate> 
+<intr_rate2>2.25</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0046-0000</fin_prdt_cd> 
+<fin_prdt_nm>JB 다이렉트예금통장
+(만기일시지급식)</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인(임의단체 제외)</join_member> 
+<etc_note>가입금액 1계좌당 1백만원이상,
+1인당  총 10억원 이하,
+인터넷/스마트폰뱅킹 가입상품</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2.1</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0050-0000</fin_prdt_cd> 
+<fin_prdt_nm>JB리치100정기예금
+(만기일시지급식)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 회전기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>①예금가입일 전전월 : -연 0.2%:급여 실적50만원이상 - 연0.1%:요구불평잔30만원이상,공과금자동이체및 당행신용카드 매입실적이 있는 경우②예금가입일: - 전자금융 정상고객 연 0.1% ③부부 동시 신규시 각 연0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 40세 이상 개인</join_member> 
+<etc_note>가입금액 300만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010022</fin_co_no> 
+<kor_co_nm>전북은행</kor_co_nm> 
+<fin_prdt_cd>10-01-20-024-0051-0000</fin_prdt_cd> 
+<fin_prdt_nm>JB리치100정기예금
+(즉시연금형)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기후 1개월 이하 : 만기일 현재 계약기간별 정기예금 실행이율 1/2
+만기후 1개월 초과 : 연 0.1%</mtrt_int> 
+<spcl_cnd>①예금가입일 전전월 : -연 0.2%:급여 실적50만원이상 - 연0.1%:요구불평잔30만원이상,공과금자동이체및 당행신용카드 매입실적이 있는 경우②예금가입일: - 전자금융 정상고객 연 0.1% ③부부 동시 신규시 각 연0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 40세 이상 개인</join_member> 
+<etc_note>가입금액 300만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221043</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21000087</fin_prdt_cd> 
+<fin_prdt_nm>마니마니정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>우대조건에 따른 우대금리 없음
+계약기간은 최소 1개월 이상부터 가능</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>거래대상자는 제한을 두지 아니한다. 다만, 국가 및 지방자치단체는 이 예금을 거래할 수 없다.</join_member> 
+<etc_note>1. 계약기간은 1개월 이상 2년까지로 하되 예금주의 편의에 따라 임의로 정할 수 있다.
+2. 가입금액 최소 5백만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.25</intr_rate> 
+<intr_rate2>1.25</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.5</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.55</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21000093</fin_prdt_cd> 
+<fin_prdt_nm>스마트
+정기예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>▶추천이율: 최대0.15%
+가입시마다 추천번호제공하며 해당추천번호를 타인이 입력하는 경우</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>스마트폰뱅킹을 가입한 개인 및 개인사업자</join_member> 
+<etc_note>1. 이 예금은 스마트폰뱅킹을 통해서만 가입할 수 있으며, 해지는 스마트폰뱅킹, 영업점 창구에서 할 수 있다.
+2. 계약기간은 1개월 이상 12개월 이내 월단위로 한다.
+3. 가입금액 최소 1백만원 이상~최대 5천만원 이하</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2.15</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21000101</fin_prdt_cd> 
+<fin_prdt_nm>e-Money
+정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>▶계약기간 만기전에 만기해지 포함 총 3회까지 분할인출이 가능하다.</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인 및 개인사업자</join_member> 
+<etc_note>1. 이 예금은 인터넷뱅킹, 고객센터를 통하여 가입하고, 해지는 인터넷뱅킹, 고객센터, 영업점 창구에서 할 수 있다.
+2. 계약기간은 1개월 이상 12개월 이내 월단위로 한다.
+3. 가입금액 최소 1백만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.65</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21001049</fin_prdt_cd> 
+<fin_prdt_nm>다모아
+정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>①(핵심예금 평균잔액 증가액X1.6%)/이 예금의 신규가입 금액
+②(신용카드 결제실적 증가액X0.7%)/이 예금의 신규가입 금액
+▶①및②의 금리를 합하여 최고1.0%우대이율 제공</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>거래대상자는 제한을 두지 아니한다. 다만, 국가 및 지방자치단체는 이 예금을 거래할 수 없다.</join_member> 
+<etc_note>1. 계약기간은 12개월로 한다.
+2. 최저가입금액은 5백만원 이상으로 하며, 이 예금은 1인 1계좌에 한하여 가입 가능하다.</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.25</intr_rate> 
+<intr_rate2>2.25</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21001057</fin_prdt_cd> 
+<fin_prdt_nm>다이아몬드
+정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>①비대면채널가입시0.05%
+②여성우대이율 0.10%
+ - 가입기간중 결혼, 임신, 출산, 자녀결혼, 손자출생시 우대금리를 지급하며, 해당 예금의 만기해지전까지 영업점 창구에 증빙서류를 제출하는 경우 
+③소개이율 0.05%
+▶①~③의 최고 우대금리 합계는 0.10%</spcl_cnd> 
+<join_deny>3</join_deny> 
+<join_member>실명의 개인인 여성</join_member> 
+<etc_note>1. 계약기간은 6개월 이상 24개월 이내로 한다.
+2. 가입금액 최소 3백만원 이상~최대 1억원 이하</etc_note> 
+<max_limit>100000000</max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.25</intr_rate> 
+<intr_rate2>1.35</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.65</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21001105</fin_prdt_cd> 
+<fin_prdt_nm>BNK사랑방
+정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>①가입일 기준 과거 1년간 당행 정기예금 신규이력이 없는 고객 0.10%
+②아래 항목 중 한가지 이상 충족시 0.10%
+- 입출금이자유로운예금 평잔 2백만원 이상, 신용카드 결제금액이 5백만원 이상
+③주거래우대금리 0.10%
+④비대면채널가입 우대이율 0.05%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인 및 개인사업자</join_member> 
+<etc_note>1. 이 예금은 1인 1계좌만 가입 가능하고, 계약기간은 12개월로 한다.
+2. 가입금액 최소 1백만원 이상~최대 5천만원 이하</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21001115</fin_prdt_cd> 
+<fin_prdt_nm>투유더정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>①가입금액 30백만원 이상인 경우 0.10%
+②이 예금 신규시 금리우대쿠폰 등록할 경우 0.10%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>거래대상자는 제한을 두지 아니한다. 다만, 국가 및 지방자치단체는 이 예금을 거래할 수 없다.</join_member> 
+<etc_note>1. 이 예금의 계약기간은 6개월 이상 2년 이내 월단위로 한다.
+2. 가입금액은 1인당 최소 100만원 이상 3억원 이하</etc_note> 
+<max_limit>300000000</max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.65</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2.1</intr_rate> 
+<intr_rate2>2.3</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21001132</fin_prdt_cd> 
+<fin_prdt_nm>BNK코리보연동정기예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>▶다음 각 항목 조건 충족시 최대 0.20%우대금리
+①신규고객
+②3천만원 이상 가입
+③계좌이동서비스를 통한 자동이체변경
+④당행 급여이체
+⑤BC카드 가맹점대금 입금
+⑥당행 BC카드 10만원 이상 결제
+⑦공과금자동이체 2건 이상
+⑧아파트관리비 자동이체
+⑨연금입금</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>거래대상자는 제한을 두지 아니한다. 다만, 국가 및 지방자치단체는 이 예금을 거래할 수 없다.</join_member> 
+<etc_note>1. 이 예금의 계약기간은 12개월, 18개월, 24개월로 한다.
+2. 이 예금의 기본이율과 우대이율은 3개월마다 변경되어 적용된다.</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.64</intr_rate> 
+<intr_rate2>1.84</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.74</intr_rate> 
+<intr_rate2>1.94</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010024</fin_co_no> 
+<kor_co_nm>경남은행</kor_co_nm> 
+<fin_prdt_cd>21001142</fin_prdt_cd> 
+<fin_prdt_nm>매직라이프정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>만기 후 1개월 미만: 일반정기예금 기본이율 Ⅹ50%
+만기 후 1개월 이상: 일반정기예금 기본이율 Ⅹ20%</mtrt_int> 
+<spcl_cnd>①비대면채널신규0.10%
+②해당상품 최초가입자0.10%
+③4050세대 우대0.10%
+④매직라이프정기적금 동시가입 우대0.10%
+⑤고객소개우대0.10%
+⑥본인퇴직, 자녀결혼 우대0.10%
+⑦거래실적에 따른 우대0.10%
+⑧재예치 회차별 우대금리0.05%~0.20%
+▶우대금리 최고합계는 0.60%를 초과하지 않음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인 및 개인사업자</join_member> 
+<etc_note>1. 이 예금의 계약기간은 1년, 2년제로 최초 가입기간을 포함하여 최장 10년 이내 재예치 가능
+2. 가입금액은 1인당 1백만원 이상 5억원 이하</etc_note> 
+<max_limit>500000000</max_limit> 
+<dcls_strt_day>20180119</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801190838</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>2.15</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010026</fin_co_no> 
+<kor_co_nm>중소기업은행</kor_co_nm> 
+<fin_prdt_cd>01211310121</fin_prdt_cd> 
+<fin_prdt_nm>IBK평생한가족통장
+(실세금리정기예금)</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기일 당시 실세금리정기예금의 만기후금리 적용
+- 1개월 이내: 
+만기일 당시 약정금리×50%
+- 1월 초과 6개월 이내: 
+만기일 당시 약정금리×30% 
+- 6개월 초과: 
+만기일 당시 약정금리×20%</mtrt_int> 
+<spcl_cnd>최고 연 0.2%p
+1. 고객별 우대금리: 연 0.05%p
+2. 주거래 우대금리: 연 0.15%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+(개인사업자 제외)</join_member> 
+<etc_note>1인당 
+통합한도 1억원</etc_note> 
+<max_limit>100000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221345</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010026</fin_co_no> 
+<kor_co_nm>중소기업은행</kor_co_nm> 
+<fin_prdt_cd>01211310127</fin_prdt_cd> 
+<fin_prdt_nm>i-ONE놀이터예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>만기일 당시 실세금리정기예금의 만기후금리 적용
+- 1개월 이내: 
+만기일 당시 약정금리×50%
+- 1월 초과 6개월 이내: 
+만기일 당시 약정금리×30% 
+- 6개월 초과: 
+만기일 당시 약정금리×20%</mtrt_int> 
+<spcl_cnd>최고 연 0.3%p
+미션우대금리* 제공
+(스탬프 적립 수에 따라 
+연 0.1%p~연 0.3%p적용)
+* 게임미션, 지인추천미션, i-ONE뱅크로 상품가입미션 수행 시 제공되는 우대금리</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+(개인사업자 제외)</join_member> 
+<etc_note>1인당 
+가입한도 3천만원</etc_note> 
+<max_limit>30000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221345</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010030</fin_co_no> 
+<kor_co_nm>한국산업은행</kor_co_nm> 
+<fin_prdt_cd>05100</fin_prdt_cd> 
+<fin_prdt_nm>정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷</join_way> 
+<mtrt_int>지급일 현재 고시된 
+이 예금의 만기후 이율</mtrt_int> 
+<spcl_cnd>해당없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220949</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>.85</intr_rate> 
+<intr_rate2>.85</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>.9</intr_rate> 
+<intr_rate2>.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>.99</intr_rate> 
+<intr_rate2>.99</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.08</intr_rate> 
+<intr_rate2>1.08</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010030</fin_co_no> 
+<kor_co_nm>한국산업은행</kor_co_nm> 
+<fin_prdt_cd>05702</fin_prdt_cd> 
+<fin_prdt_nm>KDBdream 정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>* 만기후 1년 이내 :
+ 만기일 현재 고시된 일반 정기예금 해당기간 기본이자율의 1/2
+* 만기후 1년 초과 :
+만기일 현재 고시된 보통예금 이자율</mtrt_int> 
+<spcl_cnd>KDBdream Account 가입고객이 이 예금을 가입하는 경우, 0.10%P 가산</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인(개인사업자 및 임의단체 포함)</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220949</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010030</fin_co_no> 
+<kor_co_nm>한국산업은행</kor_co_nm> 
+<fin_prdt_cd>05705</fin_prdt_cd> 
+<fin_prdt_nm>KDB Hi 정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>* 만기후 1년 이내 :
+ 만기일 현재 고시된 일반 정기예금 해당기간 기본이자율의 1/2
+* 만기후 1년 초과 :
+만기일 현재 고시된 보통예금 이자율</mtrt_int> 
+<spcl_cnd>해당없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>KDB Hi 입출금통장에 가입한 개인(개인사업자 및 임의단체 제외)
+단, 국민인 거주자에 한함</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801220949</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2.05</intr_rate> 
+<intr_rate2>2.05</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010927</fin_co_no> 
+<kor_co_nm>국민은행</kor_co_nm> 
+<fin_prdt_cd>010300100072</fin_prdt_cd> 
+<fin_prdt_nm>국민수퍼고정금리형-만기일시지급식</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>- 1개월 이내 : 약정이율 X 50%
+- 1개월 초과 ~ 3개월 이내 : 약정이율 X 30%
+- 3개월 초과 : 0.2%
+
+ ※ 약정이율 : 고객이 만기시점에 받기로 한 이율</mtrt_int> 
+<spcl_cnd>※ 우대이율 최고 연 0.3%p
+ 1.평생고객 사은이율 : 연 0.1%p
+ 2.가입상품 금리우대(인터넷신규시) : 연 0.3%p
+   (1번,2번 우대금리는 중복불가)</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>영업점장 전결금리 기준</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010927</fin_co_no> 
+<kor_co_nm>국민은행</kor_co_nm> 
+<fin_prdt_cd>010300100209</fin_prdt_cd> 
+<fin_prdt_nm>e-파워정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>- 1개월 이내 : 기본이율 X 50%
+- 1개월 초과 ~ 3개월 이내 : 기본이율 X 30%
+- 3개월초과 : 0.2%</mtrt_int> 
+<spcl_cnd>※ 우대이율 최고 연 0.3%p
+  - KB Star*t통장 or KB樂Star통장 
+    or KB나라사랑우대통장 가입자
+    우대이율 : 연 0.3%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인 또는 개인사업자</join_member> 
+<etc_note>인터넷 전용 상품</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010927</fin_co_no> 
+<kor_co_nm>국민은행</kor_co_nm> 
+<fin_prdt_cd>010300100226</fin_prdt_cd> 
+<fin_prdt_nm>KB Smart★폰 예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>- 1개월 이내 : 기본이율 X 50%
+- 1개월 초과 ~ 3개월 이내 : 기본이율 X 30%
+- 3개월초과 : 0.2%</mtrt_int> 
+<spcl_cnd>※ 우대이율 최고 연 0.6%p
+  - 추천 우대이율 : 최대 연 0.3%p
+  - KB樂Star통장 우대이율 : 연 0.3%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인 또는 개인사업자</join_member> 
+<etc_note>1. 1인당 가입한도 : 3천만원
+2. 스마트폰 전용 상품</etc_note> 
+<max_limit>30000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010927</fin_co_no> 
+<kor_co_nm>국민은행</kor_co_nm> 
+<fin_prdt_cd>010300100251</fin_prdt_cd> 
+<fin_prdt_nm>KB국민첫재테크예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>- 1개월 이내 : 기본이율 X 50%
+- 1개월 초과 ~ 3개월 이내 : 기본이율 X 30%
+- 3개월 초과 : 0.2%</mtrt_int> 
+<spcl_cnd>※ 우대이율 최고 연 0.2%p
+  - 첫예금 우대이율 : 연 0.1%p
+  - 패키지 우대이율 : 연 0.1%p
+  - 급여이체 우대이율 : 연 0.1%p
+  - 재예치 우대이율 : 연 0.1%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 18세 이상 ~ 만 38세 이하 개인</join_member> 
+<etc_note>1인당 가입한도 : 2천만원</etc_note> 
+<max_limit>20000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>M</intr_rate_type> 
+<intr_rate_type_nm>복리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.35</intr_rate> 
+<intr_rate2>1.55</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>M</intr_rate_type> 
+<intr_rate_type_nm>복리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.65</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0010927</fin_co_no> 
+<kor_co_nm>국민은행</kor_co_nm> 
+<fin_prdt_cd>010300100293</fin_prdt_cd> 
+<fin_prdt_nm>KB골든라이프연금우대예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>- 연 0.2%</mtrt_int> 
+<spcl_cnd>※ 우대이율 최고 연 0.2%p
+  - 연금실적 우대이율 : 연 0.1%p
+  - 한가족사랑 우대이율 : 연 0.1%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인 또는 개인사업자</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>M</intr_rate_type> 
+<intr_rate_type_nm>복리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0011625</fin_co_no> 
+<kor_co_nm>신한은행</kor_co_nm> 
+<fin_prdt_cd>200-0037-15</fin_prdt_cd> 
+<fin_prdt_nm>미래설계 크레바스 연금예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>-1개월 이하:(일반) 정기예금 기본금리 1/2
+
+-1개월 초과~6개월 이하: (일반) 정기예금 기본금리의 1/4
+
+-6개월 초과 0.2%</mtrt_int> 
+<spcl_cnd>해당사항없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 가입한도 : 300만원이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0011625</fin_co_no> 
+<kor_co_nm>신한은행</kor_co_nm> 
+<fin_prdt_cd>200-0121-28</fin_prdt_cd> 
+<fin_prdt_nm>신한 플러스 월복리 정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>-1개월 이하:(일반) 정기예금 기본금리 1/2
+
+-1개월 초과~6개월 이하: (일반) 정기예금 기본금리의 1/4
+
+-6개월 초과 0.2%</mtrt_int> 
+<spcl_cnd>※가산금리 최고 0.2%
+-ISA 또는 노란우산공제를 보유시
+-예금주의 입출금통장에서 개인형IRP 및 연금저축상품으로 50만원 이상 누적 이체실적 보유시
+-만 62세 이상
+-비과세 종합저축 가입자격자</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 가입한도 : 300만원 이상~3천만원 이하</etc_note> 
+<max_limit>30000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>M</intr_rate_type> 
+<intr_rate_type_nm>복리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>M</intr_rate_type> 
+<intr_rate_type_nm>복리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2.1</intr_rate> 
+<intr_rate2>2.3</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>M</intr_rate_type> 
+<intr_rate_type_nm>복리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2.25</intr_rate> 
+<intr_rate2>2.45</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0011625</fin_co_no> 
+<kor_co_nm>신한은행</kor_co_nm> 
+<fin_prdt_cd>200-0136-01</fin_prdt_cd> 
+<fin_prdt_nm>신한 S드림 정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>-1개월 이하:(일반) 정기예금 기본금리 1/2
+
+-1개월 초과~6개월 이하: (일반) 정기예금 기본금리의 1/4
+
+-6개월 초과 0.2%</mtrt_int> 
+<spcl_cnd>해당사항없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 가입한도 :
+ 3백만원 이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.2</intr_rate> 
+<intr_rate2>1.2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.35</intr_rate> 
+<intr_rate2>1.35</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.4</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.55</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0011625</fin_co_no> 
+<kor_co_nm>신한은행</kor_co_nm> 
+<fin_prdt_cd>200-0136-06</fin_prdt_cd> 
+<fin_prdt_nm>신한 S드림 정기예금(온라인전용)</fin_prdt_nm> 
+<join_way>인터넷,스마트폰,모집인</join_way> 
+<mtrt_int>-1개월 이하:(일반) 정기예금 기본금리 1/2
+
+-1개월 초과~6개월 이하: (일반) 정기예금 기본금리의 1/4
+
+-6개월 초과 0.2%</mtrt_int> 
+<spcl_cnd>해당사항없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>1. 가입한도 : 50만원이상</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221439</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.84</intr_rate> 
+<intr_rate2>1.84</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2.13</intr_rate> 
+<intr_rate2>2.13</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2.23</intr_rate> 
+<intr_rate2>2.23</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013175</fin_co_no> 
+<kor_co_nm>농협은행</kor_co_nm> 
+<fin_prdt_cd>10-003-1225-0001</fin_prdt_cd> 
+<fin_prdt_nm>NH왈츠회전예금 II</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트??</join_way> 
+<mtrt_int>만기 후 3개월 : 기본금리의 50%
+만기 후 6개월 : 기본금리의 20%
+만기 후  6개월 초과 : 기본금리의 10%
+
+* 기본금리 : 만기시점의 일반정기예금 계약기간별 금리</mtrt_int> 
+<spcl_cnd>1. 급여이체실적(50만원 이상)이 있는 경우 : 0.1%p
+2. 트리플 회전 우대이율 :  4회전기간부터 0.1%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180131</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801311339</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.93</intr_rate> 
+<intr_rate2>2.03</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013175</fin_co_no> 
+<kor_co_nm>농협은행</kor_co_nm> 
+<fin_prdt_cd>10-003-1228-0007</fin_prdt_cd> 
+<fin_prdt_nm>법사랑플러스(큰만족실세예금)</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기 후  3개월이내 : 기본금리의 50%
+만기 후 6개월이내 : 기본금리 20%
+만기 후 6개월 초과 : 기본금리의 10%
+
+* 기본금리 : 만기시점의 일반정기예금 계약기간별 금리</mtrt_int> 
+<spcl_cnd>1. 계약기간이 2년이상 3년미만인 고객 : 0.05%p
+2. 계약기간이 3년이상인 고객 0.1%p
+3. NH채움신용(체크) 월 평균
+10만원 이상 사용 또는청약저축 6개월 이상 보유자 : 0.1%p
+4. 최초고객 : 0.2%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180131</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801311339</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.25</intr_rate> 
+<intr_rate2>1.45</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.35</intr_rate> 
+<intr_rate2>1.65</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013175</fin_co_no> 
+<kor_co_nm>농협은행</kor_co_nm> 
+<fin_prdt_cd>10-003-1267-0003</fin_prdt_cd> 
+<fin_prdt_nm>e-금리우대 예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기 후 3개월 : 기본금리의 50%
+만기 후 6개월 : 기본금리의 20%
+만기 후  6개월 초과 : 기본금리의 10%
+
+* 기본금리 : 만기시점의 일반정기예금 계약기간별 금리</mtrt_int> 
+<spcl_cnd>1. NH채움카드 이용실적 100만원 : 0.1%p
+2. 추천계좌와 피추천계좌에 각각 : 0.1 %p, 최대 0.3%p
+※ 추천 및 피추천 횟수 5회</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인</join_member> 
+<etc_note>1. 1인당 가입한도 : 3억원2. 인터넷/스마트뱅킹 전용상품</etc_note> 
+<max_limit>300000000</max_limit> 
+<dcls_strt_day>20180131</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801311339</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013175</fin_co_no> 
+<kor_co_nm>농협은행</kor_co_nm> 
+<fin_prdt_cd>10-003-1313-0003</fin_prdt_cd> 
+<fin_prdt_nm>NH All100플랜연금예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>만기 후 3개월 : 기본금리의 50%
+만기 후 6개월 : 기본금리의 20%
+만기 후  6개월 초과 : 기본금리의 10%
+
+* 기본금리 : 만기시점의 일반정기예금 계약기간별 금리</mtrt_int> 
+<spcl_cnd>1. NH All100플랜 통장 보유시 : 0.1%p
+2. 부부동시 신규금액 각 1천만원 이상 : 0.1%p
+3. 총 기간 3년 이상, 1천만원 이상 : 0.1%p
+4. All100플랜 적금 만기 후 해지일로부터 5영업일 이내 이 예금 신규 시 0.2%P</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인</join_member> 
+<etc_note>1인당 가입한도 : 10억원</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180131</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801311339</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.35</intr_rate> 
+<intr_rate2>1.75</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.45</intr_rate> 
+<intr_rate2>1.95</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013909</fin_co_no> 
+<kor_co_nm>KEB하나은행</kor_co_nm> 
+<fin_prdt_cd>1</fin_prdt_cd> 
+<fin_prdt_nm>행복Together정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>1개월이내 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/2
+1개월초과 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/4</mtrt_int> 
+<spcl_cnd>온라인뱅킹에서 주거래은행 약속 메시지 작성 시 연 0.3% 우대</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+또는 개인사업자</join_member> 
+<etc_note>1. 가입금액 : 1백만원이상 5천만원이하
+ (인터넷뱅킹,스마트폰뱅킹으로 가입시
+  1만원 가입가능)
+2. 1인 최대가입한도 5천만원</etc_note> 
+<max_limit>50000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221355</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013909</fin_co_no> 
+<kor_co_nm>KEB하나은행</kor_co_nm> 
+<fin_prdt_cd>2</fin_prdt_cd> 
+<fin_prdt_nm>e-플러스정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>1개월이내 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/2
+1개월초과 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/4</mtrt_int> 
+<spcl_cnd>하나 멤버스 앱 로그인 시 연0.1% 우대</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+또는 개인사업자</join_member> 
+<etc_note>1. 가입금액: 1만원이상 원단위가입가능</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221355</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.5</intr_rate> 
+<intr_rate2>1.6</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.8</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013909</fin_co_no> 
+<kor_co_nm>KEB하나은행</kor_co_nm> 
+<fin_prdt_cd>6</fin_prdt_cd> 
+<fin_prdt_nm>하나머니세상 정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>1개월이내 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리
+1/2
+1개월초과 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/4</mtrt_int> 
+<spcl_cnd>최대 연 0.9% 우대
+ - 만기해지시 이자금액을 하나멤버스의 하나머니로 적립동의 하는 경우 연0.8%
+ - 만기해지시 이자금액을 하나멤버스의 하나머니로 적립동의한 고객중, 스마트폰뱅킹을 신규 가입하는경우 연0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+또는 개인사업자</join_member> 
+<etc_note>1. 가입금액: 1백만원이상 1천만원이하
+2. 만 14세이상 1인 1계좌
+3. 1인 최대가입한도 1천만원
+4. 기타
+ -하나멤버스회원이 예금 가입일로부터 15일이내에 우대조건 충족시 우대금리 제공</etc_note> 
+<max_limit>10000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221355</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.1</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.3</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013909</fin_co_no> 
+<kor_co_nm>KEB하나은행</kor_co_nm> 
+<fin_prdt_cd>7</fin_prdt_cd> 
+<fin_prdt_nm>N플러스 정기예금</fin_prdt_nm> 
+<join_way>스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>1개월이내 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리
+1/2
+1개월초과 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/4</mtrt_int> 
+<spcl_cnd>최대 연 0.3% 우대
+- 첫거래고객 연 0.1%
+- 스마트폰뱅킹이체 2회 이상 연 0.1%
+- 청약종합저축 신규 연 0.1%
+- 아파트관리비신규 이체 연 0.1%
+- 급여이체신규 이체 연 0.1%
+- 하나멤버스앱 1회이상 로그인 연 0.1%</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+또는 개인사업자</join_member> 
+<etc_note>1. 가입금액: 1만원이상 3천만원이하
+2. 1인 최대가입한도 3천만원
+3. 가입방법
+ - 스마트폰뱅킹과 콜센터(스마트폰뱅킹 가입고객에 한함)를 통해 가입 가능</etc_note> 
+<max_limit>30000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221355</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.55</intr_rate> 
+<intr_rate2>1.85</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.75</intr_rate> 
+<intr_rate2>2.05</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>2.1</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0013909</fin_co_no> 
+<kor_co_nm>KEB하나은행</kor_co_nm> 
+<fin_prdt_cd>8</fin_prdt_cd> 
+<fin_prdt_nm>하나된 평창 정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰,전화(텔레뱅킹)</join_way> 
+<mtrt_int>1개월이내 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리
+1/2
+1개월초과 : 지급시점 해당기간 일반정기예금 월이자지급식 기본금리 1/4</mtrt_int> 
+<spcl_cnd>최대 연 0.5% 우대
+- Well-Living 우대금리(최대 연 0.3%)
+- 올림픽 성공기원 우대금리(연 0.2%)</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>실명의 개인
+또는 개인사업자</join_member> 
+<etc_note>1. 가입금액: 1백만원이상 3천만원이하
+2. 1인 1계좌
+3. 1인 최대가입한도 3천만원
+4. 기타
+ - 판매기간:2017.11.1~2018.2.18
+ - 판매한도:총1조원(2017년 5천억원/2018년 5천억원)
+ - 재예치 우대금리 연 0.1%
+  (세후 원리금이 1년단위로 최대 2회까지 자동재예치)</etc_note> 
+<max_limit>30000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221355</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>2.4</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0014674</fin_co_no> 
+<kor_co_nm> 케이뱅크은행</kor_co_nm> 
+<fin_prdt_cd>01013000100000000003</fin_prdt_cd> 
+<fin_prdt_nm>뮤직K 정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기후 
+-1개월이내: 만기시점 기본금리 X 50%
+-1개월 초과~6개월이내: 만기시점 기본금리 X 30%
+-6개월 초과: 연 0.2%</mtrt_int> 
+<spcl_cnd>우대조건 없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 19세 이상 실명의 개인 및 개인사업자</join_member> 
+<etc_note>고객이 현금이자 또는 음악감상권을 선택하여 수령하는 정기예금</etc_note> 
+<max_limit>3000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221055</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.68</intr_rate> 
+<intr_rate2>1.68</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0014674</fin_co_no> 
+<kor_co_nm> 케이뱅크은행</kor_co_nm> 
+<fin_prdt_cd>01013000110000000000</fin_prdt_cd> 
+<fin_prdt_nm>주거래우대 정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기후 
+-1개월이내: 만기시점 기본금리 X 50%
+-1개월 초과~6개월이내: 만기시점 기본금리 X 30%
+-6개월 초과: 연 0.2%</mtrt_int> 
+<spcl_cnd>급여이체, 체크카드 고객에게 우대금리 제공 (최고 연 0.4%)</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 19세 이상 실명의 개인 및 개인사업자</join_member> 
+<etc_note>가입금액: 최소 1만원 이상(원단위)
+가입기간: 3개월 이상 ~ 36개월 이하(일단위)</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221055</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.95</intr_rate> 
+<intr_rate2>2.35</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2.4</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2.05</intr_rate> 
+<intr_rate2>2.45</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0014674</fin_co_no> 
+<kor_co_nm> 케이뱅크은행</kor_co_nm> 
+<fin_prdt_cd>01013000110000000001</fin_prdt_cd> 
+<fin_prdt_nm>코드K 정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>만기후 
+-1개월이내: 만기시점 기본금리 X 50%
+-1개월 초과~6개월이내: 만기시점 기본금리 X 30%
+-6개월 초과: 연 0.2%</mtrt_int> 
+<spcl_cnd>우대조건 없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 19세 이상 실명의 개인 및 개인사업자</join_member> 
+<etc_note>가입금액: 최소 1만원 이상(원단위)
+가입기간: 1개월 이상 ~ 36개월 이하(월단위)</etc_note> 
+<max_limit>1000000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221055</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.7</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2.2</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2.25</intr_rate> 
+<intr_rate2>2.25</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2.3</intr_rate> 
+<intr_rate2>2.3</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0014807</fin_co_no> 
+<kor_co_nm>수협은행</kor_co_nm> 
+<fin_prdt_cd>10120102800011</fin_prdt_cd> 
+<fin_prdt_nm>사랑해정기예금</fin_prdt_nm> 
+<join_way>영업점,인터넷,스마트폰</join_way> 
+<mtrt_int>* 만기후 1년 이내
+ - 만기당시 정기예금(월이자지급식) 계약기간별 약정이율 1/2
+* 만기후 1년 초과
+ - 만기당시 보통예금 이율</mtrt_int> 
+<spcl_cnd>우대조건없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221402</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.2</intr_rate> 
+<intr_rate2>1.2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.4</intr_rate> 
+<intr_rate2>1.4</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0014807</fin_co_no> 
+<kor_co_nm>수협은행</kor_co_nm> 
+<fin_prdt_cd>10120104400021</fin_prdt_cd> 
+<fin_prdt_nm>사랑해나누리예금</fin_prdt_nm> 
+<join_way>영업점</join_way> 
+<mtrt_int>* 만기후 1년 이내
+ - 만기당시 정기예금(월이자지급식) 계약기간별 약정이율 1/2
+* 만기후 1년 초과
+ - 만기당시 보통예금 이율</mtrt_int> 
+<spcl_cnd>* 최고 우대금리 : 0.1%
+ - 기부금 납부자
+ - 헌혈증서 보유자
+ - 자원봉사증보유자
+ - 어업종사자, 어업인
+※ 단위는 : 연%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>제한없음</join_member> 
+<etc_note>해당없음</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221402</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.6</intr_rate> 
+<intr_rate2>1.7</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2>1.9</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0014807</fin_co_no> 
+<kor_co_nm>수협은행</kor_co_nm> 
+<fin_prdt_cd>10120109300021</fin_prdt_cd> 
+<fin_prdt_nm>사랑해독도정기예금</fin_prdt_nm> 
+<join_way>인터넷,스마트폰</join_way> 
+<mtrt_int>* 만기후 1년 이내
+ - 만기당시 정기예금(월이자지급식) 계약기간별 약정이율 1/2
+* 만기후 1년 초과
+ - 만기당시 보통예금 이율</mtrt_int> 
+<spcl_cnd>* 최고 우대금리 : 0.3%
+ - 사랑해독도정기예금 가입 0.1%
+ - 사랑해독도정기적금 가입 또는 대출,펀드,신탁,신용(체크)카드 1건이상 보유고객 0.1%
+ - 금리쿠폰 0.1%
+※ 단위는 : 연%p</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>개인</join_member> 
+<etc_note>인터넷뱅킹 및 스마트폰뱅킹 가입 전용상품</etc_note> 
+<max_limit>2000000000</max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221402</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.9</intr_rate> 
+<intr_rate2>2.2</intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2</intr_rate> 
+<intr_rate2>2.3</intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+		<product>  
+			<baseinfo>  
+<dcls_month>201801</dcls_month> 
+<fin_co_no>0015130</fin_co_no> 
+<kor_co_nm>한국카카오은행 </kor_co_nm> 
+<fin_prdt_cd>10-01-20-388-0002</fin_prdt_cd> 
+<fin_prdt_nm>카카오뱅크 정기예금</fin_prdt_nm> 
+<join_way>스마트폰</join_way> 
+<mtrt_int>만기 후
+ - 만기 후 1개월 이내 : 가입(또는 자동연장)시점 기본금리 x 50%
+ - 만기 후 1개월초과 ~ 3개월이내 : 가입(또는 자동연장)시점 기본금리 x 30%
+ - 만기 후 3개월 초과 : 0.20%</mtrt_int> 
+<spcl_cnd>없음</spcl_cnd> 
+<join_deny>1</join_deny> 
+<join_member>만 17세 이상의 실명의 개인</join_member> 
+<etc_note>1.가입금액 : 100만원 이상(원단위)
+2.가입기간 : 1개월 이상 ~ 36개월 이하(월, 일단위로 지정 가능)</etc_note> 
+<max_limit></max_limit> 
+<dcls_strt_day>20180122</dcls_strt_day> 
+<dcls_end_day></dcls_end_day> 
+<fin_co_subm_day>201801221022</fin_co_subm_day> 
+			</baseinfo>  
+			<options>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>6</save_trm> 
+<intr_rate>1.8</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>12</save_trm> 
+<intr_rate>2.2</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>24</save_trm> 
+<intr_rate>2.25</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+				<option>  
+<intr_rate_type>S</intr_rate_type> 
+<intr_rate_type_nm>단리</intr_rate_type_nm> 
+<save_trm>36</save_trm> 
+<intr_rate>2.3</intr_rate> 
+<intr_rate2></intr_rate2> 
+				</option>  
+			</options>  
+		</product>  
+	</products>  
+</result>  
+
+
