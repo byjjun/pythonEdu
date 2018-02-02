@@ -27,8 +27,17 @@ def savingparser():
         if _12m_produc['save_trm'] == u'12':
             m12_product_list.append(_12m_produc)
         
-    for m12_product in m12_product_list:
+    m12_product_list.sort(cmp=None, key=None, reverse=False)    
+    
+    m12_product_list_r2sorted = sorted(m12_product_list, key=lambda k: k['intr_rate2'], reverse=True)
+    for m12_product in m12_product_list_r2sorted:
+        print m12_product['fin_co_no']
         print m12_product['fin_prdt_cd']
+        print m12_product['intr_rate']
+        print m12_product['intr_rate2']
+        print m12_product['intr_rate_type_nm']
+        print m12_product['save_trm']
+        print '----------'
     
      
         
