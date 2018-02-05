@@ -15,6 +15,8 @@ import xml.etree.ElementTree as ET
 #from _ast import Continue
 #print(GetElsXML.get_current_els_xml())
 
+
+
 def elsparser():
     elsxmldata = GetElsXML.get_current_els_xml()
     
@@ -26,13 +28,15 @@ def elsparser():
     i=1
             
     els_dic_list = []
+    global countresult
     
     for message in tree.findall('message'):
         for elslist in message.findall('DISDlsListDTO'):
             totalcount = elslist.find('dbio_total_count_')
             
-            #if totalcount is not None:
-                #print "총 개수: ",totalcount.text   
+            if totalcount is not None:
+               countresult = totalcount.text
+               #print "총 개수: ",totalcount.text   
                 
             for oneels in elslist.findall('DISDlsDTO'):
                 #print("aaa")
@@ -101,6 +105,9 @@ def elsparser():
     
     return els_dic_list
 #print els_dic_list
+
+def return_totalcount():
+    return countresult
 
 def debug_els_dic(els_dic_list):
     print datetime.today().strftime('%Y.%m.%d'),' 청약중  ELS 목록'
