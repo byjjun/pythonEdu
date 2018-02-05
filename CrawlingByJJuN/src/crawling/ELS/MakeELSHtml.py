@@ -5,8 +5,9 @@ Created on 2018. 1. 25.
 
 @author: 073860
 '''
+from datetime import datetime
 
-def makeelshtml(els_dic_list):
+def makeelshtml(els_dic_list, totalcount):
     
     '''
         for elsdic in els_dic_list:
@@ -26,7 +27,22 @@ def makeelshtml(els_dic_list):
             print '���: '
     
     '''
+    
+    #print datetime.today().strftime('%Y.%m.%d'),' 청약중  ELS 목록'
+    
+    #print datetime.today().strftime('%Y'),'년',datetime.today().strftime('%m'),'월',datetime.today().strftime('%d'),'일'
+    
+    
+    print datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
+    print "청약 가능한 ELS로 총 ",totalcount,"개가 검색되었습니다."
+    print "자세한 목록은 아래를 참조해 주세요."
+    print "<br/>"
+    print "금융투자협희 공시정보를 사용하였으며, 투자추천이나 권유는 아닙니다."
+    print "각 상품의 자세한 정보는 상세정보를 통하여 각 판매사 사이트를 참조해 주시기 바랍니다."
+    print "<br/>"
+    
     for elsdic in els_dic_list:
+        
         print "<hr />"
         print "<table style=\"height: 91px;\" width=\"475\">"
         print "<tbody>"

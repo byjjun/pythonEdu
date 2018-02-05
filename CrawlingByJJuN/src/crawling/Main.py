@@ -13,5 +13,5 @@ elsdiclist = XmlParser4ELS.elsparser()
 rate_sorted = sorted(elsdiclist, key=lambda k: k['elsrate'], reverse=True)
 
 #XmlParser4ELS.debug_els_dic(rate_sorted)
-MakeELSHtml.makeelshtml(rate_sorted)
+MakeELSHtml.makeelshtml(rate_sorted, XmlParser4ELS.return_totalcount())
 
