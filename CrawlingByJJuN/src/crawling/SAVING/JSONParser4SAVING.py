@@ -10,15 +10,21 @@ from SAVING import GetSavingJSON
 import json
 import pprint
 
-def savingparser(sortcode):
+def savingparser(finkind,svkind,sortcode):
+    
+    #finkind = 은행, 저축은행
+    #svkind = 예금, 적금   
     #sortcode = 1 : 우대금리포함
     #sortcode = 2 : 우대금리미포함
+    
+    
     if sortcode is None:
         sortcode = 1
     #TOP 몇개
     rank_count = 5 
     
-    savingjson = GetSavingJSON.get_current_saving_json()
+    #savingjson = GetSavingJSON.get_current_saving_json('은행','예금')
+    savingjson = GetSavingJSON.get_current_saving_json(finkind,svkind)
     
     result_dic = json.loads(savingjson)
     list_dic = result_dic['result']
@@ -31,7 +37,7 @@ def savingparser(sortcode):
     fin_cmpy_dic_list = list_dic['baseList']
     #pprint.pprint(baselist_dic)
     #pprint.pprint(product_dic)
-    print "#################"
+    #print "#################"
     
     m12_product_list = []
     
@@ -74,6 +80,7 @@ def savingparser(sortcode):
     
     return top5_result_dic_list
 
+    #for debug
     for top5_result_dic in top5_result_dic_list:
         #금융기관
         print top5_result_dic['fin_compy_name']
@@ -88,45 +95,9 @@ def savingparser(sortcode):
         #우대조건
         print top5_result_dic['spcl_cnd']
         print '------------'
-    '''
-    for _result in tree.findall('result'):
-        
-        if _result.findall('err_code').text !='000':
-            print "ERROR : Cannot get a xml file" 
-            break
-        
-        saving_dic = {}
-        
-        for _product in _result.findall('products'):
-            for baseinfo in _product.findall('baseinfo'):
-                saving_dic['FINNAME'] = baseinfo.findall('kor_co_nm').text
-            
-            
-            
-        print '은행이름 : ',saving_dic['FINNAME']
-        
-        <hr />
-        <table style="width: 440px;">
-        <tbody>
-        <tr>
-        <td style="width: 120px; background-color: #d7d6a5;" colspan="2">$fin_compy_name</td>
-        <td style="width: 220px; background-color: #f2ede4;" colspan="3">$product_name</td>
-        </tr>
-        <tr>
-        <td style="width: 60px; background-color: #d7d6a5;">일반</td>
-        <td style="width: 60px; background-color: #dba67b;">$intr_rate</td>
-        <td style="width: 80px; background-color: #d7d6a5;">우대</td>
-        <td style="width: 60px; background-color: #dba67b;">$intr_rate2</td>
-        <td style="width: 60px; background-color: #f2ede4;">$intr_rate_type_nm</td>
-        </tr>
-        <tr>
-        <td style="width: 440px; background-color: #f2ede4;" colspan="5">&nbsp;$spcl_cnd</td>
-        </tr>
-        </tbody>
-        </table>
-    '''
+    
 
-savingparser(1)
+
     
     
     
