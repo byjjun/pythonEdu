@@ -9,6 +9,9 @@ Created on 2017. 12. 22.
 from ELS import XmlParser4ELS
 from ELS import MakeELSHtml
 
+if __name__ == '__main__':
+    pass
+
 elsdiclist = XmlParser4ELS.elsparser()
 rate_sorted = sorted(elsdiclist, key=lambda k: k['elsrate'], reverse=True)
 
