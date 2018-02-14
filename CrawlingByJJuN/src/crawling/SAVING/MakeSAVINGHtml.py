@@ -18,7 +18,7 @@ def makesavinghello():
 def makeproduchtml(topsaving_list):        
     for top_product in topsaving_list:
         #print "<hr />"
-        print "<table style=\"width: 440px;\">"
+        print "<table style=\"height: 91px;\" width=\"475\">"
         print "<tbody>"
         print "<tr>"
         print "<td style=\"width: 120px; background-color: #d7d6a5;\" colspan=\"2\">",top_product['fin_compy_name'],"</td>"

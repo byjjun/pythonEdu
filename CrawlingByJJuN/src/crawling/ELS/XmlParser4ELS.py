@@ -45,7 +45,7 @@ def elsparser():
                 
                 #Except ELS
                 nowdate = datetime.today().strftime("%Y%m%d")
-                if nowdate >= oneels.find('val26').text:
+                if nowdate > oneels.find('val26').text:
                     #print "X ELS"
                     continue
                                 
