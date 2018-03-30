@@ -79,26 +79,39 @@ def elsparser():
                 sale_s_date = oneels.find('val16')
                 if sale_s_date is not None:
                     els_dic['sale_s_date']=sale_s_date.text
+                else:
+                    els_dic['sale_s_date']=' '    
                 #
                 sale_e_date = oneels.find('val17')
                 if sale_e_date is not None:
                     els_dic['sale_e_date']=sale_e_date.text
+                else:
+                    els_dic['sale_e_date']=' '
                 #
                 elsrate = oneels.find('val15')
                 if elsrate is not None:
                     els_dic['elsrate']=elsrate.text
+                else:
+                    els_dic['elsrate']=' '
                 #
                 elstruct = oneels.find('val18')
                 if elstruct is not None:
                     els_dic['elstruct']=elstruct.text
+                else:
+                    els_dic['elstruct']=' '
+                
                 #
                 sitelink = oneels.find('val20')
                 if sitelink is not None:
                     els_dic['sitelink']=sitelink.text
+                else:
+                    els_dic['sitelink']=' '
                 #
                 elsnote = oneels.find('val21')
                 if elsnote is not None:
-                    els_dic['elsnote']=elsnote.text    
+                    els_dic['elsnote']=elsnote.text
+                else:
+                    els_dic['elsnote']='1'
                                                 
                 els_dic_list.append(els_dic)
                 i=i+1
