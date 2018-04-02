@@ -87,8 +87,10 @@ def write_post(login_id, login_pw):
     while True:
         time.sleep(1)
     #print(login_id, login_pw)
-        
+
 userid = 'byjjun@gmail.com'
 userpw = 'POCKTAN1'
 
-write_post(userid, userpw)
+#write_post(userid, userpw)
+
+write_post('byjjun@gmail.com', 'POCKTAN1')

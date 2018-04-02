@@ -108,11 +108,18 @@ def elsparser():
                     els_dic['sitelink']=' '
                 #
                 elsnote = oneels.find('val21')
+                
                 if elsnote is not None:
                     els_dic['elsnote']=elsnote.text
                 else:
-                    els_dic['elsnote']='1'
-                                                
+                    els_dic['elsnote']=' '
+                
+                if els_dic['elsnote'] is None:
+                    els_dic['elsnote'] = ' '
+                    
+                #debug
+                #print els_dic['elsnote'] 
+                                               
                 els_dic_list.append(els_dic)
                 i=i+1
     
