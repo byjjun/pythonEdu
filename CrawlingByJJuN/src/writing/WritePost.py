@@ -62,7 +62,8 @@ def write_post(login_id, login_pw):
     driver.find_element_by_xpath('//*[@id="title"]').send_keys(els_title())
     
     ### step 3, write tag ###
-    driver.find_element_by_xpath('//*[@id="category-17"]').click()
+    #driver.find_element_by_xpath('//*[@id="category-17"]').click()
+    driver.find_element_by_xpath('//*[@id="in-category-17"]').click()
     driver.find_element_by_xpath('//*[@id="new-tag-post_tag"]').send_keys(els_tag())
     driver.find_element_by_xpath('//*[@id="post_tag"]/div/div[2]/p/input[2]').click()
         
@@ -83,14 +84,12 @@ def write_post(login_id, login_pw):
     #driver.find_element_by_xpath('//*[@id="content"]').clear()
     #driver.find_element_by_xpath('//*[@id="content"]').send_keys(a_post)
     '''
-    
+  
     while True:
         time.sleep(1)
     #print(login_id, login_pw)
 
 userid = 'byjjun@gmail.com'
 userpw = 'POCKTAN1'
-
 #write_post(userid, userpw)
-
 write_post('byjjun@gmail.com', 'POCKTAN1')
