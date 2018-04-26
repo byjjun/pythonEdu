@@ -21,7 +21,7 @@ def savingparser(finkind,svkind,sortcode):
     if sortcode is None:
         sortcode = 1
     #TOP 몇개
-    rank_count = 5 
+    rank_count = 10 
     
     #savingjson = GetSavingJSON.get_current_saving_json('은행','예금')
     savingjson = GetSavingJSON.get_current_saving_json(finkind,svkind)
