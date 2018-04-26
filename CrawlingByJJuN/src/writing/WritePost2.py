@@ -12,8 +12,6 @@ from datetime import datetime
 
 from ELS import XmlParser4ELS
 from ELS import MakeELSHtml
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support.expected_conditions import element_to_be_clickable
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -23,9 +21,11 @@ def saving_tag():
     saving_tag = '고금리, 예금, 예금추천, 정기예금, 적금, 특판, 우대금리'
     return saving_tag
 def saving_post():
+    saving_post = ''
     
-    saving_post= 'aa'
     return saving_post
+
+
 
 def els_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -37,22 +37,18 @@ def els_tag():
 def els_post():
     elsdiclist = XmlParser4ELS.elsparser()
     rate_sorted = sorted(elsdiclist, key=lambda k: k['elsrate'], reverse=True)
-    els_post=MakeELSHtml.make_str_elshtml(rate_sorted, XmlParser4ELS.return_totalcount())
-    
-    print "############## debug ############"
-    print els_post
-    print "############## debug ############"
-    
+    els_post=MakeELSHtml.make_str_elshtml(rate_sorted, XmlParser4ELS.return_totalcount())    
     return els_post
 
-def write_post(login_id, login_pw):
-    
-    ### write post ###
+def write_init():
+     ### write post ###
     ### step 1 , login ###
     driver = webdriver.Chrome('lib\chromedriver.exe')
     driver.get('http://fundingchoice.co.kr/wp-admin/')
     #driver.implicitly_wait(100)
     
+    login_id = 'byjjun@gmail.com'
+    login_pw = 'POCKTAN1'
     print login_id
     #driver.implicitly_wait(1000)
     driver.find_element_by_id('user_login').click()
@@ -61,19 +57,23 @@ def write_post(login_id, login_pw):
     driver.find_element_by_id('user_pass').click()
     driver.find_element_by_id('user_pass').send_keys(login_pw)  
     #driver.implicitly_wait(1000)
-    driver.find_element_by_id("wp-submit").click()
-        
+    driver.find_element_by_id("wp-submit").click()    
+    return driver
+
+
+def write_post(driver, category, tag, post_content):
+    
     ### step 2 , write els post title ###
     driver.get("http://fundingchoice.co.kr/wp-admin/post-new.php")
     driver.find_element_by_xpath('//*[@id="title"]').send_keys(els_title())
     
     ### step 3, write tag ###
-    driver.find_element_by_xpath('//*[@id="in-category-17"]').click()
-    driver.find_element_by_xpath('//*[@id="new-tag-post_tag"]').send_keys(els_tag())
+    driver.find_element_by_xpath(category).click()
+    driver.find_element_by_xpath('//*[@id="new-tag-post_tag"]').send_keys(tag)
     driver.find_element_by_xpath('//*[@id="post_tag"]/div/div[2]/p/input[2]').click()
         
     ### step 4, write els post ###
-    apost = els_post()
+    apost = post_content
     #print apost
     #textarea에 한방에 집어넣는거.. 신기하네. =_=
     a_post=driver.find_element_by_id("content")
@@ -83,13 +83,8 @@ def write_post(login_id, login_pw):
     #driver.implicitly_wait(10000)
     driver.find_element_by_xpath('//*[@id="publish"]').send_keys('')
     driver.find_element_by_xpath('//*[@id="publish"]').click()
-    
-    while True:
-        time.sleep(1)
-    
-
-userid = 'byjjun@gmail.com'
-userpw = 'POCKTAN1'
+   
 
 #write_post(userid, userpw)
-write_post('byjjun@gmail.com', 'POCKTAN1')
+driver = write_init()
+write_post(driver,'//*[@id="in-category-17"]', els_tag(),els_post())

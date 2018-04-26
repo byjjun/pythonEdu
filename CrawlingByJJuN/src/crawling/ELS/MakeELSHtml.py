@@ -111,8 +111,8 @@ def make_str_elshtml(els_dic_list, totalcount):
         "</tbody>"\
         "</table>"
     
-    print "-------"
-    print str_elshtml
-    print "-------"
+    #print "-------"
+    #print str_elshtml
+    #print "-------"
         
     return str_elshtml
