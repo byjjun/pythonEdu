@@ -16,10 +16,10 @@ from SAVING import SavingMain
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
-    saving_title = datetime.today().strftime('%Y년 %m월 %d일 '),'은행/저축은행 예금 추천순위 Top 10 '
+    saving_title = datetime.today().strftime('%Y년 %m월 %d일 '),'은행 / 저축은행 예금 금리비교 Top 10 '
     return saving_title
 def saving_tag():
-    saving_tag = '고금리, 예금, 예금추천, 정기예금, 적금, 특판, 우대금리',''.decode('utf-8').encode('utf-8')
+    saving_tag = '금리비교, 고금리, 예금, 예금추천, 정기예금, 적금, 특판, 우대금리',''.decode('utf-8').encode('utf-8')
     return saving_tag
 def saving_post():
     saving_post = SavingMain.str_saving()
@@ -27,10 +27,10 @@ def saving_post():
 
 def ins_saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
-    ins_saving_title = datetime.today().strftime('%Y년 %m월 %d일 '),'은행/저축은행 적금 추천순위 Top 10 '
+    ins_saving_title = datetime.today().strftime('%Y년 %m월 %d일 '),'은행/저축은행 적금 금리비교 Top 10 '
     return ins_saving_title
 def ins_saving_tag():
-    ins_saving_tag = '고금리, 적금, 적금추천, 예금추천, 정기적금, 예금, 특판, 우대금리',''.decode('utf-8').encode('utf-8')
+    ins_saving_tag = '금리비교, 고금리, 적금, 적금추천, 예금추천, 정기적금, 예금, 특판, 우대금리',''.decode('utf-8').encode('utf-8')
     return ins_saving_tag
 def ins_saving_post():
     ins_saving_post = SavingMain.str_inssaving()
@@ -41,7 +41,7 @@ def els_title():
     els_title = datetime.today().strftime('%Y년 %m월 %d일 '),'-청약중인 ELS목록 모아보기 '
     return els_title
 def els_tag():
-    els_tag = 'ELS랭킹, ELS순위, ELS추천, 고금리, 예금, 적금, 투자, 특판, 청약',''.decode('utf-8').encode('utf-8')
+    els_tag = '금리비교, ELS랭킹, ELS순위, ELS추천, 고금리, 예금, 적금, 투자, 특판, 청약',''.decode('utf-8').encode('utf-8')
     return els_tag
 def els_post():
     elsdiclist = XmlParser4ELS.elsparser()
