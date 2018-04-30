@@ -12,9 +12,11 @@ s="AAA"\
 print s 
  
 hoo = unicode('한글', 'utf-8')
+print hoo
 print str(hoo.encode('utf-8'))
 
 bar = '한글'.decode('utf-8')
+print bar
 print bar.encode('utf-8')
 
 foo = u'한글'
