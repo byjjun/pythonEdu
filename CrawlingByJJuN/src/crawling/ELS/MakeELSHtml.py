@@ -74,6 +74,8 @@ def makeelshtml(els_dic_list, totalcount):
     
 def make_str_elshtml(els_dic_list, totalcount):
     
+    
+    
     str_elshtml = datetime.today().strftime('%Y년 %m월 %d일 ')+'기준 ' \
     "청약 가능한 ELS로 총 "+totalcount+"개가 검색되었습니다." \
     "<br>자세한 목록은 아래를 참조해 주세요."\
@@ -82,6 +84,10 @@ def make_str_elshtml(els_dic_list, totalcount):
     "<br/>"
     
     for elsdic in els_dic_list:
+        
+        if elsdic['sitelink'] is None:
+            elsdic['sitelink'] = ' '
+        
         str_elshtml += \
         "<hr />"\
         "<table style=\"height: 91px;\" width=\"475\">"\
@@ -111,8 +117,8 @@ def make_str_elshtml(els_dic_list, totalcount):
         "</tbody>"\
         "</table>"
     
-    #print "-------"
-    #print str_elshtml
-    #print "-------"
+        #print "-------"
+        #print str_elshtml
+        #print "-------"
         
     return str_elshtml

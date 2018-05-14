@@ -67,7 +67,7 @@ def write_init():
     driver.find_element_by_id('user_pass').click()
     driver.find_element_by_id('user_pass').send_keys(login_pw)  
     #driver.implicitly_wait(1000)
-    driver.find_element_by_id("wp-submit").click()    
+    driver.find_element_by_id("wp-submit").click()
     return driver
 
 
