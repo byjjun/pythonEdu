@@ -22,10 +22,14 @@ def getCurrentStockPriceDAUM(stock_code):
     driver.get(request_url)
     
     stock_now_price = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[1]/em')
-    #print stock_code
-    #print stock_now_price   
+    stock_updown_rate = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[3]/span')
     
-    return stock_now_price.text
+    #print stock_code
+    #print stock_now_price.text
+    #print stock_updown_rate.text
+    
+    #print stock_now_price.text+' ('+stock_updown_rate+')'
+    return stock_now_price.text+' ('+stock_updown_rate.text+')'
 
 def getCurrentStockConsenFromHK():
     
@@ -95,6 +99,7 @@ def getCurrentStockConsenFromHK():
         stock_dic['upper_rate']=upper_rate
         #print str(stock_dic['upper_rate'])+'%'
         stock_dic['now_price']=getCurrentStockPriceDAUM(stock_dic['stock_code'])
+        print stock_dic['now_price']
         stock_dic_list.append(stock_dic)
                 
         print stock_dic
