@@ -14,6 +14,9 @@ from bs4 import BeautifulSoup
 
 phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 
+'''
+DAUM에서 주식 현재가 추출
+'''
 def getCurrentStockPriceDAUM(stock_code):
     
     stock_price = {}
@@ -37,6 +40,9 @@ def getCurrentStockPriceDAUM(stock_code):
     #print stock_now_price.text+' ('+stock_updown_rate+')'
     return stock_price
 
+'''
+한경 CONSENSUS에서 리포트 추출 
+'''
 def getCurrentStockConsenFromHK():
     
     #한경 컨세서스 연결.

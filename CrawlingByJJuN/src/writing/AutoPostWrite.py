@@ -45,7 +45,7 @@ def els_tag():
     return els_tag
 def els_post():
     elsdiclist = XmlParser4ELS.elsparser()
-    rate_sorted = sorted(elsdiclist, key=lambda k: k['elsrate'], reverse=True)
+    rate_sorted = sorted(elsdiclist, key=lambda k: float(k['elsrate']), reverse=True)
     els_post=MakeELSHtml.make_str_elshtml(rate_sorted, XmlParser4ELS.return_totalcount())    
     return els_post
 
