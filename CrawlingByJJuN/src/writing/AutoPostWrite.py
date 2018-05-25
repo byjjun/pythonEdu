@@ -13,6 +13,7 @@ from datetime import datetime
 from ELS import XmlParser4ELS
 from ELS import MakeELSHtml
 from SAVING import SavingMain
+from STOCK import MakeStockMain
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -48,6 +49,16 @@ def els_post():
     rate_sorted = sorted(elsdiclist, key=lambda k: float(k['elsrate']), reverse=True)
     els_post=MakeELSHtml.make_str_elshtml(rate_sorted, XmlParser4ELS.return_totalcount())    
     return els_post
+
+def stock_title():
+    stock_title = datetime.today().strftime('%Y년 %m월 %d일 '),' 증권사 추천주 - 목표가상승기업 '
+    return stock_title
+def stock_tag():
+    stock_tag = '주식투자, 리서치, 보고서, 주식추천, 애널리스트, 증권가찌라시',''.decode('utf-8').encode('utf-8')
+    return stock_tag
+def stock_post():
+    stock_post = MakeStockMain.getStockConsenStockMain()
+    return stock_post
 
 def write_init():
      ### write post ###
@@ -94,8 +105,6 @@ def write_post(driver,category,title, tag, post_content):
     driver.find_element_by_xpath('//*[@id="publish"]').send_keys('')
     driver.find_element_by_xpath('//*[@id="publish"]').click()
    
-
-#write_post(userid, userpw)
 driver = write_init()
 sleep(2)
 write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
@@ -105,3 +114,6 @@ write_post(driver,'//*[@id="in-category-62"]', saving_title(), saving_tag(), sav
 driver.implicitly_wait(1000)
 sleep(2)
 write_post(driver,'//*[@id="in-category-62"]', ins_saving_title(), ins_saving_tag(),ins_saving_post())
+driver.implicitly_wait(1000)
+sleep(2)
+write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())

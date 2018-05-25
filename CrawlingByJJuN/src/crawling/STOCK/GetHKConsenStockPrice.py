@@ -162,7 +162,8 @@ def makeSTOCKHtml(stock_dic_list):
     "<span style=\"font-size: 10pt;\">본 자료는 어떠한 경우에도 증권투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.</span><br>"    
     
     return stock_html
-    
+ 
+
 def getStockConsenStockMain():
     
     stock_dic_list = getCurrentStockConsenFromHK()

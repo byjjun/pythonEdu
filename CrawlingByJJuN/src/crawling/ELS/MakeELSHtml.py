@@ -83,10 +83,15 @@ def make_str_elshtml(els_dic_list, totalcount):
     "<br>각 상품의 자세한 정보는 상세정보를 통하여 각 판매사 사이트를 참조해 주시기 바랍니다."\
     "<br/>"
     
+    count = 1
     for elsdic in els_dic_list:
         
         if elsdic['sitelink'] is None:
             elsdic['sitelink'] = ' '
+        
+        if(count == 5):
+            str_elshtml+=\
+            "&nbsp;"
         
         str_elshtml += \
         "<hr />"\
@@ -116,7 +121,8 @@ def make_str_elshtml(els_dic_list, totalcount):
         "</tr>"\
         "</tbody>"\
         "</table>"
-    
+        
+        count = count+1
         #print "-------"
         #print str_elshtml
         #print "-------"
