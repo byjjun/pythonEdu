@@ -51,7 +51,8 @@ def getCurrentStockConsenFromHK():
     
     today_str = datetime.today().strftime('%Y-%m-%d')
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate=2018-05-08&edate=2018-05-08&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
-    request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
+    #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
+    request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
     
     driver = webdriver.PhantomJS(phantomjs)
     driver.get(request_url)
@@ -171,4 +172,4 @@ def getStockConsenStockMain():
     print makeSTOCKHtml(stock_dic_list_sorted)
     return makeSTOCKHtml(stock_dic_list_sorted)
 
-getStockConsenStockMain()
+#getStockConsenStockMain()
