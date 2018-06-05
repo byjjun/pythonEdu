@@ -137,6 +137,9 @@ def makeSTOCKHtml(stock_dic_list):
     pre_stockcode = ""
     count = 1
     for stock_dic in stock_dic_list:
+        #if(count ==5):
+            #stock_html += "<br>&nbsp;&nbsp;"
+        
         if(count == 1 or pre_stockcode != stock_dic['stock_code']):
             stock_html += \
             "<hr style=\"border: double 1px black;\">"\

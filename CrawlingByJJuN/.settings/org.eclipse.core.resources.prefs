@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/crawling/ELS/MakeELSHtml.py=utf-8
 encoding//src/crawling/ELS/XmlParser4ELS.py=utf-8
+encoding//src/crawling/LOAN/CreditLOANJSONParser.py=utf-8
+encoding//src/crawling/LOAN/CreditLoanGetJSON.py=utf-8
 encoding//src/crawling/MainELS.py=utf-8
 encoding//src/crawling/MainSaving.py=utf-8
 encoding//src/crawling/SAVING/GetSavingJSON.py=utf-8
@@ -8,6 +10,7 @@ encoding//src/crawling/SAVING/JSONParser4SAVING.py=utf-8
 encoding//src/crawling/SAVING/MakeSAVINGHtml.py=utf-8
 encoding//src/crawling/SAVING/SavingMain.py=utf-8
 encoding//src/crawling/STOCK/GetHKConsenStockPrice.py=utf-8
+encoding//src/crawling/STOCK/GetStck_StandAlone.py=utf-8
 encoding//src/test/CrawlELS.py=utf-8
 encoding//src/test/Unicodetest.py=utf8
 encoding//src/writing/AutoPostWrite.py=utf-8
