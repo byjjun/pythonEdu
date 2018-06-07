@@ -12,11 +12,11 @@ def makesavinghello():
     str_hello = \
     datetime.today().strftime('%Y년 %m월 %d일 '),'기준  예금금리  Top 5 입니다.' \
     "자세한 목록은 아래를 참조해 주세요." \
-    "<br/>" 
+    "<br/>"
     return str_hello
 
 
-def makeproduchtml(topsaving_list):        
+def makeproduchtml(topsaving_list):
     for top_product in topsaving_list:
         #print "<hr />"
         print "<table style=\"height: 91px;\" width=\"475\">"

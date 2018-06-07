@@ -9,8 +9,6 @@ Created on 2018. 6. 1.
 
 import requests
 
-
-
 def get_current_loan_json(finGrpNo,svkind):
 
     apikey = 'c00ce82f75408d5a4d3bbe6c8db89dd2'

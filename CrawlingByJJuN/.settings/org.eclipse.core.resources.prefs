@@ -3,6 +3,7 @@ encoding//src/crawling/ELS/MakeELSHtml.py=utf-8
 encoding//src/crawling/ELS/XmlParser4ELS.py=utf-8
 encoding//src/crawling/LOAN/CreditLOANJSONParser.py=utf-8
 encoding//src/crawling/LOAN/CreditLoanGetJSON.py=utf-8
+encoding//src/crawling/LOAN/CreditLoanMakeHtml.py=utf-8
 encoding//src/crawling/MainELS.py=utf-8
 encoding//src/crawling/MainSaving.py=utf-8
 encoding//src/crawling/SAVING/GetSavingJSON.py=utf-8
