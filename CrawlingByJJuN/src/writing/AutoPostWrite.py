@@ -14,6 +14,7 @@ from ELS import XmlParser4ELS
 from ELS import MakeELSHtml
 from SAVING import SavingMain
 from STOCK import MakeStockMain
+from LOAN import CreditLoanMakeHtml
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -60,6 +61,16 @@ def stock_post():
     stock_post = MakeStockMain.getStockConsenStockMain()
     return stock_post
 
+def creditloan_title():
+    creditloan_title = datetime.today().strftime('%Y년 %m월 %d일 '),'- 신용대출 금리비교 '
+    return creditloan_title
+def creditloan_tag():
+    creditloan_tag = '카카오 뱅크,비상금 대출,신용 대출,중소기업 진흥 공단,마통,마이너스 통장,대출금리,대출금리비교,대출추천',''.decode('utf-8').encode('utf-8')
+    return creditloan_tag
+def creditloan_post():
+    creditloan_post=CreditLoanMakeHtml.creditloanmain()
+    return creditloan_post
+
 def write_init():
      ### write post ###
     ### step 1 , login ###
@@ -104,7 +115,7 @@ def write_post(driver,category,title, tag, post_content):
     #driver.implicitly_wait(10000)
     driver.find_element_by_xpath('//*[@id="publish"]').send_keys('')
     driver.find_element_by_xpath('//*[@id="publish"]').click()
-   
+    
 driver = write_init()
 sleep(2)
 write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
@@ -116,4 +127,8 @@ sleep(2)
 write_post(driver,'//*[@id="in-category-62"]', ins_saving_title(), ins_saving_tag(),ins_saving_post())
 driver.implicitly_wait(1000)
 sleep(2)
+write_post(driver,'//*[@id="in-category-5"]', creditloan_title(), creditloan_tag(),creditloan_post())
+driver.implicitly_wait(1000)
+sleep(2)
 write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
+sleep(2)

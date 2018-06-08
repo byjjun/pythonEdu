@@ -132,7 +132,13 @@ def getCurrentStockConsenFromHK():
 def makeSTOCKHtml(stock_dic_list):
     
     stock_html = "<span style=\"font-size: 10pt;\">금일의 목표가 상승 기업</span><br>"\
-    "<span style=\"font-size: 10pt;\">"+datetime.today().strftime('%Y-%m-%d %H:%M')+"기준 발행된 증권사 리서치 보고서 중 목표가가 상승된 기업 리스트 입니다.</span><br>" 
+    "<span style=\"font-size: 10pt;\">"+str(datetime.today().strftime('%Y-%m-%d %H:%M'))+"기준 발행된 증권사 리서치 보고서 중 목표가가 상승된 기업 리스트 입니다.</span><br>"\
+    "<br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다"\
+    "<br>오늘자 정보가 아니면 "\
+    "<font size=5><a href=\"http://fundingchoice.co.kr/?cat=63\">[여기]</a></font>에서 최신 비교자료를 확인하세요"\
+    "<br/>"\
+    "&nbsp;" 
+
     
     pre_stockcode = ""
     count = 1

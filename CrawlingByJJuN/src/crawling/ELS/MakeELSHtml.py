@@ -81,6 +81,10 @@ def make_str_elshtml(els_dic_list, totalcount):
     "<br>자세한 목록은 아래를 참조해 주세요."\
     "<br>*투자추천이나 권유가 아닙니다."\
     "<br>각 상품의 자세한 정보는 상세정보를 통하여 각 판매사 사이트를 참조해 주시기 바랍니다."\
+    "<br/>"\
+    "<br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다"\
+    "<br>오늘자 정보가 아니면 "\
+    "<font size=5><a href=\"http://fundingchoice.co.kr/?cat=61\">[여기]</a></font>에서 최신 비교자료를 확인하세요"\
     "<br/>"
     
     count = 1
