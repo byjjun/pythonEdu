@@ -15,6 +15,7 @@ from ELS import MakeELSHtml
 from SAVING import SavingMain
 from STOCK import MakeStockMain
 from LOAN import CreditLoanMakeHtml
+from selenium.webdriver.common.keys import Keys
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -112,11 +113,19 @@ def write_post(driver,category,title, tag, post_content):
     driver.execute_script("arguments[0].value = arguments[1];", a_post, apost)
     
     ### step 5, post submit ####
-    #driver.implicitly_wait(10000)
-    driver.find_element_by_xpath('//*[@id="publish"]').send_keys('')
-    driver.find_element_by_xpath('//*[@id="publish"]').click()
+    driver.implicitly_wait(1000)
+    sleep(1)
+    driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME) 
+    driver.implicitly_wait(1000)
+    
+    publish_element = driver.find_element_by_xpath('//*[@id="publish"]')
+    driver.execute_script("arguments[0].click();", publish_element)
+    
+    #driver.find_element_by_xpath('//*[@id="publish"]').send_keys('')
+    #driver.find_element_by_xpath('//*[@id="publish"]').click()
     
 driver = write_init()
+driver.maximize_window()
 sleep(2)
 write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
 driver.implicitly_wait(1000)

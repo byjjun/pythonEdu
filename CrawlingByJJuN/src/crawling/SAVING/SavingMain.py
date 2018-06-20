@@ -17,6 +17,7 @@ def str_saving():
     #정기예금 - 우대포함
     str_return = datetime.today().strftime('%Y년 %m월 %d일 ')+'기준'  
     str_return += '은행 / 저축은행 정기예금  Top 10.'
+    str_return += '<br></br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다<br>오늘자 정보가 아니면 <font size=5><a href=\"http://fundingchoice.co.kr/?cat=62\">[여기]</a></font>에서 최신 비교자료를 확인하세요.'
     str_return +=  "<br/>"
     str_return +=  "<hr/>"
     str_return +=  "은행  12개월 정기예금    금리비교 - 우대금리 Top 10"
@@ -52,6 +53,7 @@ def str_inssaving():
      #은행
     #정기적금 - 우대포함
     str_return =  datetime.today().strftime('%Y년 %m월 %d일 ')+'기준  적금금리  Top 10 입니다.'
+    str_return += "<br></br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다<br>오늘자 정보가 아니면 <font size=5><a href=\"http://fundingchoice.co.kr/?cat=62\">[여기]</a></font>에서 최신 비교자료를 확인하세요."
     str_return +=  "<br/>"
     str_return +=  "<hr/>"
     str_return +=  "은행  12개월 정기적금  금리비교 - 우대금리 Top 10"
