@@ -11,6 +11,7 @@ import requests
 from selenium import webdriver
 from datetime import datetime
 from bs4 import BeautifulSoup
+from telnetlib import theNULL
 
 phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 
@@ -20,18 +21,23 @@ DAUM에서 주식 현재가 추출
 def getCurrentStockPriceDAUM(stock_code):
     
     stock_price = {}
+    if stock_code == '130960':
+        stock_code = '035760'
     
     request_url = 'http://finance.daum.net/item/main.daum?code='+stock_code
     #print request_url
-    
-    driver = webdriver.PhantomJS(phantomjs)
-    driver.get(request_url)
-    
-    stock_now_price = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[1]/em')
-    stock_updown_rate = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[3]/span')
-    
-    stock_price['now_price'] = stock_now_price.text
-    stock_price['updown_rate'] = stock_updown_rate.text
+    try:
+        driver = webdriver.PhantomJS(phantomjs)
+        driver.get(request_url)
+        
+        stock_now_price = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[1]/em')
+        stock_updown_rate = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[3]/span')
+        
+        stock_price['now_price'] = stock_now_price.text
+        stock_price['updown_rate'] = stock_updown_rate.text
+    except:
+        stock_price['now_price'] = "0"
+        stock_price['updown_rate'] = "0"
     
     #print stock_code
     #print stock_now_price.text
@@ -53,6 +59,7 @@ def getCurrentStockConsenFromHK():
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate=2018-05-08&edate=2018-05-08&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
     request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
+    print request_url
     
     driver = webdriver.PhantomJS(phantomjs)
     driver.get(request_url)
@@ -114,7 +121,9 @@ def getCurrentStockConsenFromHK():
         upper_rate=int((upper_rate-1)*100)        
         stock_dic['upper_rate']=str(upper_rate)
         #print str(stock_dic['upper_rate'])+'%'
+        
         now_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
+                
         stock_dic['now_price']=now_stock_price['now_price']
         stock_dic['now_updown_rate']=now_stock_price['updown_rate']
         #print stock_dic['now_price']

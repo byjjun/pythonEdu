@@ -125,7 +125,7 @@ def write_post(driver,category,title, tag, post_content):
     #driver.find_element_by_xpath('//*[@id="publish"]').click()
     
 driver = write_init()
-driver.maximize_window()
+#driver.maximize_window()
 sleep(2)
 write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
 driver.implicitly_wait(1000)
