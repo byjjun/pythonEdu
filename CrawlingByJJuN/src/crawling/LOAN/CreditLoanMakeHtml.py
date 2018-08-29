@@ -61,9 +61,9 @@ def mkhtml_creditloan():
     #otherloan_list = sorted(otherloan_list, key=lambda k: float(k['crdt_grad_avg']), reverse=False)
     
     otherloan = []
-    templist = CreditLOANJSONParser.loanparser('보험','개인신용대출',3)
-    for _tmp in templist:
-        otherloan.append(_tmp)
+    #templist = CreditLOANJSONParser.loanparser('보험','개인신용대출',3)
+    #for _tmp in templist:
+    #    otherloan.append(_tmp)
         
     templist = CreditLOANJSONParser.loanparser('저축은행','개인신용대출',3)
     for _tmp in templist:
