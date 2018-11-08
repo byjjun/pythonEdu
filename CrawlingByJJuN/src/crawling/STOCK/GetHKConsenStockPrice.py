@@ -46,6 +46,45 @@ def getCurrentStockPriceDAUM(stock_code):
     #print stock_now_price.text+' ('+stock_updown_rate+')'
     return stock_price
 
+
+'''
+DAUM에서 주식 현재가 추출
+'''
+def getCurrentStockPricePAXNET(stock_code):
+    
+    stock_price = {}
+    if stock_code == '130960':
+        stock_code = '035760'
+    
+    request_url = 'http://paxnet.moneta.co.kr/stock/analysis/presentValue?abbrSymbol='+stock_code
+    #print request_url
+    try:
+        driver = webdriver.PhantomJS(phantomjs)
+        driver.get(request_url)
+        #print request_url
+        
+        stock_now_price = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[1]/td[1]/span')
+        #print stock_now_price.text
+        
+        stock_updown_rate = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[3]/td[1]/span')
+        #print stock_updown_rate.text
+        
+        
+        stock_price['now_price'] = stock_now_price.text
+        stock_price['updown_rate'] = stock_updown_rate.text
+    
+    except:
+        stock_price['now_price'] = "0"
+        stock_price['updown_rate'] = "0"
+    
+    #print stock_code
+    #print stock_now_price.text
+    #print stock_updown_rate.text
+    
+    #print stock_now_price.text+' ('+stock_updown_rate+')'
+    return stock_price
+
+
 '''
 한경 CONSENSUS에서 리포트 추출 
 '''
@@ -122,7 +161,7 @@ def getCurrentStockConsenFromHK():
         stock_dic['upper_rate']=str(upper_rate)
         #print str(stock_dic['upper_rate'])+'%'
         
-        now_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
+        now_stock_price = getCurrentStockPricePAXNET(stock_dic['stock_code'])
                 
         stock_dic['now_price']=now_stock_price['now_price']
         stock_dic['now_updown_rate']=now_stock_price['updown_rate']
@@ -158,7 +197,8 @@ def makeSTOCKHtml(stock_dic_list):
         if(count == 1 or pre_stockcode != stock_dic['stock_code']):
             stock_html += \
             "<hr style=\"border: double 1px black;\">"\
-            "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong>"+stock_dic['stock_name'].encode('UTF-8')+"</strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
+            "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
+            #"<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong>"+stock_dic['stock_name'].encode('UTF-8')+"</strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
         else:
             stock_html += \
             "<hr align=\"left\" noshade=\"noshade\" width=\"250\" />"

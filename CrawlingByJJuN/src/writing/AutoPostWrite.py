@@ -127,6 +127,7 @@ def write_post(driver,category,title, tag, post_content):
 driver = write_init()
 #driver.maximize_window()
 sleep(2)
+
 write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
 driver.implicitly_wait(1000)
 sleep(2)
@@ -139,5 +140,6 @@ sleep(2)
 write_post(driver,'//*[@id="in-category-5"]', creditloan_title(), creditloan_tag(),creditloan_post())
 driver.implicitly_wait(1000)
 sleep(2)
+
 write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
 sleep(2)
