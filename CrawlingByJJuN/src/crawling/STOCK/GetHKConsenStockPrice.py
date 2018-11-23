@@ -9,7 +9,7 @@ Created on 2018. 5. 11.
 
 import requests
 from selenium import webdriver
-from datetime import datetime
+from datetime import datetime, date, timedelta
 from bs4 import BeautifulSoup
 from telnetlib import theNULL
 
@@ -48,7 +48,7 @@ def getCurrentStockPriceDAUM(stock_code):
 
 
 '''
-DAUM에서 주식 현재가 추출
+PAXNET에서 주식 현재가 추출
 '''
 def getCurrentStockPricePAXNET(stock_code):
     
@@ -56,7 +56,7 @@ def getCurrentStockPricePAXNET(stock_code):
     if stock_code == '130960':
         stock_code = '035760'
     
-    request_url = 'http://paxnet.moneta.co.kr/stock/analysis/presentValue?abbrSymbol='+stock_code
+    request_url = 'http://paxnet.moneta.co.kr/stock/analysis/main?abbrSymbol='+stock_code
     #print request_url
     try:
         driver = webdriver.PhantomJS(phantomjs)
@@ -86,12 +86,107 @@ def getCurrentStockPricePAXNET(stock_code):
 
 
 '''
+MK증권 에서 주식 현재가 추출
+'''
+def getCurrentStockPriceMK(stock_code):
+    
+    stock_price = {}
+    if stock_code == '130960':
+        stock_code = '035760'
+    
+    request_url = 'http://vip.mk.co.kr/newSt/price/price.php?stCode='+stock_code
+    #print request_url
+    try:
+        driver = webdriver.PhantomJS(phantomjs)
+        driver.get(request_url)
+        #print request_url
+        
+        stock_now_price = driver.find_element_by_xpath('//*[@id="lastTick[6]"]/font[1]')
+        #print stock_now_price.text
+        
+        stock_updown_rate = driver.find_element_by_xpath('//*[@id="disArr[0]"]/span')
+        #print stock_updown_rate.text
+        
+        
+        stock_price['now_price'] = stock_now_price.text
+        stock_price['updown_rate'] = stock_updown_rate.text
+    
+    except:
+        stock_price['now_price'] = "0"
+        stock_price['updown_rate'] = "0"
+    
+    #print stock_code
+    #print stock_now_price.text
+    #print stock_updown_rate.text
+    
+    #print stock_now_price.text+' ('+stock_updown_rate+')'
+    return stock_price
+
+'''
+최근 2달 목표주가 추출
+'''
+def getPreStockConsenFromHK(stock_code):
+    try:
+        stock_pre_consen_list = []
+        
+        today = date.today()
+        
+        yesterday = today - timedelta(1)
+        pre_2month = today - timedelta(60)
+        
+        yesterday_str = yesterday.strftime('%Y-%m-%d')
+        pre_2month_str = pre_2month.strftime('%Y-%m-%d')
+        
+        request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?sdate='+pre_2month_str+'&edate='+yesterday_str+'&now_page=1&search_value=&report_type=CO&pagenum=50&search_text='+stock_code+'&business_code='
+        #print request_url
+        
+        driver = webdriver.PhantomJS(phantomjs)
+        driver.get(request_url)
+        
+        table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
+        tablebody_html = table_element.get_attribute('innerHTML')
+        #print tablebody_html
+        
+        soup = BeautifulSoup(tablebody_html, "html.parser")
+        
+        stock_element_list = soup.find_all('tr')
+        
+        for stock_element in stock_element_list:
+            
+            #DATE
+            upload_date=stock_element.td.string
+            stock_data = stock_element.find_all('td')
+            stock_pre_consen ={}
+            i = 1
+            for astock_data in stock_data:
+                if(i==1):
+                    print astock_data.text
+                    stock_pre_consen['update_date']=astock_data.text
+                if(i==3):
+                    print astock_data.text
+                    stock_pre_consen['consen_price']=astock_data.text                
+                if(i==4):
+                    print astock_data.text
+                    stock_pre_consen['opinion']=astock_data.text    
+                if(i==6):
+                    print astock_data.text
+                    stock_pre_consen['anal_company']=astock_data.text
+                i=i+1
+                #print "."
+            
+            stock_pre_consen_list.append(stock_pre_consen)
+    except:
+        print 'No Pre Consen'            
+    
+    return stock_pre_consen_list
+
+'''
 한경 CONSENSUS에서 리포트 추출 
 '''
 def getCurrentStockConsenFromHK():
     
     #한경 컨세서스 연결.
-    #
+    
     stock_dic_list = []
     
     today_str = datetime.today().strftime('%Y-%m-%d')
@@ -161,7 +256,7 @@ def getCurrentStockConsenFromHK():
         stock_dic['upper_rate']=str(upper_rate)
         #print str(stock_dic['upper_rate'])+'%'
         
-        now_stock_price = getCurrentStockPricePAXNET(stock_dic['stock_code'])
+        now_stock_price = getCurrentStockPriceMK(stock_dic['stock_code'])
                 
         stock_dic['now_price']=now_stock_price['now_price']
         stock_dic['now_updown_rate']=now_stock_price['updown_rate']
@@ -177,6 +272,37 @@ def getCurrentStockConsenFromHK():
     return stock_dic_list
 
 
+'''
+최근 2달 목표주가 html로 리턴
+'''
+def makePreSTOCKHtml(stockcode):
+    
+    stock_pre_consen_list = getPreStockConsenFromHK(stockcode)
+    print "debug1"
+    print stock_pre_consen_list
+   
+    html_str = '<span style=\"font-size: 8pt;\">'
+    html_str += '<table width=\"100\">'
+    #html_str += '<tr>'
+    
+    for astock_pre_consen in stock_pre_consen_list:
+        
+        
+        html_str += '<tr hight=\"8\">'
+        html_str += '<td>'
+        html_str += astock_pre_consen['update_date'].encode('UTF-8')
+        html_str += '</td><td>'
+        html_str += astock_pre_consen['consen_price'].encode('UTF-8')
+        html_str += '</td><td>'
+        html_str += astock_pre_consen['opinion'].encode('UTF-8').lstrip('\n').rstrip()
+        html_str += '</td><td>'
+        html_str += astock_pre_consen['anal_company'].encode('UTF-8')
+        html_str += '</td></tr>'
+    
+    html_str += '</table></span>'
+        
+    return html_str
+
 def makeSTOCKHtml(stock_dic_list):
     
     stock_html = "<span style=\"font-size: 10pt;\">금일의 목표가 상승 기업</span><br>"\
@@ -189,6 +315,8 @@ def makeSTOCKHtml(stock_dic_list):
 
     
     pre_stockcode = ""
+    pre_stockconsen_html =""
+    
     count = 1
     for stock_dic in stock_dic_list:
         #if(count ==5):
@@ -198,7 +326,11 @@ def makeSTOCKHtml(stock_dic_list):
             stock_html += \
             "<hr style=\"border: double 1px black;\">"\
             "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
-            #"<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong>"+stock_dic['stock_name'].encode('UTF-8')+"</strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
+            
+            print 'debug3'
+            pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+            print pre_stockconsen_html
+            
         else:
             stock_html += \
             "<hr align=\"left\" noshade=\"noshade\" width=\"250\" />"
@@ -206,13 +338,14 @@ def makeSTOCKHtml(stock_dic_list):
         stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>상승률  : "+ stock_dic['upper_rate'].encode('UTF-8') +"%</strong></span> (<strong>신규"+ stock_dic['new_price'].encode('UTF-8') +"</strong> / 이전 "+stock_dic['old_price'].encode('UTF-8')+")</span><br>"\
         "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표대비 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
         "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+")</span><br>"\
-        "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span><br>"
+        "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
         #"<hr align=\"left\" noshade=\"noshade\" width=\"250\" />"
 
         #if(count == 1 or pre_stockcode != stock_dic['stock_code']):
             #stock_html += "<hr />"
         count = count+1
         pre_stockcode=stock_dic['stock_code']
+        stock_html += pre_stockconsen_html + '<br>'
         
     stock_html += \
     "<br><br>"\
@@ -222,12 +355,15 @@ def makeSTOCKHtml(stock_dic_list):
     
     return stock_html
  
+ 
 
 def getStockConsenStockMain():
     
     stock_dic_list = getCurrentStockConsenFromHK()
-    stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: float(k['upper_rate']), reverse=True)
+    stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: float(k['stock_code']), reverse=True)
     print makeSTOCKHtml(stock_dic_list_sorted)
     return makeSTOCKHtml(stock_dic_list_sorted)
 
 #getStockConsenStockMain()
+
+#getPreStockConsenFromHK('058470')
