@@ -150,6 +150,7 @@ def getPreStockConsenFromHK(stock_code):
         soup = BeautifulSoup(tablebody_html, "html.parser")
         
         stock_element_list = soup.find_all('tr')
+        count = 1
         
         for stock_element in stock_element_list:
             
@@ -158,25 +159,44 @@ def getPreStockConsenFromHK(stock_code):
             stock_data = stock_element.find_all('td')
             stock_pre_consen ={}
             i = 1
+            
             for astock_data in stock_data:
                 if(i==1):
-                    print astock_data.text
+                    #print astock_data.text
                     stock_pre_consen['update_date']=astock_data.text
                 if(i==3):
-                    print astock_data.text
-                    stock_pre_consen['consen_price']=astock_data.text                
+                    #print astock_data.text
+                    stock_pre_consen['consen_price']=astock_data.text
+                    print '###'+stock_pre_consen['consen_price']
+                                    
                 if(i==4):
-                    print astock_data.text
+                    #print astock_data.text
                     stock_pre_consen['opinion']=astock_data.text    
                 if(i==6):
-                    print astock_data.text
+                    #print astock_data.text
                     stock_pre_consen['anal_company']=astock_data.text
                 i=i+1
                 #print "."
             
-            stock_pre_consen_list.append(stock_pre_consen)
-    except:
-        print 'No Pre Consen'            
+            if(stock_pre_consen['consen_price']=='0'):
+                print 'Not Rated'
+                
+            else:
+                stock_pre_consen_list.append(stock_pre_consen)
+                count+=1
+                #print '####'+count
+            
+            #print 'debug4'
+            #print count
+                 
+            if (count > 7):
+                print '7 line limited'
+                break
+                
+    except Exception, e:
+        
+        print 'No Pre Consen'
+        print str(e)        
     
     return stock_pre_consen_list
 
@@ -278,8 +298,8 @@ def getCurrentStockConsenFromHK():
 def makePreSTOCKHtml(stockcode):
     
     stock_pre_consen_list = getPreStockConsenFromHK(stockcode)
-    print "debug1"
-    print stock_pre_consen_list
+   #print "debug1"
+   #print stock_pre_consen_list
    
     html_str = '<span style=\"font-size: 8pt;\">'
     html_str += '<table width=\"100\">'
@@ -327,9 +347,10 @@ def makeSTOCKHtml(stock_dic_list):
             "<hr style=\"border: double 1px black;\">"\
             "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
             
-            print 'debug3'
+            #print 'debug3'
             pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
-            print pre_stockconsen_html
+            print "."
+            #print pre_stockconsen_html
             
         else:
             stock_html += \
@@ -360,7 +381,8 @@ def makeSTOCKHtml(stock_dic_list):
 def getStockConsenStockMain():
     
     stock_dic_list = getCurrentStockConsenFromHK()
-    stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: float(k['stock_code']), reverse=True)
+    #stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: float(k['stock_code']), reverse=True)
+    stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['stock_code'], reverse=True)
     print makeSTOCKHtml(stock_dic_list_sorted)
     return makeSTOCKHtml(stock_dic_list_sorted)
 
