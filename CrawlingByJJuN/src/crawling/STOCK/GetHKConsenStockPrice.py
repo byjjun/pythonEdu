@@ -342,19 +342,19 @@ def makeSTOCKHtml(stock_dic_list):
         #if(count ==5):
             #stock_html += "<br>&nbsp;&nbsp;"
         
-        if(count == 1 or pre_stockcode != stock_dic['stock_code']):
-            stock_html += \
-            "<hr style=\"border: double 1px black;\">"\
-            "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
+        #if(count == 1 or pre_stockcode != stock_dic['stock_code']):
+        stock_html += \
+        "<hr style=\"border: double 1px black;\">"\
+        "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
             
             #print 'debug3'
-            pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
-            print "."
+        pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+        print "."
             #print pre_stockconsen_html
             
-        else:
-            stock_html += \
-            "<hr align=\"left\" noshade=\"noshade\" width=\"250\" />"
+        #else:
+        #    stock_html += \
+        #    "<hr align=\"left\" noshade=\"noshade\" width=\"250\" />"
                     
         stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>상승률  : "+ stock_dic['upper_rate'].encode('UTF-8') +"%</strong></span> (<strong>신규"+ stock_dic['new_price'].encode('UTF-8') +"</strong> / 이전 "+stock_dic['old_price'].encode('UTF-8')+")</span><br>"\
         "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표대비 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
