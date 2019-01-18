@@ -302,7 +302,7 @@ def makePreSTOCKHtml(stockcode):
    #print stock_pre_consen_list
    
     html_str = '<span style=\"font-size: 8pt;\">'
-    html_str += '<table width=\"100\">'
+    html_str += '<table width=\"450\">'
     #html_str += '<tr>'
     
     for astock_pre_consen in stock_pre_consen_list:
