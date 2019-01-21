@@ -17,7 +17,7 @@ from STOCK import MakeStockMain
 from LOAN import CreditLoanMakeHtml
 from selenium.webdriver.common.keys import Keys
 import requests as RR
-
+import json
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -135,31 +135,56 @@ def writeTstoryPost(category,title,tag,contents):
         대출받기 771980
     '''
     url = 'https://www.tistory.com/apis/post/write'
-    
+    print url
+    '''
     post_data = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
                  'blogName': 'fundingchoice',
                  'title' : 'title',
-                 'content' : 'contents',
+                 'content' : '<br>contents</br>으아아아',
+                 'tag' : '',
+                 'visibility' : '3', 
+                 'category' : '771976' }
+    '''
+    parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
+                 'blogName': 'fundingchoice',
+                 'title' : 'title'
+                 }
+    
+    post_data = {'content' : '<br>contents</br>으아아아',
                  'tag' : '',
                  'visibility' : '3', 
                  'category' : '771976' }
     
     
-    post_data['title']=title
+    parameter['title']=title
     post_data['tag']=tag
     post_data['content']=contents
     post_data['category']=category
 
-    r = RR.post(url, params=post_data, verify=False)
-   
+    #print title
+    #print post_data['title']
+    #print post_data['tag']
+    #print post_data['content']
+    #print post_data['category']
+    
+    sleep(10)
+    
+    #r = RR.post(url, params = parameter, data=json.dumps(post_data), verify=False)
+    r = RR.post(url, params = parameter, data=post_data, verify=False)
+       
     print(r.text)
     print(r.status_code)
 
- 
+
+############################
+#### FundingChoice 포스팅
+#### Chrome Driver 사용
+############################
+
 driver = write_init()
 #driver.maximize_window()
 sleep(2)
-'''
+
 write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
 driver.implicitly_wait(1000)
 sleep(2)
@@ -174,6 +199,34 @@ driver.implicitly_wait(1000)
 sleep(2)
 write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
 sleep(2)
-'''
 
-writeTstoryPost('771976',els_title(),els_tag(), els_post())
+
+####################
+#### TISTORY 포스팅
+#### Open API 사용
+####################
+
+title = ''.join(els_title())
+tag = ''.join(els_tag())
+post = ''.join(els_post())
+writeTstoryPost('771976',title,tag,post)
+
+title = ''.join(saving_title())
+tag = ''.join(saving_tag())
+post = ''.join(saving_post())
+writeTstoryPost('771977',title,tag,post)
+
+title = ''.join(ins_saving_title())
+tag = ''.join(ins_saving_tag())
+post = ''.join(ins_saving_post())
+writeTstoryPost('771977',title,tag,post)
+
+title = ''.join(creditloan_title())
+tag = ''.join(creditloan_tag())
+post = ''.join(creditloan_post())
+writeTstoryPost('771980',title,tag,post)
+
+title = ''.join(stock_title())
+tag = ''.join(stock_tag())
+post = ''.join(stock_post())
+writeTstoryPost('771978',title,tag,post)
