@@ -185,20 +185,24 @@ driver = write_init()
 #driver.maximize_window()
 sleep(2)
 
-write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
-driver.implicitly_wait(1000)
-sleep(2)
-write_post(driver,'//*[@id="in-category-62"]', saving_title(), saving_tag(), saving_post())
-driver.implicitly_wait(1000)
-sleep(2)
-write_post(driver,'//*[@id="in-category-62"]', ins_saving_title(), ins_saving_tag(),ins_saving_post())
-driver.implicitly_wait(1000)
-sleep(2)
-write_post(driver,'//*[@id="in-category-5"]', creditloan_title(), creditloan_tag(),creditloan_post())
-driver.implicitly_wait(1000)
-sleep(2)
-write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
-sleep(2)
+
+try:
+    write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
+    driver.implicitly_wait(1000)
+    sleep(2)
+    write_post(driver,'//*[@id="in-category-62"]', saving_title(), saving_tag(), saving_post())
+    driver.implicitly_wait(1000)
+    sleep(2)
+    write_post(driver,'//*[@id="in-category-62"]', ins_saving_title(), ins_saving_tag(),ins_saving_post())
+    driver.implicitly_wait(1000)
+    sleep(2)
+    write_post(driver,'//*[@id="in-category-5"]', creditloan_title(), creditloan_tag(),creditloan_post())
+    driver.implicitly_wait(1000)
+    sleep(2)
+    write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
+    sleep(2)
+except:
+    print "ERROR"
 
 
 ####################
@@ -206,27 +210,30 @@ sleep(2)
 #### Open API 사용
 ####################
 
-title = ''.join(els_title())
-tag = ''.join(els_tag())
-post = ''.join(els_post())
-writeTstoryPost('771976',title,tag,post)
-
-title = ''.join(saving_title())
-tag = ''.join(saving_tag())
-post = ''.join(saving_post())
-writeTstoryPost('771977',title,tag,post)
-
-title = ''.join(ins_saving_title())
-tag = ''.join(ins_saving_tag())
-post = ''.join(ins_saving_post())
-writeTstoryPost('771977',title,tag,post)
-
-title = ''.join(creditloan_title())
-tag = ''.join(creditloan_tag())
-post = ''.join(creditloan_post())
-writeTstoryPost('771980',title,tag,post)
-
-title = ''.join(stock_title())
-tag = ''.join(stock_tag())
-post = ''.join(stock_post())
-writeTstoryPost('771978',title,tag,post)
+try:
+    title = ''.join(els_title())
+    tag = ''.join(els_tag())
+    post = ''.join(els_post())
+    writeTstoryPost('771976',title,tag,post)
+    
+    title = ''.join(saving_title())
+    tag = ''.join(saving_tag())
+    post = ''.join(saving_post())
+    writeTstoryPost('771977',title,tag,post)
+    
+    title = ''.join(ins_saving_title())
+    tag = ''.join(ins_saving_tag())
+    post = ''.join(ins_saving_post())
+    writeTstoryPost('771977',title,tag,post)
+    
+    title = ''.join(creditloan_title())
+    tag = ''.join(creditloan_tag())
+    post = ''.join(creditloan_post())
+    writeTstoryPost('771980',title,tag,post)
+    
+    title = ''.join(stock_title())
+    tag = ''.join(stock_tag())
+    post = ''.join(stock_post())
+    writeTstoryPost('771978',title,tag,post)
+except:
+    print "ERROR"
