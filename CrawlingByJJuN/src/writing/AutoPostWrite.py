@@ -100,6 +100,7 @@ def write_post(driver,category,title, tag, post_content):
     
     ### step 2 , write els post title ###
     driver.get("http://fundingchoice.co.kr/wp-admin/post-new.php")
+    #driver.find_element_by_xpath('//*[@id="post-title-0"]').send_keys(title)
     driver.find_element_by_xpath('//*[@id="title"]').send_keys(title)
     
     ### step 3, write tag ###
@@ -185,7 +186,6 @@ driver = write_init()
 #driver.maximize_window()
 sleep(2)
 
-
 try:
     write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
     driver.implicitly_wait(1000)
@@ -204,6 +204,7 @@ try:
 except:
     print "ERROR"
 
+driver.quit()
 
 ####################
 #### TISTORY 포스팅

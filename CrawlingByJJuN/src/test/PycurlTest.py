@@ -11,7 +11,7 @@ import json
 import base64
 
 
-user = 'byjjun@gmail.com'
+user = 'byjjun'
 pythonapp = 'POCKTAN1'
 url = 'http://fundingchoice.co.kr/wp-json/wp/v2'
 #url = 'http://fundingchoice.co.kr/index.php/wp-json/wp/v2'
