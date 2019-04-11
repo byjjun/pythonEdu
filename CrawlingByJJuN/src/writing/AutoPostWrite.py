@@ -137,15 +137,7 @@ def writeTstoryPost(category,title,tag,contents):
     '''
     url = 'https://www.tistory.com/apis/post/write'
     print url
-    '''
-    post_data = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
-                 'blogName': 'fundingchoice',
-                 'title' : 'title',
-                 'content' : '<br>contents</br>으아아아',
-                 'tag' : '',
-                 'visibility' : '3', 
-                 'category' : '771976' }
-    '''
+    
     parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
                  'blogName': 'fundingchoice',
                  'title' : 'title'
@@ -187,6 +179,7 @@ driver = write_init()
 sleep(2)
 
 try:
+    
     write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
     driver.implicitly_wait(1000)
     sleep(2)
@@ -196,9 +189,12 @@ try:
     write_post(driver,'//*[@id="in-category-62"]', ins_saving_title(), ins_saving_tag(),ins_saving_post())
     driver.implicitly_wait(1000)
     sleep(2)
+    
+    '''
     write_post(driver,'//*[@id="in-category-5"]', creditloan_title(), creditloan_tag(),creditloan_post())
     driver.implicitly_wait(1000)
     sleep(2)
+    '''
     write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
     sleep(2)
 except:
@@ -213,6 +209,7 @@ driver.quit()
 ####################
 
 try:
+    
     title = ''.join(els_title())
     tag = ''.join(els_tag())
     post = ''.join(els_post())
@@ -227,15 +224,16 @@ try:
     tag = ''.join(ins_saving_tag())
     post = ''.join(ins_saving_post())
     writeTstoryPost('771977',title,tag,post)
-    
+    '''
     title = ''.join(creditloan_title())
     tag = ''.join(creditloan_tag())
     post = ''.join(creditloan_post())
     writeTstoryPost('771980',title,tag,post)
-    
+    '''
     title = ''.join(stock_title())
     tag = ''.join(stock_tag())
     post = ''.join(stock_post())
     writeTstoryPost('771978',title,tag,post)
+    
 except:
     print "ERROR"
