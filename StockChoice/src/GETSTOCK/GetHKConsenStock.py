@@ -6,16 +6,26 @@ Created on 2019. 4. 9.
 @author: 073860
 '''
 
+import platform
 import requests
 from selenium import webdriver
 from datetime import datetime, date, timedelta
 from bs4 import BeautifulSoup
 
-phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
+#phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
+phantomjs='/usr/local/bin/phantomjs'
 pre_price_count = 7
 stock_rank_count = 10
 stock_days_count = 2
 stock_load_count = "50" 
+
+def setPhantomjsPath():
+    global phantomjs
+    if(platform.system() == 'Windows'):
+        phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
+    else:
+        phantomjs='/usr/local/bin/phantomjs'
+
 
 #최근 목표주가 몇개 세팅
 def setPrePriceCount(count):
@@ -351,6 +361,10 @@ def makeSTOCKHtml(stock_dic_list):
 
 
 def main():
+    
+    #환경세팅
+    setPhantomjsPath()
+    
     
     #최근 몇개 주식을 가지고 올것이냐
     setStockLoadCount("100")
