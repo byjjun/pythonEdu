@@ -12,7 +12,7 @@ from selenium import webdriver
 from datetime import datetime, date, timedelta
 from bs4 import BeautifulSoup
 
-#phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
+# phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
 pre_price_count = 7
 stock_rank_count = 10
@@ -358,6 +358,54 @@ def makeSTOCKHtml(stock_dic_list):
     "<span style=\"font-size: 10pt;\">본 자료는 어떠한 경우에도 증권투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.</span><br>"    
     
     return stock_html
+
+
+'''
+TISTORY BLOG WRITE
+'''
+def writeTstoryPost(category,title,tag,contents):
+    '''
+    $$$$카테고리 $$$$
+    ELS 771976
+    예금적금 771977
+    주식 771978
+    대출받기 771980
+    '''
+    url = 'https://www.tistory.com/apis/post/write'
+    print url
+    
+    parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
+                 'blogName': 'stockchoice',
+                 'title' : 'title'
+                 }
+    
+    post_data = {'content' : '<br>contents</br>으아아아',
+                 'tag' : '',
+                 'visibility' : '3', 
+                 'category' : '771976' }
+    
+    
+    parameter['title']=title
+    post_data['tag']=tag
+    post_data['content']=contents
+    post_data['category']=category
+
+    #print title
+    #print post_data['title']
+    #print post_data['tag']
+    #print post_data['content']
+    #print post_data['category']
+    
+    sleep(10)
+    
+    #r = RR.post(url, params = parameter, data=json.dumps(post_data), verify=False)
+    r = RR.post(url, params = parameter, data=post_data, verify=False)
+       
+    print(r.text)
+    print(r.status_code)
+
+
+
 
 
 def main():
