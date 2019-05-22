@@ -223,7 +223,7 @@ def getCurrentStockPriceMMK(stock_code):
     print request_url
     
     try:
-        driver = webdriver.PhantomJS(phantomjs)
+        driver = webdriver.PhantomJS(phantomjs) 
         driver.get(request_url)
         #print request_url
         
