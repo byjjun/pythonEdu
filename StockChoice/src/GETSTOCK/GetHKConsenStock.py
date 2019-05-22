@@ -15,9 +15,9 @@ from bs4 import BeautifulSoup
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
 pre_price_count = 7
-stock_rank_count = 10
-stock_days_count = 2
-stock_load_count = "50" 
+stock_rank_count = 20
+stock_days_count = 4
+stock_load_count = "250"
 
 def setPhantomjsPath():
     global phantomjs
@@ -211,6 +211,44 @@ def getCurrentStockPriceMK(stock_code):
 
 
 '''
+MK증권(모바일) 에서 주식 현재가 추출 - 속도개선용
+'''
+def getCurrentStockPriceMMK(stock_code):
+    
+    stock_price = {}
+    if stock_code == '130960':
+        stock_code = '035760'
+    
+    request_url = 'http://m.mk.co.kr/stock/price/'+stock_code
+    print request_url
+    
+    try:
+        driver = webdriver.PhantomJS(phantomjs)
+        driver.get(request_url)
+        #print request_url
+        
+        stock_now_price = driver.find_element_by_xpath('//*[@id="ct"]/div[1]/div[4]/div[2]/ul/li[1]/span[1]')
+        #print stock_now_price.text
+        
+        stock_updown_rate = driver.find_element_by_xpath('//*[@id="ct"]/div[1]/div[4]/div[2]/ul/li[1]/span[2]')
+        #print stock_updown_rate.text
+        
+        
+        stock_price['now_price'] = stock_now_price.text
+        stock_price['updown_rate'] = stock_updown_rate.text
+    
+    except:
+        stock_price['now_price'] = "0"
+        stock_price['updown_rate'] = "0"
+    
+    #print stock_code
+    #print stock_now_price.text
+    #print stock_updown_rate.text
+    
+    #print stock_now_price.text+' ('+stock_updown_rate+')'
+    return stock_price
+
+'''
 한경 CONSENSUS에서 리포트 추출
 input : none
 doing : 
@@ -295,7 +333,7 @@ def getCurrentStockConsenFromHK():
         
         if(stock_dic['new_price'] != "0" ):
              
-            now_stock_price = getCurrentStockPriceMK(stock_dic['stock_code'])
+            now_stock_price = getCurrentStockPriceMMK(stock_dic['stock_code'])
                     
             stock_dic['now_price']=now_stock_price['now_price']
             stock_dic['now_updown_rate']=now_stock_price['updown_rate']
@@ -360,52 +398,6 @@ def makeSTOCKHtml(stock_dic_list):
     return stock_html
 
 
-'''
-TISTORY BLOG WRITE
-'''
-def writeTstoryPost(category,title,tag,contents):
-    '''
-    $$$$카테고리 $$$$
-    ELS 771976
-    예금적금 771977
-    주식 771978
-    대출받기 771980
-    '''
-    url = 'https://www.tistory.com/apis/post/write'
-    print url
-    
-    parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
-                 'blogName': 'stockchoice',
-                 'title' : 'title'
-                 }
-    
-    post_data = {'content' : '<br>contents</br>으아아아',
-                 'tag' : '',
-                 'visibility' : '3', 
-                 'category' : '771976' }
-    
-    
-    parameter['title']=title
-    post_data['tag']=tag
-    post_data['content']=contents
-    post_data['category']=category
-
-    #print title
-    #print post_data['title']
-    #print post_data['tag']
-    #print post_data['content']
-    #print post_data['category']
-    
-    sleep(10)
-    
-    #r = RR.post(url, params = parameter, data=json.dumps(post_data), verify=False)
-    r = RR.post(url, params = parameter, data=post_data, verify=False)
-       
-    print(r.text)
-    print(r.status_code)
-
-
-
 
 
 def main():
@@ -415,16 +407,16 @@ def main():
     
     
     #최근 몇개 주식을 가지고 올것이냐
-    setStockLoadCount("100")
+    setStockLoadCount(stock_load_count)
     
     #괴리율 랭킹 몇등까지 표출
-    setStockRankCount(15)
+    setStockRankCount(stock_rank_count)
     
     #이전목표주가는 몇개까지 표출
-    setPrePriceCount(5)
+    setPrePriceCount(pre_price_count)
     
     #몇일전 보고서 까지 찾을꺼냐
-    setStockDaysCount(5)
+    setStockDaysCount(stock_days_count)
     
     
     stock_dic_list = getCurrentStockConsenFromHK()
