@@ -220,7 +220,7 @@ def getCurrentStockPriceMMK(stock_code):
         stock_code = '035760'
     
     request_url = 'http://m.mk.co.kr/stock/price/'+stock_code
-    print request_url
+    #print request_url
     
     try:
         driver = webdriver.PhantomJS(phantomjs) 
@@ -291,6 +291,7 @@ def getCurrentStockConsenFromHK():
         upload_date=stock_element.td.string
         stock_data = stock_element.find_all('td')
         stock_dic ={}
+        stockcode = '000000'
         i = 1
         for astock_data in stock_data:
             if(i==1):
@@ -304,6 +305,7 @@ def getCurrentStockConsenFromHK():
                 end = start+6    
                 stock_code = all_title[start:end]
                 stock_dic['stock_code']=stock_code
+                stockcode=stock_code
                 stock_name = all_title[0:all_title.find('(')] 
                 stock_dic['stock_name']=stock_name
                 title = all_title[end+1:len(all_title)]
@@ -326,10 +328,18 @@ def getCurrentStockConsenFromHK():
                 #print "####a####"
                 #print astock_data.text
                 stock_dic['analyst_company']=astock_data.text
+            
+            if(i==9):
+                for link in astock_data.find_all('a', href=True):
+                    url = link['href']
+                stock_dic['report_url'] = 'http://hkconsensus.hankyung.com/'+ url
+                #print stock_dic['report_url']
                 break
             i=i+1
             #print "."
-        
+            
+        stock_dic['companyinfo_url']='http://media.kisline.com/highlight/mainHighlight.nice?paper_stock='+stockcode+'&nav=1'    
+        #print stock_dic['companyinfo_url']        
         
         if(stock_dic['new_price'] != "0" ):
              
@@ -374,7 +384,8 @@ def makeSTOCKHtml(stock_dic_list):
         
         stock_html += \
         "<hr style=\"border: double 1px black;\">"\
-        "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")</span><br>"
+        "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")"\
+        "<a href=\""+stock_dic['companyinfo_url'].encode('UTF-8')+"\">[기업]</a><a href=\""+stock_dic['companyinfo_url'].encode('UTF-8')+"\">[report]</a></span><br>"
          
         pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
         #print "."
@@ -404,19 +415,18 @@ def main():
     
     #환경세팅
     setPhantomjsPath()
-    
-    
+        
     #최근 몇개 주식을 가지고 올것이냐
-    setStockLoadCount(stock_load_count)
+    setStockLoadCount("200")
     
     #괴리율 랭킹 몇등까지 표출
-    setStockRankCount(stock_rank_count)
+    setStockRankCount(20)
     
     #이전목표주가는 몇개까지 표출
-    setPrePriceCount(pre_price_count)
+    setPrePriceCount(7)
     
     #몇일전 보고서 까지 찾을꺼냐
-    setStockDaysCount(stock_days_count)
+    setStockDaysCount(7)
     
     
     stock_dic_list = getCurrentStockConsenFromHK()
