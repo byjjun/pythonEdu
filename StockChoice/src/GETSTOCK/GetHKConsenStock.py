@@ -459,11 +459,11 @@ def main():
     setPhantomjsPath()
         
     #최근 몇개 주식을 가지고 올것이냐
-    setStockLoadCount("5")
+    setStockLoadCount("250")
     #250
     
     #괴리율 랭킹 몇등까지 표출
-    setStockRankCount(5)
+    setStockRankCount(20)
     #20
     
     #이전목표주가는 몇개까지 표출
@@ -471,7 +471,7 @@ def main():
     #7
     
     #몇일전 보고서 까지 찾을꺼냐
-    setStockDaysCount(5)
+    setStockDaysCount(14)
     #14
     
     
