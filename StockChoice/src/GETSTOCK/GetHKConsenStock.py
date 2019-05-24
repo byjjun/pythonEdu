@@ -11,6 +11,8 @@ import requests
 from selenium import webdriver
 from datetime import datetime, date, timedelta
 from bs4 import BeautifulSoup
+from time import time, sleep
+import requests as RR
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
@@ -369,7 +371,7 @@ def getCurrentStockConsenFromHK():
 
 def makeSTOCKHtml(stock_dic_list):
     
-    stock_html = "<span style=\"font-size: 10pt;\">금일의 괴리율 랭킹</span><br>"\
+    stock_html = "<span style=\"font-size: 10pt;\">금일의 상승여력 랭킹</span><br>"\
     "<span style=\"font-size: 10pt;\">"+str(datetime.today().strftime('%Y-%m-%d %H:%M'))+"기준 발행된 증권사 리서치 보고서 중 목표가와 현 주가의 괴리율이  큰 기업순위입니다.</span><br>"\
     #"<br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다"\
     #"<br>오늘자 정보가 아니면 "\
@@ -390,8 +392,8 @@ def makeSTOCKHtml(stock_dic_list):
         pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
         #print "."
                             
-        stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표대비 괴리율 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
-        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+")</span><br>"\
+        stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표대비 상승여력 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
+        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+")"+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
 
         count = count+1
@@ -409,6 +411,46 @@ def makeSTOCKHtml(stock_dic_list):
     return stock_html
 
 
+def writeTstoryPost(category,title,tag,contents):
+    '''
+    $$$$카테고리 $$$$
+        괴리율 742010
+
+    '''
+    url = 'https://www.tistory.com/apis/post/write'
+    print url
+    
+    parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
+                 'blogName': 'stockchoice',
+                 'title' : 'title'
+                 }
+    
+    post_data = {'content' : '<br>contents</br>으아아아',
+                 'tag' : '',
+                 'visibility' : '3', 
+                 'category' : '742010' }
+    
+    
+    parameter['title']=title
+    post_data['tag']=tag
+    post_data['content']=contents
+    post_data['category']=category
+
+    #print title
+    #print post_data['title']
+    #print post_data['tag']
+    #print post_data['content']
+    #print post_data['category']
+    
+    sleep(10)
+    
+    #r = RR.post(url, params = parameter, data=json.dumps(post_data), verify=False)
+    r = RR.post(url, params = parameter, data=post_data, verify=False)
+       
+    print(r.text)
+    print(r.status_code)
+
+
 
 
 def main():
@@ -417,16 +459,20 @@ def main():
     setPhantomjsPath()
         
     #최근 몇개 주식을 가지고 올것이냐
-    setStockLoadCount("200")
+    setStockLoadCount("5")
+    #250
     
     #괴리율 랭킹 몇등까지 표출
-    setStockRankCount(20)
+    setStockRankCount(5)
+    #20
     
     #이전목표주가는 몇개까지 표출
     setPrePriceCount(7)
+    #7
     
     #몇일전 보고서 까지 찾을꺼냐
-    setStockDaysCount(7)
+    setStockDaysCount(5)
+    #14
     
     
     stock_dic_list = getCurrentStockConsenFromHK()
@@ -437,8 +483,15 @@ def main():
     print "--------------------------------"
     print "  "
     
-    print result_html
+    print result_html 
     
+    print "--------------------------------"
+    
+    title_name = datetime.today().strftime('%Y년 %m월 %d일 ')+' 금일의 상승여력 랭킹 '
+    
+    writeTstoryPost("742010",title_name,"",result_html)
+    
+    print "--------------------------------"
     
 
 main()
