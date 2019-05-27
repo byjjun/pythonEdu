@@ -393,7 +393,7 @@ def makeSTOCKHtml(stock_dic_list):
         #print "."
                             
         stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표대비 상승여력 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
-        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+")"+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
+        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+") : "+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
 
         count = count+1
