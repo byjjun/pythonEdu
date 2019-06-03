@@ -70,6 +70,8 @@ def getStockLoadCount():
 최근 2달간 이전 목표주가 추출
 '''
 def getPreStockConsenFromHK(stock_code):
+    driver = webdriver.PhantomJS(phantomjs)
+    
     try:
         stock_pre_consen_list = []
         
@@ -84,7 +86,7 @@ def getPreStockConsenFromHK(stock_code):
         request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?sdate='+pre_2month_str+'&edate='+yesterday_str+'&now_page=1&search_value=&report_type=CO&pagenum=50&search_text='+stock_code+'&business_code='
         #print request_url
         
-        driver = webdriver.PhantomJS(phantomjs)
+        #driver = webdriver.PhantomJS(phantomjs)
         driver.get(request_url)
         
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
@@ -141,7 +143,7 @@ def getPreStockConsenFromHK(stock_code):
         
         print 'No Pre Consen'
         print str(e)        
-    
+    driver.close()
     return stock_pre_consen_list
 
 '''
@@ -209,6 +211,7 @@ def getCurrentStockPriceMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.close()
     return stock_price
 
 
@@ -248,6 +251,7 @@ def getCurrentStockPriceMMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.close()
     return stock_price
 
 '''
@@ -365,7 +369,8 @@ def getCurrentStockConsenFromHK():
             
         #print stock_dic
     stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['diff_rate'], reverse=False)
-               
+    
+    driver.close()           
     return stock_dic_list_sorted
 
 
@@ -487,7 +492,7 @@ def main():
     
     print "--------------------------------"
     
-    title_name = datetime.today().strftime('%Y년 %m월 %d일 ')+' 금일의 상승여력 랭킹 '
+    title_name = datetime.today().strftime('%Y년 %m월 %d일 %H시 ')+' 상승여력 랭킹 '
     
     writeTstoryPost("742010",title_name,"",result_html)
     

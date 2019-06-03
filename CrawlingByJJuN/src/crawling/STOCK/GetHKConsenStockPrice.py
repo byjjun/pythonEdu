@@ -25,9 +25,10 @@ def getCurrentStockPriceDAUM(stock_code):
         stock_code = '035760'
     
     request_url = 'http://finance.daum.net/item/main.daum?code='+stock_code
+    driver = webdriver.PhantomJS(phantomjs)
     #print request_url
     try:
-        driver = webdriver.PhantomJS(phantomjs)
+        #driver = webdriver.PhantomJS(phantomjs)
         driver.get(request_url)
         
         stock_now_price = driver.find_element_by_xpath('//*[@id="topWrap"]/div[1]/ul[2]/li[1]/em')
@@ -44,6 +45,7 @@ def getCurrentStockPriceDAUM(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.close()
     return stock_price
 
 
@@ -58,8 +60,9 @@ def getCurrentStockPricePAXNET(stock_code):
     
     request_url = 'http://paxnet.moneta.co.kr/stock/analysis/main?abbrSymbol='+stock_code
     #print request_url
+    driver = webdriver.PhantomJS(phantomjs)
     try:
-        driver = webdriver.PhantomJS(phantomjs)
+        #driver = webdriver.PhantomJS(phantomjs)
         driver.get(request_url)
         #print request_url
         
@@ -82,6 +85,7 @@ def getCurrentStockPricePAXNET(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.close()
     return stock_price
 
 
@@ -96,8 +100,9 @@ def getCurrentStockPriceMK(stock_code):
     
     request_url = 'http://vip.mk.co.kr/newSt/price/price.php?stCode='+stock_code
     #print request_url
+    driver = webdriver.PhantomJS(phantomjs)
     try:
-        driver = webdriver.PhantomJS(phantomjs)
+        #driver = webdriver.PhantomJS(phantomjs)
         driver.get(request_url)
         #print request_url
         
@@ -120,12 +125,14 @@ def getCurrentStockPriceMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.close()
     return stock_price
 
 '''
 최근 2달 목표주가 추출
 '''
 def getPreStockConsenFromHK(stock_code):
+    driver = webdriver.PhantomJS(phantomjs)
     try:
         stock_pre_consen_list = []
         
@@ -140,7 +147,7 @@ def getPreStockConsenFromHK(stock_code):
         request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?sdate='+pre_2month_str+'&edate='+yesterday_str+'&now_page=1&search_value=&report_type=CO&pagenum=50&search_text='+stock_code+'&business_code='
         #print request_url
         
-        driver = webdriver.PhantomJS(phantomjs)
+        #driver = webdriver.PhantomJS(phantomjs)
         driver.get(request_url)
         
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
@@ -198,6 +205,7 @@ def getPreStockConsenFromHK(stock_code):
         print 'No Pre Consen'
         print str(e)        
     
+    driver.close()
     return stock_pre_consen_list
 
 '''
@@ -289,6 +297,7 @@ def getCurrentStockConsenFromHK():
                 
         #print stock_dic
         
+    driver.close()    
     return stock_dic_list
 
 
