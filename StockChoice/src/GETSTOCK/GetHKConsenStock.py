@@ -70,6 +70,7 @@ def getStockLoadCount():
 최근 2달간 이전 목표주가 추출
 '''
 def getPreStockConsenFromHK(stock_code):
+    
     driver = webdriver.PhantomJS(phantomjs)
     
     try:
@@ -145,7 +146,7 @@ def getPreStockConsenFromHK(stock_code):
         print str(e)
     
               
-    driver.close()
+    driver.quit()
     
     
     return stock_pre_consen_list
@@ -215,7 +216,7 @@ def getCurrentStockPriceMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
-    driver.close()
+    driver.quit()
     
     return stock_price
 
@@ -232,8 +233,9 @@ def getCurrentStockPriceMMK(stock_code):
     request_url = 'http://m.mk.co.kr/stock/price/'+stock_code
     #print request_url
     
+    driver = webdriver.PhantomJS(phantomjs) 
     try:
-        driver = webdriver.PhantomJS(phantomjs) 
+        
         driver.get(request_url)
         #print request_url
         
@@ -256,7 +258,8 @@ def getCurrentStockPriceMMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
-    driver.close()
+    driver.quit()
+    
     return stock_price
 
 '''
@@ -375,7 +378,7 @@ def getCurrentStockConsenFromHK():
         #print stock_dic
     stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['diff_rate'], reverse=False)
     
-    driver.close()
+    driver.quit()
     return stock_dic_list_sorted
 
 
@@ -459,8 +462,7 @@ def writeTstoryPost(category,title,tag,contents):
        
     print(r.text)
     print(r.status_code)
-
-
+    
 
 
 def main():
