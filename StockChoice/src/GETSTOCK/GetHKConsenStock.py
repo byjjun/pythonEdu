@@ -13,6 +13,7 @@ from datetime import datetime, date, timedelta
 from bs4 import BeautifulSoup
 from time import time, sleep
 import requests as RR
+import signal
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
@@ -145,7 +146,7 @@ def getPreStockConsenFromHK(stock_code):
         print 'No Pre Consen'
         print str(e)
     
-              
+    driver.service.process.send_signal(signal.SIGTERM)          
     driver.quit()
     
     
@@ -216,6 +217,7 @@ def getCurrentStockPriceMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.service.process.send_signal(signal.SIGTERM)
     driver.quit()
     
     return stock_price
@@ -258,6 +260,7 @@ def getCurrentStockPriceMMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.service.process.send_signal(signal.SIGTERM)
     driver.quit()
     sleep(1)
     return stock_price
@@ -378,6 +381,7 @@ def getCurrentStockConsenFromHK():
         #print stock_dic
     stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['diff_rate'], reverse=False)
     
+    driver.service.process.send_signal(signal.SIGTERM)
     driver.quit()
     
     return stock_dic_list_sorted
