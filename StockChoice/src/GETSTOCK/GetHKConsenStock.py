@@ -26,7 +26,7 @@ def setPhantomjsPath():
     if(platform.system() == 'Windows'):
         phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
     else:
-        phantomjs='/usr/local/bin/phantomjs'
+        phantomjs='/usr/bin/phantomjs'
 
 
 #최근 목표주가 몇개 세팅
