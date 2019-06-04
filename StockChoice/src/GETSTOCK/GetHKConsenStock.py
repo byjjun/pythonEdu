@@ -379,6 +379,7 @@ def getCurrentStockConsenFromHK():
     stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['diff_rate'], reverse=False)
     
     driver.quit()
+    
     return stock_dic_list_sorted
 
 
