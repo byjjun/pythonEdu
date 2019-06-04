@@ -17,6 +17,9 @@ import signal
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
+chromedrv='lib\chromedriver.exe'
+tempfilepath='/tmp/cookies.txt'
+
 pre_price_count = 7
 stock_rank_count = 20
 stock_days_count = 4
@@ -28,6 +31,19 @@ def setPhantomjsPath():
         phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
     else:
         phantomjs='/usr/bin/phantomjs'
+
+
+
+
+def setChromedrvPath():
+    global chromedrv
+    if(platform.system() == 'Windows'):
+        chromedrv='lib\chromedriver.exe'
+    else:
+        chromedrv='/usr/bin/chromedriver'
+
+
+
 
 
 #최근 목표주가 몇개 세팅
@@ -72,7 +88,8 @@ def getStockLoadCount():
 '''
 def getPreStockConsenFromHK(stock_code):
     
-    driver = webdriver.PhantomJS(phantomjs)
+    
+    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
     
     try:
         stock_pre_consen_list = []
@@ -193,8 +210,10 @@ def getCurrentStockPriceMK(stock_code):
     
     request_url = 'http://vip.mk.co.kr/newSt/price/price.php?stCode='+stock_code
     #print request_url
+    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    
     try:
-        driver = webdriver.PhantomJS(phantomjs)
+        
         driver.get(request_url)
         #print request_url
         
@@ -235,7 +254,8 @@ def getCurrentStockPriceMMK(stock_code):
     request_url = 'http://m.mk.co.kr/stock/price/'+stock_code
     #print request_url
     
-    driver = webdriver.PhantomJS(phantomjs) 
+    #driver = webdriver.PhantomJS(phantomjs)
+    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt']) 
     try:
         
         driver.get(request_url)
@@ -260,9 +280,10 @@ def getCurrentStockPriceMMK(stock_code):
     #print stock_updown_rate.text
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
+    sleep(1)
     driver.service.process.send_signal(signal.SIGTERM)
     driver.quit()
-    sleep(1)
+    
     return stock_price
 
 '''
@@ -291,7 +312,8 @@ def getCurrentStockConsenFromHK():
     
     print request_url
     
-    driver = webdriver.PhantomJS(phantomjs)
+    #driver = webdriver.PhantomJS(phantomjs)
+    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
     driver.get(request_url)
     #html = driver.page_source
     table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
