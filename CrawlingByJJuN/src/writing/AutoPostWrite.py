@@ -205,7 +205,7 @@ try:
     sleep(2)
 except:
     print "ERROR"
-
+#driver.close()
 driver.quit()
 
 
