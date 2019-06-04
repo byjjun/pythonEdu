@@ -143,8 +143,10 @@ def getPreStockConsenFromHK(stock_code):
         
         print 'No Pre Consen'
         print str(e)
+    
               
     driver.close()
+    
     
     return stock_pre_consen_list
 
