@@ -142,8 +142,10 @@ def getPreStockConsenFromHK(stock_code):
     except Exception, e:
         
         print 'No Pre Consen'
-        print str(e)        
+        print str(e)
+              
     driver.close()
+    
     return stock_pre_consen_list
 
 '''
@@ -212,6 +214,7 @@ def getCurrentStockPriceMK(stock_code):
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
     driver.close()
+    
     return stock_price
 
 
@@ -370,7 +373,7 @@ def getCurrentStockConsenFromHK():
         #print stock_dic
     stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['diff_rate'], reverse=False)
     
-    driver.close()           
+    driver.close()
     return stock_dic_list_sorted
 
 
