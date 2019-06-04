@@ -14,11 +14,10 @@ from bs4 import BeautifulSoup
 from time import time, sleep
 import requests as RR
 import signal
+from pytz import timezone
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
-chromedrv='lib\chromedriver.exe'
-tempfilepath='/tmp/cookies.txt'
 
 pre_price_count = 7
 stock_rank_count = 20
@@ -31,19 +30,6 @@ def setPhantomjsPath():
         phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
     else:
         phantomjs='/usr/bin/phantomjs'
-
-
-
-
-def setChromedrvPath():
-    global chromedrv
-    if(platform.system() == 'Windows'):
-        chromedrv='lib\chromedriver.exe'
-    else:
-        chromedrv='/usr/bin/chromedriver'
-
-
-
 
 
 #최근 목표주가 몇개 세팅
@@ -411,8 +397,11 @@ def getCurrentStockConsenFromHK():
 
 def makeSTOCKHtml(stock_dic_list):
     
+    KST=datetime.now(timezone('Asia/Seoul'))
+    time_info = KST.strftime('%Y-%m-%d %H:%M')
+    
     stock_html = "<span style=\"font-size: 10pt;\">금일의 상승여력 랭킹</span><br>"\
-    "<span style=\"font-size: 10pt;\">"+str(datetime.today().strftime('%Y-%m-%d %H:%M'))+"기준 발행된 증권사 리서치 보고서 중 목표가와 현 주가의 괴리율이  큰 기업순위입니다.</span><br>"\
+    "<span style=\"font-size: 10pt;\">"+time_info+"기준 발행된 증권사 리서치 보고서 중 목표가와 현 주가의 괴리율이  큰 기업순위입니다.</span><br>"\
     #"<br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다"\
     #"<br>오늘자 정보가 아니면 "\
     #"<font size=5><a href=\"http://fundingchoice.co.kr/?cat=63\">[여기]</a></font>에서 최신 비교자료를 확인하세요"\
@@ -526,11 +515,14 @@ def main():
     
     print "--------------------------------"
     
-    title_name = datetime.today().strftime('%Y년 %m월 %d일 %H시 ')+' 상승여력 랭킹 '
+    KST=datetime.now(timezone('Asia/Seoul'))
+    title_name = KST.strftime('%Y년 %m월 %d일 %H시 ')+' 상승여력 랭킹 '
     
     writeTstoryPost("742010",title_name,"",result_html)
     
     print "--------------------------------"
-    
+
+
+print "========[ START ]=========fbwj"    
 
 main()
