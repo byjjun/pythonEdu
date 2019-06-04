@@ -259,7 +259,7 @@ def getCurrentStockPriceMMK(stock_code):
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
     driver.quit()
-    
+    sleep(1)
     return stock_price
 
 '''
