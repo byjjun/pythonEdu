@@ -76,7 +76,8 @@ def creditloan_post():
 
 def write_init():
      ### write post ###
-     
+    
+    ''' 
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
@@ -84,8 +85,11 @@ def write_init():
     ### step 1 , login ###
     driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
     #driver = webdriver.Chrome('lib\chromedriver.exe')
+    '''
+    phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
+    driver = webdriver.PhantomJS(phantomjs)
     driver.get('http://fundingchoice.co.kr/wp-admin/')
-    #driver.implicitly_wait(100)
+    driver.implicitly_wait(100)
     
     login_id = 'byjjun@gmail.com'
     login_pw = 'POCKTAN1'

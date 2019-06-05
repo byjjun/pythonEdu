@@ -9,13 +9,15 @@ from GETSTOCK import GetHKConsenStock
 
 app = Flask(__name__)
 
-@app.route('/getConsen')
+@app.route('/getstock')
 def hello_world():
-    print "#### Flask Start ###"
+    
+    print "=== [ Get Stock Method Start ] ==="
     GetHKConsenStock.main()
     
-    return 'Hello Flask'
+    return 'Get Stock Complete'
 
 if __name__ == '__main__':
-  app.run()
+    print "### Flask Server Start ###"
+    app.run()
 
