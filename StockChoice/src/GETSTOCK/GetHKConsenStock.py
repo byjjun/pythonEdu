@@ -491,7 +491,7 @@ def main():
     #250
     
     #괴리율 랭킹 몇등까지 표출
-    setStockRankCount(20)
+    setStockRankCount(30)
     #20
     
     #이전목표주가는 몇개까지 표출
