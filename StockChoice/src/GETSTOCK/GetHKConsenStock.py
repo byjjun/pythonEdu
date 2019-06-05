@@ -15,6 +15,8 @@ from time import time, sleep
 import requests as RR
 import signal
 from pytz import timezone
+from GETSTOCK import STATES
+
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
@@ -521,6 +523,7 @@ def main():
     writeTstoryPost("742010",title_name,"",result_html)
     
     print "--------------------------------"
+    STATES.starting=0
 
 if __name__ == '__main__':
     print "=========================="
