@@ -289,7 +289,8 @@ def getCurrentStockConsenFromHK():
     
     stock_dic_list = []
     
-    today_str = datetime.today().strftime('%Y-%m-%d')
+    KST=datetime.now(timezone('Asia/Seoul'))
+    today_str = KST.strftime('%Y-%m-%d')
     #몇일전까지 : days=0 은 오늘
     startday_str = (datetime.today() - timedelta(days=getStockDaysCount())).strftime('%Y-%m-%d')
     #몇개 분석할 것이냐?
