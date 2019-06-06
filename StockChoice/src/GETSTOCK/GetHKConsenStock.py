@@ -15,7 +15,7 @@ from time import time, sleep
 import requests as RR
 import signal
 from pytz import timezone
-from GETSTOCK import STATES
+import STATES
 
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
