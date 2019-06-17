@@ -78,6 +78,7 @@ def getPreStockConsenFromHK(stock_code):
     
     
     driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    driver.delete_all_cookies()
     
     try:
         stock_pre_consen_list = []
@@ -243,7 +244,9 @@ def getCurrentStockPriceMMK(stock_code):
     #print request_url
     
     #driver = webdriver.PhantomJS(phantomjs)
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt']) 
+    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    driver.delete_all_cookies()
+        
     try:
         
         driver.get(request_url)
@@ -303,6 +306,8 @@ def getCurrentStockConsenFromHK():
     
     #driver = webdriver.PhantomJS(phantomjs)
     driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    driver.delete_all_cookies()
+    
     driver.get(request_url)
     #html = driver.page_source
     table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
