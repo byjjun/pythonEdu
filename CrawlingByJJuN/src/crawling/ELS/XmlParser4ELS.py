@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 def elsparser():
     elsxmldata = GetElsXML.get_current_els_xml()
     
+    print '#######return_totalcount'
     #debug XML DATA
     #print(elsxmldata)
     
@@ -29,6 +30,9 @@ def elsparser():
             
     els_dic_list = []
     global countresult
+    
+    countresult = '0'
+    
     
     for message in tree.findall('message'):
         for elslist in message.findall('DISDlsListDTO'):
@@ -127,6 +131,7 @@ def elsparser():
 #print els_dic_list
 
 def return_totalcount():
+    #print '#######return_totalcount'
     return countresult
 
 def debug_els_dic(els_dic_list):

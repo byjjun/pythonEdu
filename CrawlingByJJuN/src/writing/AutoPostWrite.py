@@ -18,6 +18,7 @@ from LOAN import CreditLoanMakeHtml
 from selenium.webdriver.common.keys import Keys
 import requests as RR
 import json
+import traceback
 
 def saving_title():
     #datetime.today().strftime('%Y년 %m월 %d일 '),'기준 '
@@ -184,34 +185,42 @@ def writeTstoryPost(category,title,tag,contents):
 #### Chrome Driver 사용
 ############################
 
+'''
+fundingchoice.co.kr은 접었음.
+'''
+'''
 driver = write_init()
 #driver.maximize_window()
 sleep(2)
 
 try:
     
+    print "els"
     write_post(driver,'//*[@id="in-category-61"]', els_title(), els_tag(),els_post())
     driver.implicitly_wait(1000)
     sleep(2)
+    print "예금"
     write_post(driver,'//*[@id="in-category-62"]', saving_title(), saving_tag(), saving_post())
     driver.implicitly_wait(1000)
     sleep(2)
+    print "적금"
     write_post(driver,'//*[@id="in-category-62"]', ins_saving_title(), ins_saving_tag(),ins_saving_post())
     driver.implicitly_wait(1000)
-    sleep(2)
-    
-    '''
+    sleep(2)   
+    print "대출" 
     write_post(driver,'//*[@id="in-category-5"]', creditloan_title(), creditloan_tag(),creditloan_post())
     driver.implicitly_wait(1000)
     sleep(2)
-    '''
+    
+    print "주식"
     write_post(driver,'//*[@id="in-category-63"]', stock_title(), stock_tag(),stock_post())
     sleep(2)
+    
 except:
     print "ERROR"
 #driver.close()
 driver.quit()
-
+'''
 
 ####################
 #### TISTORY 포스팅
@@ -234,16 +243,18 @@ try:
     tag = ''.join(ins_saving_tag())
     post = ''.join(ins_saving_post())
     writeTstoryPost('771977',title,tag,post)
-    '''
+    
     title = ''.join(creditloan_title())
     tag = ''.join(creditloan_tag())
     post = ''.join(creditloan_post())
     writeTstoryPost('771980',title,tag,post)
-    '''
+    
     title = ''.join(stock_title())
     tag = ''.join(stock_tag())
     post = ''.join(stock_post())
     writeTstoryPost('771978',title,tag,post)
     
-except:
-    print "ERROR"
+except Exception as e:
+    print(e)
+    traceback.print_exc()
+    print "###ERROR###"

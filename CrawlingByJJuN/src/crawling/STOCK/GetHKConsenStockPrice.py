@@ -50,13 +50,13 @@ def getCurrentStockPriceNaver(stock_code):
         
         if(plusminus == u'플러스'):
             plusminus = u'+'
-            print '+'
+            #print '+'
         elif(plusminus == u'마이너스'):
             plusminus = u'-'
-            print '-'
+            #print '-'
                 
         stock_price['now_price'] = stock_price_info_array[1].encode('utf-8')
-        stock_price['updown_rate'] = plusminus.encode('utf-8')+stock_price_info_array[6].encode('utf-8')
+        stock_price['updown_rate'] = plusminus.encode('utf-8')+stock_price_info_array[6].encode('utf-8')+u'%'.encode('utf-8')
     
     except Exception as e:
         print(e)
@@ -276,10 +276,14 @@ def getCurrentStockConsenFromHK():
     
     stock_dic_list = []
     
+    today = date.today()   
+    yesterday = today - timedelta(1)
+    yesterday_str = yesterday.strftime('%Y-%m-%d')
+    
     today_str = datetime.today().strftime('%Y-%m-%d')
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate=2018-05-08&edate=2018-05-08&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
-    request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
+    request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+yesterday_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
     print request_url
     
     driver = webdriver.PhantomJS(phantomjs)
@@ -393,7 +397,7 @@ def makePreSTOCKHtml(stockcode):
 
 def makeSTOCKHtml(stock_dic_list):
     
-    stock_html = "<span style=\"font-size: 10pt;\">금일의 목표가 상승 기업</span><br>"\
+    stock_html = "<span style=\"font-size: 10pt;\">금일/전일의 목표가 상승 기업</span><br>"\
     "<span style=\"font-size: 10pt;\">"+str(datetime.today().strftime('%Y-%m-%d %H:%M'))+"기준 발행된 증권사 리서치 보고서 중 목표가가 상승된 기업 리스트 입니다.</span><br>"\
     "<br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다"\
     "<br>오늘자 정보가 아니면 "\
@@ -426,7 +430,7 @@ def makeSTOCKHtml(stock_dic_list):
                     
         stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>상승률  : "+ stock_dic['upper_rate'].encode('UTF-8') +"%</strong></span> (<strong>신규"+ stock_dic['new_price'].encode('UTF-8') +"</strong> / 이전 "+stock_dic['old_price'].encode('UTF-8')+")</span><br>"\
         "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표대비 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
-        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+")</span><br>"\
+        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+") : " + stock_dic['update_date'].encode('UTF-8') + "</span><br>"\
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
         #"<hr align=\"left\" noshade=\"noshade\" width=\"250\" />"
 
