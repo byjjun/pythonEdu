@@ -17,8 +17,13 @@ def writeTstoryPost(category,title,tag,contents):
     '''
     url = 'https://www.tistory.com/apis/post/write'
     print url
-    
+    '''
     parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
+                 'blogName': 'stockchoice',
+                 'title' : 'title'
+                 }
+    '''
+    parameter = {'access_token' : 'f03141da873795fa244f3f8178d16bbda7464f3aacecc315d49c842a8e0ddaf379dcb5ff',
                  'blogName': 'stockchoice',
                  'title' : 'title'
                  }
