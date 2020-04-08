@@ -254,7 +254,7 @@ def getCurrentStockPriceDAUM(stock_code):
     if stock_code == '130960':
         stock_code = '035760'
     
-    request_url = 'https://finance.daum.net/quotes/'+stock_code+'?period=day#home'
+    request_url = 'https://finance.daum.net/quotes/A'+stock_code+'?period=day#home'
     print 'get stock price from daum'
     print request_url
     driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
