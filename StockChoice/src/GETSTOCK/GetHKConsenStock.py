@@ -188,7 +188,7 @@ def makePreSTOCKHtml(stockcode):
     return html_str
 
 '''
-현재가를 네이버에서 들고오는걸로 변경(지금버전 2019.6.19)
+현재가를 네이버에서 들고오는걸로 변경
 '''
 def getCurrentStockPriceNaver(stock_code):
     
@@ -246,7 +246,7 @@ def getCurrentStockPriceNaver(stock_code):
 
 
 '''
-DAUM 에서 주식 현재가 추출
+DAUM 에서 주식 현재가 추출(지금버전 2020.4.8)
 '''
 def getCurrentStockPriceDAUM(stock_code):
     
