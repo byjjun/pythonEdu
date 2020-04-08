@@ -245,6 +245,49 @@ def getCurrentStockPriceNaver(stock_code):
     return stock_price
 
 
+'''
+MK증권 에서 주식 현재가 추출
+'''
+def getCurrentStockPriceDAUM(stock_code):
+    
+    stock_price = {}
+    if stock_code == '130960':
+        stock_code = '035760'
+    
+    request_url = 'https://finance.daum.net/quotes/'+stock_code+'?period=day#home'
+    #print request_url
+    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    
+    try:
+        
+        driver.get(request_url)
+        #print request_url
+        
+        stock_now_price = driver.find_element_by_xpath('//*[@id="boxSummary"]/div/span[1]/span[1]/span[3]/strong')
+        print stock_now_price.text
+        
+        stock_updown_rate = driver.find_element_by_xpath('//*[@id="boxSummary"]/div/span[1]/span[1]/span[3]/p[2]')
+        print stock_updown_rate.text
+        
+        
+        stock_price['now_price'] = stock_now_price.text
+        stock_price['updown_rate'] = stock_updown_rate.text
+    
+    except:
+        stock_price['now_price'] = "0"
+        stock_price['updown_rate'] = "0"
+    
+    #print stock_code
+    #print stock_now_price.text
+    #print stock_updown_rate.text
+    
+    #print stock_now_price.text+' ('+stock_updown_rate+')'
+    driver.service.process.send_signal(signal.SIGTERM)
+    driver.quit()
+    
+    return stock_price
+
+
 
 '''
 MK증권 에서 주식 현재가 추출
@@ -434,7 +477,8 @@ def getCurrentStockConsenFromHK():
         
         if(stock_dic['new_price'] != "0" ):
              
-            now_stock_price = getCurrentStockPriceNaver(stock_dic['stock_code'])
+            #now_stock_price = getCurrentStockPriceNaver(stock_dic['stock_code'])
+            now_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
                     
             stock_dic['now_price']=now_stock_price['now_price']
             stock_dic['now_updown_rate']=now_stock_price['updown_rate']
