@@ -246,7 +246,7 @@ def getCurrentStockPriceNaver(stock_code):
 
 
 '''
-MK증권 에서 주식 현재가 추출
+DAUM 에서 주식 현재가 추출
 '''
 def getCurrentStockPriceDAUM(stock_code):
     
@@ -255,7 +255,8 @@ def getCurrentStockPriceDAUM(stock_code):
         stock_code = '035760'
     
     request_url = 'https://finance.daum.net/quotes/'+stock_code+'?period=day#home'
-    #print request_url
+    print 'get stock price from daum'
+    print request_url
     driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
     
     try:
