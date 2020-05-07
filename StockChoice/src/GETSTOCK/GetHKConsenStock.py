@@ -20,11 +20,12 @@ import STATES
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
+chromedrive='/usr/bin/chromedriver'
 
 pre_price_count = 7
-stock_rank_count = 20
-stock_days_count = 4
-stock_load_count = "250"
+stock_rank_count = 25
+stock_days_count = 7
+stock_load_count = "300"
 
 def setPhantomjsPath():
     global phantomjs
@@ -32,6 +33,14 @@ def setPhantomjsPath():
         phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
     else:
         phantomjs='/usr/bin/phantomjs'
+
+
+def setChromedriverPath():
+    global chromedrive
+    if(platform.system() == 'Windows'):
+        chromedrive='lib/chromedriver.exe'
+    else:
+        chromedrive='/usr/bin/chromedriver'
 
 
 #최근 목표주가 몇개 세팅
@@ -77,8 +86,12 @@ def getStockLoadCount():
 def getPreStockConsenFromHK(stock_code):
     
     
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    driver.delete_all_cookies()
+    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    #driver.delete_all_cookies()
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('headless')
+    opt.add_argument("--disable-gpu")
+    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
     
     try:
         stock_pre_consen_list = []
@@ -198,7 +211,11 @@ def getCurrentStockPriceNaver(stock_code):
     
     request_url = 'https://finance.naver.com/item/main.nhn?code='+stock_code
         
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('headless')
+    opt.add_argument("--disable-gpu")
+    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
     
     try:
         
@@ -257,7 +274,11 @@ def getCurrentStockPriceDAUM(stock_code):
     request_url = 'https://finance.daum.net/quotes/A'+stock_code+'?period=day#home'
     print 'get stock price from daum'
     print request_url
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('headless')
+    opt.add_argument("--disable-gpu")
+    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
     
     try:
         
@@ -301,7 +322,11 @@ def getCurrentStockPriceMK(stock_code):
     
     request_url = 'http://vip.mk.co.kr/newSt/price/price.php?stCode='+stock_code
     #print request_url
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('headless')
+    opt.add_argument("--disable-gpu")
+    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
     
     try:
         
@@ -346,8 +371,12 @@ def getCurrentStockPriceMMK(stock_code):
     #print request_url
     
     #driver = webdriver.PhantomJS(phantomjs)
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    driver.delete_all_cookies()
+    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    #driver.delete_all_cookies()
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('headless')
+    opt.add_argument("--disable-gpu")
+    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
         
     try:
         
@@ -407,8 +436,12 @@ def getCurrentStockConsenFromHK():
     print request_url
     
     #driver = webdriver.PhantomJS(phantomjs)
-    driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    driver.delete_all_cookies()
+   # driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
+    #driver.delete_all_cookies()
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('headless')
+    opt.add_argument("--disable-gpu")
+    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
     
     driver.get(request_url)
     #html = driver.page_source
@@ -478,8 +511,8 @@ def getCurrentStockConsenFromHK():
         
         if(stock_dic['new_price'] != "0" ):
              
-            #now_stock_price = getCurrentStockPriceNaver(stock_dic['stock_code'])
-            now_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
+            now_stock_price = getCurrentStockPriceNaver(stock_dic['stock_code'])
+            #now_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
                     
             stock_dic['now_price']=now_stock_price['now_price']
             stock_dic['now_updown_rate']=now_stock_price['updown_rate']
@@ -596,6 +629,7 @@ def main():
     
     #환경세팅
     setPhantomjsPath()
+    setChromedriverPath()
         
     #최근 몇개 주식을 가지고 올것이냐
     setStockLoadCount("250")
