@@ -91,7 +91,7 @@ def getPreStockConsenFromHK(stock_code):
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
+    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     
     try:
         stock_pre_consen_list = []
@@ -215,7 +215,7 @@ def getCurrentStockPriceNaver(stock_code):
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
+    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     
     try:
         
@@ -278,7 +278,7 @@ def getCurrentStockPriceDAUM(stock_code):
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
+    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     
     try:
         
@@ -326,7 +326,7 @@ def getCurrentStockPriceMK(stock_code):
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
+    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     
     try:
         
@@ -376,7 +376,7 @@ def getCurrentStockPriceMMK(stock_code):
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
+    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
         
     try:
         
@@ -441,7 +441,7 @@ def getCurrentStockConsenFromHK():
     opt = webdriver.ChromeOptions()
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome('lib\chromedriver.exe', chrome_options=opt)
+    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     
     driver.get(request_url)
     #html = driver.page_source
