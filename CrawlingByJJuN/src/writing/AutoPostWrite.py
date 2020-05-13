@@ -96,7 +96,7 @@ def write_init():
     driver.implicitly_wait(100)
     
     login_id = 'byjjun@gmail.com'
-    login_pw = 'POCKTAN1'
+    login_pw = ''
     
     print login_id
     driver.implicitly_wait(1000)

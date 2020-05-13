@@ -5,7 +5,7 @@ Created on 2019. 4. 9.
 
 @author: 073860
 '''
-
+import sys
 import platform
 import requests
 from selenium import webdriver
@@ -668,7 +668,7 @@ def writeTstoryPost(category,title,tag,contents):
     
 
 
-def main():
+def main(login_pw):
     
     #환경세팅
     setPhantomjsPath()
@@ -708,7 +708,7 @@ def main():
     KST=datetime.now(timezone('Asia/Seoul'))
     title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 상승여력 랭킹 '
     
-    WriteWordPress.write_post(WriteWordPress.write_init(driver), "", title_name, "", result_html)
+    WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), "", title_name, "", result_html)
     #writeTstoryPost("742010",title_name,"",result_html)
     
     print "--------------------------------"
@@ -723,4 +723,6 @@ if __name__ == '__main__':
     print "=========================="
     print "========[ START ]========="    
     print "=========================="
-    main()
+    
+    main(sys.argv[1])
+    
