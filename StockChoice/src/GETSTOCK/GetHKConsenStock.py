@@ -21,6 +21,7 @@ from Write import WriteWordPress
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
 
+
 chromedrive = ''
 if(platform.system() == 'Windows'):
     chromedrive='lib/chromedriver.exe'
