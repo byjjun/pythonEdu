@@ -11,18 +11,46 @@ import requests as RR
 
 def writeTstoryPost(category,title,tag,contents):
     '''
-    $$$$카테고리 $$$$
-        괴리율 742010
+    url = 'https://www.tistory.com/apis/post/write'
+    
+    post_data = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
+                 'blogName': 'fundingchoice',
+                 'title' : 'title',
+                 'content' : 'contents',
+                 'tag' : '',
+                 'visibility' : '3', 
+                 'category' : '771976' }
+    
+    
+    post_data['title']='TITLE TEST'
+    post_data['tag']='TAG TEST'
+    post_data['content']='<br>aaa</br><br>aaa</br><br>aaa</br>'
+    post_data['category']='771976'
+
+    r = requests.post(url, params=post_data, verify=False)
+   
+    print(r.text)
+    print(r.status_code)
+
 
     '''
     url = 'https://www.tistory.com/apis/post/write'
     print url
-    '''
+
+
     parameter = {'access_token' : 'cb08c8f727865836f77fd2fed9f4aef8_f76acdd266a3ec3bda480f948f4a3915',
-                 'blogName': 'stockchoice',
+                 'blogName': 'fundingchoice',
                  'title' : 'title'
                  }
+    
+    post_data = {'content' : '<br>contents</br>으아아아',
+                 'tag' : '',
+                 'visibility' : '3', 
+                 'category' : '742010' }
+
+
     '''
+    stockchoice Tistory
     parameter = {'access_token' : 'f03141da873795fa244f3f8178d16bbda7464f3aacecc315d49c842a8e0ddaf379dcb5ff',
                  'blogName': 'stockchoice',
                  'title' : 'title'
@@ -32,7 +60,7 @@ def writeTstoryPost(category,title,tag,contents):
                  'tag' : '',
                  'visibility' : '3', 
                  'category' : '742010' }
-    
+    '''    
     
     parameter['title']=title
     post_data['tag']=tag

@@ -16,7 +16,7 @@ import requests as RR
 import signal
 from pytz import timezone
 import STATES
-
+from Write import WriteWordPress
 
 # phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
 phantomjs='/usr/local/bin/phantomjs'
@@ -706,13 +706,18 @@ def main():
     print "--------------------------------"
     
     KST=datetime.now(timezone('Asia/Seoul'))
-    title_name = KST.strftime('%Y년 %m월 %d일 %H시 ')+' 상승여력 랭킹 '
+    title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 상승여력 랭킹 '
     
-    writeTstoryPost("742010",title_name,"",result_html)
+    WriteWordPress.write_post(WriteWordPress.write_init(driver), "", title_name, "", result_html)
+    #writeTstoryPost("742010",title_name,"",result_html)
     
     print "--------------------------------"
     STATES.starting=0
+    
     setWebDriverClose()
+
+    
+
 
 if __name__ == '__main__':
     print "=========================="
