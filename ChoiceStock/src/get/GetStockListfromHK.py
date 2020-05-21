@@ -10,7 +10,7 @@ from datetime import date, datetime, timedelta
 from bs4 import BeautifulSoup
 from pytz import timezone
 from src.util import Preference
-from src.get import GetStockInfo
+from src.get import GetStockPrice
 
 
 '''
@@ -111,7 +111,7 @@ def getCurrentStockConsenFromHK():
         if(stock_dic['new_price'] != "0" ):
              
             now_stock_price = GetStockInfo.getCurrentStockPriceNaver(stock_dic['stock_code'])
-            #now_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
+ GetStockPricenow_stock_price = getCurrentStockPriceDAUM(stock_dic['stock_code'])
                     
             stock_dic['now_price']=now_stock_price['now_price']
             stock_dic['now_updown_rate']=now_stock_price['updown_rate']

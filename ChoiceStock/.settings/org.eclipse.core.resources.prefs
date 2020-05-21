@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/get/GetStockInfo.py=utf-8
 encoding//src/get/GetStockListfromHK.py=utf-8
+encoding//src/get/GetStockPrice.py=utf-8
 encoding//src/main/Starter.py=utf-8
 encoding//src/util/Preference.py=utf-8
 encoding//src/write/HtmlMaker.py=utf-8
