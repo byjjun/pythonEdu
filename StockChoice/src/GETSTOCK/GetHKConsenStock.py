@@ -18,28 +18,14 @@ from pytz import timezone
 import STATES
 from Write import WriteWordPress
 
-# phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
-phantomjs='/usr/local/bin/phantomjs'
-
-
-chromedrive = ''
-if(platform.system() == 'Windows'):
-    chromedrive='lib/chromedriver.exe'
-else:
-    chromedrive='/usr/bin/chromedriver'
-
-opt = webdriver.ChromeOptions()
-opt.add_argument('headless')
-opt.add_argument("--disable-gpu")
-driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-
-
-pre_price_count = 7
-stock_rank_count = 25
-stock_days_count = 7
-stock_load_count = "300"
-
-
+# Initialize
+phantomjs= None
+chromedrive = None
+driver = None
+pre_price_count = None
+stock_rank_count = None
+stock_days_count = None
+stock_load_count = None
 
 def setPhantomjsPath():
     global phantomjs
@@ -47,7 +33,6 @@ def setPhantomjsPath():
         phantomjs='C:\\phantomjs2.1.1\\bin\\phantomjs.exe'
     else:
         phantomjs='/usr/bin/phantomjs'
-
 
 def setChromedriverPath():
     global chromedrive
@@ -63,13 +48,6 @@ def setWebDriverInit():
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
     driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-
-
-def setWebDriverClose():
-    global driver
-    driver.quit()
-
-
 
 #최근 목표주가 몇개 세팅
 def setPrePriceCount(count):
@@ -108,11 +86,16 @@ def getStockLoadCount():
     return stock_load_count
 
 
+# Driver Close
+def setWebDriverClose():
+    global driver
+    driver.quit()
+
+
 '''
 최근 2달간 이전 목표주가 추출
 '''
 def getPreStockConsenFromHK(stock_code):
-    
     
     #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
     #driver.delete_all_cookies()
@@ -232,7 +215,7 @@ def makePreSTOCKHtml(stockcode):
     return html_str
 
 '''
-현재가를 네이버에서 들고오는걸로 변경
+현재가를 네이버에서 들고오는걸로 변경(지금버전 2020.5.20)
 '''
 def getCurrentStockPriceNaver(stock_code):
     
@@ -242,14 +225,6 @@ def getCurrentStockPriceNaver(stock_code):
     
     
     request_url = 'https://finance.naver.com/item/main.nhn?code='+stock_code
-       
-    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    '''
-    opt = webdriver.ChromeOptions()
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-    '''
     
     try:
         
@@ -291,16 +266,12 @@ def getCurrentStockPriceNaver(stock_code):
     
     #print stock_now_price.text+' ('+stock_updown_rate+')'
     
-    #driver.close()
-    #driver.service.process.send_signal(signal.SIGTERM)
-    #driver.quit()
-    
         
     return stock_price
 
 
 '''
-DAUM 에서 주식 현재가 추출(지금버전 2020.4.8)
+(X)DAUM 에서 주식 현재가 추출
 '''
 def getCurrentStockPriceDAUM(stock_code):
     
@@ -311,13 +282,7 @@ def getCurrentStockPriceDAUM(stock_code):
     request_url = 'https://finance.daum.net/quotes/A'+stock_code+'?period=day#home'
     print 'get stock price from daum'
     print request_url
-    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    '''
-    opt = webdriver.ChromeOptions()
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-    '''
+
     try:
         
         driver.get(request_url)
@@ -337,20 +302,13 @@ def getCurrentStockPriceDAUM(stock_code):
         stock_price['now_price'] = "0"
         stock_price['updown_rate'] = "0"
     
-    #print stock_code
-    #print stock_now_price.text
-    #print stock_updown_rate.text
-    
-    #print stock_now_price.text+' ('+stock_updown_rate+')'
-    #driver.service.process.send_signal(signal.SIGTERM)
-    #driver.quit()
     
     return stock_price
 
 
 
 '''
-MK증권 에서 주식 현재가 추출
+(X)MK증권 에서 주식 현재가 추출
 '''
 def getCurrentStockPriceMK(stock_code):
     
@@ -360,13 +318,7 @@ def getCurrentStockPriceMK(stock_code):
     
     request_url = 'http://vip.mk.co.kr/newSt/price/price.php?stCode='+stock_code
     #print request_url
-    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    '''
-    opt = webdriver.ChromeOptions()
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-    '''
+
     
     try:
         
@@ -390,16 +342,14 @@ def getCurrentStockPriceMK(stock_code):
     #print stock_code
     #print stock_now_price.text
     #print stock_updown_rate.text
-    
     #print stock_now_price.text+' ('+stock_updown_rate+')'
-    #driver.service.process.send_signal(signal.SIGTERM)
-    #driver.quit()
+
     
     return stock_price
 
 
 '''
-MK증권(모바일) 에서 주식 현재가 추출 - 속도개선용
+(X)MK증권(모바일) 에서 주식 현재가 추출 - 속도개선용
 '''
 def getCurrentStockPriceMMK(stock_code):
     
@@ -409,16 +359,6 @@ def getCurrentStockPriceMMK(stock_code):
     
     request_url = 'http://m.mk.co.kr/stock/price/'+stock_code
     #print request_url
-    
-    #driver = webdriver.PhantomJS(phantomjs)
-    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    #driver.delete_all_cookies()
-    '''
-    opt = webdriver.ChromeOptions()
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-    '''
         
     try:
         
@@ -441,12 +381,8 @@ def getCurrentStockPriceMMK(stock_code):
     
     #print stock_code
     #print stock_now_price.text
-    #print stock_updown_rate.text
-    
+    #print stock_updown_rate.text   
     #print stock_now_price.text+' ('+stock_updown_rate+')'
-    sleep(1)
-    #driver.service.process.send_signal(signal.SIGTERM)
-    #driver.quit()
     
     return stock_price
 
@@ -462,7 +398,6 @@ output : tuple(최근 7일 목표주가, 현재가)
 def getCurrentStockConsenFromHK():
     
     #한경 컨세서스 연결.
-    
     stock_dic_list = []
     
     KST=datetime.now(timezone('Asia/Seoul'))
@@ -476,16 +411,6 @@ def getCurrentStockConsenFromHK():
     request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=business&sdate='+startday_str+'&edate='+today_str+'&pagenum='+stock_count+'&order_type=12000001&now_page=1'
     
     print request_url
-    
-    #driver = webdriver.PhantomJS(phantomjs)
-   # driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    #driver.delete_all_cookies()
-    '''
-    opt = webdriver.ChromeOptions()
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-    '''
     
     driver.get(request_url)
     #html = driver.page_source
@@ -576,9 +501,7 @@ def getCurrentStockConsenFromHK():
             
         #print stock_dic
     stock_dic_list_sorted = sorted(stock_dic_list, key=lambda k: k['diff_rate'], reverse=False)
-    
-    #driver.service.process.send_signal(signal.SIGTERM)
-    #driver.quit()
+
     
     return stock_dic_list_sorted
 
@@ -590,9 +513,6 @@ def makeSTOCKHtml(stock_dic_list):
     
     stock_html = "<span style=\"font-size: 10pt;\">금일의 상승여력 랭킹</span><br>"\
     "<span style=\"font-size: 10pt;\">"+time_info+"기준 발행된 증권사 리서치 보고서 중 목표가와 현 주가의 괴리율이  큰 기업순위입니다.</span><br>"\
-    #"<br>FundingChoice에서는 최신자료로 매일 업데이트 됩니다"\
-    #"<br>오늘자 정보가 아니면 "\
-    #"<font size=5><a href=\"http://fundingchoice.co.kr/?cat=63\">[여기]</a></font>에서 최신 비교자료를 확인하세요"\
     "<br/>"\
     "&nbsp;" 
     
@@ -676,49 +596,46 @@ def main(login_pw):
     setChromedriverPath()
     setWebDriverInit()
     
+    try:
+        #최근 몇개 주식을 가지고 올것이냐
+        setStockLoadCount("250")
+        #250
+            #괴리율 랭킹 몇등까지 표출
+        setStockRankCount(30)
+        #20
+            #이전목표주가는 몇개까지 표출
+        setPrePriceCount(7)
+        #7
+            #몇일전 보고서 까지 찾을꺼냐
+        setStockDaysCount(14)
+        #14
+            
+        stock_dic_list = getCurrentStockConsenFromHK()
         
-    #최근 몇개 주식을 가지고 올것이냐
-    setStockLoadCount("250")
-    #250
-    
-    #괴리율 랭킹 몇등까지 표출
-    setStockRankCount(30)
-    #20
-    
-    #이전목표주가는 몇개까지 표출
-    setPrePriceCount(7)
-    #7
-    
-    #몇일전 보고서 까지 찾을꺼냐
-    setStockDaysCount(14)
-    #14
-    
-    
-    stock_dic_list = getCurrentStockConsenFromHK()
-    
-    result_html = makeSTOCKHtml(stock_dic_list)
-    
-    print "  "
-    print "--------------------------------"
-    print "  "
-    
-    print result_html 
-    
-    print "--------------------------------"
-    
-    KST=datetime.now(timezone('Asia/Seoul'))
-    title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 상승여력 랭킹 '
-    
-    WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), "", title_name, "", result_html)
-    #writeTstoryPost("742010",title_name,"",result_html)
-    
-    print "--------------------------------"
-    STATES.starting=0
-    
-    setWebDriverClose()
-
-    
-
+        result_html = makeSTOCKHtml(stock_dic_list)
+        
+        print "  "
+        print "--------------------------------"
+        print "  "
+        
+        #print result_html 
+        
+        print "--------------------------------"
+        
+        KST=datetime.now(timezone('Asia/Seoul'))
+        title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 상승여력 랭킹 '
+        
+        WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), "", title_name, "", result_html)
+        print "--------------------------------"
+        
+        STATES.starting=0
+    except:
+        print "exception"
+        
+    finally:
+        #Driver 닫기
+        setWebDriverClose()
+        
 
 if __name__ == '__main__':
     print "=========================="
@@ -726,4 +643,9 @@ if __name__ == '__main__':
     print "=========================="
     
     main(sys.argv[1])
+
+    print "=========================="
+    print "========[ SUCCESS ]========="    
+    print "=========================="
+
     
