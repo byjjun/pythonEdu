@@ -52,7 +52,7 @@ def main(login_pw):
         title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 상승여력 랭킹 '
         
         driver = Preference.getWebDriver()
-        WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), "", title_name, "", result_html)
+        WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), Preference.getCategory("상승여력"), title_name, "", result_html)
         print "--------------------------------"
         
         

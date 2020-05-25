@@ -18,6 +18,23 @@ stock_rank_count = None
 stock_days_count = None
 stock_load_count = None
 
+
+def getCategory(categorykind):
+    if(categorykind == '상승여력'):
+        #return '//*[@id="inspector-checkbox-control-7"]'
+        return '//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[3]/div/div[4]/div/div/span'
+    
+    elif(categorykind == '목표상향'):
+        return '//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[2]/div/div[2]/div/div/span'
+    
+    elif(categorykind == '거래폭발'):
+        return '//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[2]/div/div[1]/div/div/span'
+    
+    else:
+        #미분류
+        return '//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[2]/div/div[3]/div/div/span' 
+
+
 def setPhantomjsPath():
     global phantomjs
     if(platform.system() == 'Windows'):
@@ -28,15 +45,19 @@ def setPhantomjsPath():
 def setChromedriverPath():
     global chromedrive
     if(platform.system() == 'Windows'):
-        chromedrive='C:\\dev\\py_stockchoice\\ChoiceStock\\src\\write\\lib\\chromedriver.exe'
+        chromedrive='C:\\git_repo\\pythonEdu\\ChoiceStock\\src\\write\\lib\\chromedriver.exe'
     else:
         chromedrive='/usr/bin/chromedriver'
 
 def setWebDriverInit():
     global driver
     opt = webdriver.ChromeOptions()
+    
+    #headless
+    '''
     opt.add_argument('headless')
     opt.add_argument("--disable-gpu")
+    '''
     driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     return driver
 

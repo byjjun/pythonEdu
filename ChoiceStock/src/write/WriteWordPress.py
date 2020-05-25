@@ -57,7 +57,7 @@ def write_post(driver,category,title, tag, post_content):
     driver.find_element_by_xpath('//*[@id="post-title-1"]').send_keys(title)
     
     ### step 3, write tag ###
-    #driver.find_element_by_xpath(category).click()
+    
     #driver.find_element_by_xpath('//*[@id="new-tag-post_tag"]').send_keys(tag)
     #driver.find_element_by_xpath('//*[@id="post_tag"]/div/div[2]/p/input[2]').click()
         
@@ -69,14 +69,27 @@ def write_post(driver,category,title, tag, post_content):
     a_post=driver.find_element_by_xpath('//*[@id="post-content-0"]')
     driver.execute_script("arguments[0].value = arguments[1];", a_post, apost)
     sleep(5)
+    
     driver.find_element_by_xpath('//*[@id="post-content-0"]').send_keys(Keys.ENTER)
     sleep(10)
-    
-    ### step 5, post submit ####
+        
+    ### step 5, select category ####
     driver.implicitly_wait(1000)
     sleep(1)
+    
     driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME) 
     driver.implicitly_wait(1000)
+    
+    print '-------'
+    print category
+    print '-------'
+    driver.find_element_by_xpath('//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[2]/h2/button').click()
+    sleep(1)
+    driver.find_element_by_xpath(category).click()
+    sleep(1)
+    
+    ### step 6, post submit ####
+    
     
     driver.find_element_by_xpath('//*[@id="editor"]/div/div/div/div[1]/div[2]/div[1]/button').click()
     driver.implicitly_wait(1000)
