@@ -79,10 +79,7 @@ def write_post(driver,category,title, tag, post_content):
     
     driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME) 
     driver.implicitly_wait(1000)
-    
-    print '-------'
-    print category
-    print '-------'
+
     driver.find_element_by_xpath('//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[2]/h2/button').click()
     sleep(1)
     driver.find_element_by_xpath(category).click()

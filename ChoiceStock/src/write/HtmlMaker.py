@@ -10,7 +10,7 @@ Created on 2020. 5. 21.
 from datetime import datetime
 from pytz import timezone
 from src.util import Preference
-from src.get import GetStockListfromHK
+from src.get import GetStockListfromHK, GetStockInfoDetail
 
 def makeSTOCKHtml(stock_dic_list):
     
@@ -35,7 +35,9 @@ def makeSTOCKHtml(stock_dic_list):
         stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표가 대비 현재가 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
         "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+") : "+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
-
+        
+        stock_html += makeStockDetailHtml(stock_dic['stock_code'])
+        
         pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
         #print "."
 
@@ -82,3 +84,34 @@ def makePreSTOCKHtml(stockcode):
     html_str += '</table></span>'
         
     return html_str
+
+
+'''
+주가 추가정보 html로 리턴
+'''
+def makeStockDetailHtml(stockcode):
+    
+    stock_info = GetStockInfoDetail.getStockDeatilInfofromPaxnet(stockcode)
+    #print stock_info
+    
+    html_str = '<br><span style=\"font-size: 9pt;\">'
+    html_str += '시총:' + stock_info['total_cap'].encode('UTF-8')+'억'
+    html_str += ' / 거래량:' + stock_info['today_volume'].encode('UTF-8')+'('+stock_info['volume_ratio'].encode('UTF-8')+'%)'
+    html_str += ' / PBR:'+stock_info['PBR'].encode('UTF-8')
+    html_str += ' / PER:'+stock_info['PER'].encode('UTF-8')
+    html_str += '<span><br>'
+    
+    #print html_str
+    return html_str
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
