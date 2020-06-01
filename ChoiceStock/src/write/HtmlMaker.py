@@ -12,6 +12,8 @@ from pytz import timezone
 from src.util import Preference
 from src.get import GetStockListfromHK, GetStockInfoDetail
 
+MARKTAG_STATS=False
+
 def makeSTOCKHtml(stock_dic_list):
     
     KST=datetime.now(timezone('Asia/Seoul'))
@@ -96,16 +98,51 @@ def makeStockDetailHtml(stockcode):
     
     html_str = '<br><span style=\"font-size: 9pt;\">'
     html_str += '시총:' + stock_info['total_cap'].encode('UTF-8')+'억'
+    html_str += makeMarkTagStart(stock_info['volume_ratio'], '100', 'VOLUME', '')
     html_str += ' / 거래량:' + stock_info['today_volume'].encode('UTF-8')+'('+stock_info['volume_ratio'].encode('UTF-8')+'%)'
+    html_str += makeMarkTagEnd()
+    html_str += makeMarkTagStart('1', stock_info['PBR'], 'PBR', '')
     html_str += ' / PBR:'+stock_info['PBR'].encode('UTF-8')
+    html_str += makeMarkTagEnd()
+    html_str += makeMarkTagStart('10', stock_info['PER'], 'PER', '')
     html_str += ' / PER:'+stock_info['PER'].encode('UTF-8')
+    html_str += makeMarkTagEnd()
     html_str += '<span><br>'
     
     #print html_str
     return html_str
     
     
+def makeMarkTagStart(compare_value, control_value, check_kind, additional_check):
     
+    global MARKTAG_STATS
+    
+    mark_start_html = ''
+    
+    input_1 = float(compare_value)
+    input_2 = float(control_value)
+        
+    if(input_1 > input_2):
+        mark_start_html = '<mark><b>'
+        MARKTAG_STATS=True    
+            
+    return mark_start_html
+
+def makeMarkTagEnd():
+    
+    global MARKTAG_STATS
+    mark_end_html = ''
+    
+    if(MARKTAG_STATS):
+        mark_end_html = '</b></mark>'    
+    else:
+        mark_end_html = ''
+    
+    MARKTAG_STATS=False
+    return mark_end_html
+    
+    
+
     
     
     
