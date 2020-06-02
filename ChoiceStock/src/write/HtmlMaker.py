@@ -125,9 +125,10 @@ def makeMarkTagStart(compare_value, control_value, check_kind, additional_check)
     input_1 = float(compare_value)
     input_2 = float(control_value)
         
-    if(input_1 > 0.0 & input_1 > input_2):
-        mark_start_html = '<mark><b>'
-        MARKTAG_STATS=True
+    if(input_1 > 0.0):
+        if(input_1 > input_2):
+            mark_start_html = '<mark><b>'
+            MARKTAG_STATS=True
             
     return mark_start_html
 
