@@ -116,16 +116,16 @@ def makeStockDetailHtml(stockcode):
     return html_str
     
     
-def makeMarkTagStart(compare_value, control_value, check_kind, additional_check):
+def makeMarkTagStart(value_1, value_2, check_kind, additional_check):
     
     global MARKTAG_STATS
     
     mark_start_html = ''
     
-    input_1 = float(compare_value)
-    input_2 = float(control_value)
+    input_1 = float(value_1)
+    input_2 = float(value_2)
         
-    if(input_1 > 0.0):
+    if(input_2 > 0.0):
         if(input_1 > input_2):
             mark_start_html = '<mark><b>'
             MARKTAG_STATS=True
