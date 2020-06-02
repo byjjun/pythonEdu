@@ -98,14 +98,17 @@ def makeStockDetailHtml(stockcode):
     
     html_str = '<br><span style=\"font-size: 9pt;\">'
     html_str += '시총:' + stock_info['total_cap'].encode('UTF-8')+'억'
+    html_str += ' / '
     html_str += makeMarkTagStart(stock_info['volume_ratio'], '100', 'VOLUME', '')
-    html_str += ' / 거래량:' + stock_info['today_volume'].encode('UTF-8')+'('+stock_info['volume_ratio'].encode('UTF-8')+'%)'
+    html_str += '거래량:' + stock_info['today_volume'].encode('UTF-8')+'('+stock_info['volume_ratio'].encode('UTF-8')+'%)'
     html_str += makeMarkTagEnd()
+    html_str += ' / '
     html_str += makeMarkTagStart('1', stock_info['PBR'], 'PBR', '')
-    html_str += ' / PBR:'+stock_info['PBR'].encode('UTF-8')
+    html_str += 'PBR:'+stock_info['PBR'].encode('UTF-8')
     html_str += makeMarkTagEnd()
+    html_str += ' / '
     html_str += makeMarkTagStart('10', stock_info['PER'], 'PER', '')
-    html_str += ' / PER:'+stock_info['PER'].encode('UTF-8')
+    html_str += 'PER:'+stock_info['PER'].encode('UTF-8')
     html_str += makeMarkTagEnd()
     html_str += '<span><br>'
     
