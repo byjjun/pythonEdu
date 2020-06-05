@@ -293,10 +293,10 @@ def getUpturnStockFromHK():
                 stock_dic['stock_name']=stock_name
                 title = all_title[end+1:len(all_title)]
                 stock_dic['title']=title
-                print stock_dic['all_title']
-                print stock_dic['stock_code']
+                #print stock_dic['all_title']
+                #print stock_dic['stock_code']
                 print stock_dic['stock_name']
-                print stock_dic['title']
+                #print stock_dic['title']
             if(i==3):
                 #print astock_data.text
                 stock_dic['analyst_name']=astock_data.text                
@@ -311,7 +311,7 @@ def getUpturnStockFromHK():
                 stock_dic['old_price']=astock_data.text
                 continue
             i=i+1
-            print "."
+            #print "."
         
 
         stock_dic['companyinfo_url']='http://media.kisline.com/highlight/mainHighlight.nice?paper_stock='+stock_code+'&nav=1'    
