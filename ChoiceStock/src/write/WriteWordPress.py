@@ -63,7 +63,7 @@ def write_post(driver,category,title, tag, post_content):
         
     ### step 4, write els post ###
     apost = post_content
-    print apost
+    #print apost
     
     #textarea에 한방에 집어넣는거.. 신기하네. =_=
     a_post=driver.find_element_by_xpath('//*[@id="post-content-0"]')
