@@ -54,8 +54,8 @@ def setWebDriverInit():
     opt = webdriver.ChromeOptions()
     
     #headless
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
+    #opt.add_argument('headless')
+    #opt.add_argument("--disable-gpu")
     
     driver = webdriver.Chrome(chromedrive, chrome_options=opt)
     return driver

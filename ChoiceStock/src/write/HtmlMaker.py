@@ -58,6 +58,55 @@ def makeSTOCKHtml(stock_dic_list):
     return stock_html
 
 
+
+def makeUpturnStockHtml(stock_dic_list):
+    
+    KST=datetime.now(timezone('Asia/Seoul'))
+    time_info = KST.strftime('%Y-%m-%d %H:%M')
+        
+    stock_html = "<span style=\"font-size: 10pt;\">금일/전일 목표가 상향기업</span><br>"\
+    "<span style=\"font-size: 10pt;\">"+time_info+"기준 발행된 증권사 리서치 보고서 중 목표가 상향기업 리스트입니다.</span><br>"\
+    "<br/>"\
+    "&nbsp;" 
+    
+    pre_stockconsen_html =""
+    
+    count = 1
+    for stock_dic in stock_dic_list:
+        
+        stock_html += \
+        "<hr style=\"border: double 1px black;\">"\
+        "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")"\
+        "<a href=\""+stock_dic['companyinfo_url'].encode('UTF-8')+"\">[기업]</a></br>"
+        #"<a href=\""+stock_dic['report_url'].encode('UTF-8')+"\">[report]</a></span><br>"
+        
+        stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>상승률  : "+ stock_dic['upper_rate'].encode('UTF-8') +"%</strong></span> (<strong>신규"+ stock_dic['new_price'].encode('UTF-8') +"</strong> / 이전 "+stock_dic['old_price'].encode('UTF-8')+")</span><br>"                             
+        stock_html += "<span style=\"font-size: 10pt;\"><span style=\"font-size: 12pt;\"><strong>목표가 대비 현재가 : "+stock_dic['diff_rate'].encode('UTF-8')+"%</strong></span> (현재 "+stock_dic['now_price'].encode('UTF-8')+" / <strong>목표"+stock_dic['new_price'].encode('UTF-8')+"</strong>)</span><br>"\
+        "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+") : "+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
+        "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
+        
+        stock_html += makeStockDetailHtml(stock_dic['stock_code'])
+        
+        pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+        #print "."
+
+        count = count+1
+
+        stock_html += pre_stockconsen_html + '<br>'
+        
+        print '-------'
+                
+    stock_html += \
+    "<br><br>"\
+    "<hr style=\"border: double 1px black;\">"\
+    "<span style=\"font-size: 10pt;\">증권 투자는 원금손실의 가능성에 유의하시고, 투자자 본인의 판단과 책임하에 최종 결정을 하셔야 합니다. </span><br>"\
+    "<span style=\"font-size: 10pt;\">본 자료는 어떠한 경우에도 증권투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.</span><br>"    
+    
+    return stock_html
+
+
+
+
 '''
 최근 2달 목표주가 html로 리턴
 '''
