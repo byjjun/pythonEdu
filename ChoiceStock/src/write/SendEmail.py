@@ -30,9 +30,11 @@ html = '<span style="font-size: 10pt;">금일의 상승여력 랭킹</span><br><
 part2 = MIMEText(html, "html")
 message.attach(part2)
 
-s = smtplib.SMTP_SSL(smtp_server,port)
-s.sendmail(sender_email,receiver_email, message.as_string())
-s.quit()
+smtp_session = smtplib.SMTP_SSL(smtp_server,port)
+smtp_session.login(sender_email, password)
+
+smtp_session.sendmail(sender_email,receiver_email, message.as_string())
+smtp_session.quit()
 
 
 
