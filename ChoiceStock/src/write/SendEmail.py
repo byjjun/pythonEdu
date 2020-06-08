@@ -13,9 +13,8 @@ from email.mime.multipart import MIMEMultipart
 
 port = 465
 smtp_server = "smtp.gmail.com"
-
 sender_email = "stockchoicebyjjun@gmail.com"
-receiver_email = "byjjun@gmail.com"
+receiver_email = "stockchoicebyjjun@gmail.com"
 
 password = sys.argv[1]
 print password
