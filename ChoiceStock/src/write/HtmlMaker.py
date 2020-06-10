@@ -199,5 +199,7 @@ def makeMarkTagEnd():
     return mark_end_html
     
 
-    
+def getStylesHtml():
+    stylesheet_htmlcode = '<head><link rel="stylesheet" href="http://choicestock.cafe24.com/wp-content/themes/sparkling/style.css"></head>'
+    return stylesheet_htmlcode    
     
