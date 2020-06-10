@@ -8,7 +8,7 @@ Created on 2020. 6. 8.
 
 import smtplib
 import sys
-import HtmlMaker
+from src.write import HtmlMaker
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
