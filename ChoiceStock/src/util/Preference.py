@@ -44,7 +44,7 @@ def getVolAgainstTime(volume_ratio):
     KST=datetime.now(timezone('Asia/Seoul'))
     time_info = KST.strftime('%H%M')
     if(int(time_info) < 940):
-        if(float(volume_ratio) > 60.0):
+        if(float(volume_ratio) > 50.0):
              result=True
         else:
             result=False
@@ -54,7 +54,7 @@ def getVolAgainstTime(volume_ratio):
         else:
             result=False
     if(int(time_info) < 1110):
-        if(float(volume_ratio) > 180.0):
+        if(float(volume_ratio) > 150.0):
              result=True
         else:
             result=False
@@ -64,7 +64,7 @@ def getVolAgainstTime(volume_ratio):
         else:
             result=False
     else:
-        if(float(volume_ratio) > 80.0):
+        if(float(volume_ratio) > 300.0):
              result=True
         else:
             result=False
