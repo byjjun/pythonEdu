@@ -114,8 +114,9 @@ def makeVolumeUpHtml(stock_dic_list):
     
     KST=datetime.now(timezone('Asia/Seoul'))
     time_info = KST.strftime('%Y-%m-%d %H:%M')
+    stock_html = "<head><link rel=\"stylesheet\" href=\"http://choicestock.cafe24.com/wp-content/themes/sparkling/style.css\"></head>"
     
-    stock_html = "<span style=\"font-size: 10pt;\">금일의 거래폭발 랭킹</span><br>"\
+    stock_html += "<span style=\"font-size: 10pt;\">금일의 거래폭발 랭킹</span><br>"\
     "<span style=\"font-size: 10pt;\">"+time_info+"기준 발행된 증권사 리서치 보고서 중 목표가와 현 주가의 괴리율이  큰 기업 중 거래량이 폭증한 종목 입니다.</span><br>"\
     "<br/>"\
     "&nbsp;" 

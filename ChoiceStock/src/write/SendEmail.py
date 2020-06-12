@@ -29,8 +29,7 @@ def sendMailtoGmail(title,contents, mail_pw):
     message["To"]=receiver_email
     
     
-    html=HtmlMaker.getStylesHtml() 
-    html+=contents
+    html=contents
     
     part2 = MIMEText(html, "html")
     message.attach(part2)
