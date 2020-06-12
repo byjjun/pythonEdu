@@ -20,11 +20,8 @@ def sendMailtoGmail(title,contents, mail_pw):
     sender_email = "stockchoicebyjjun@gmail.com"
     receiver_email = "stockchoicebyjjun@gmail.com"
     
-    password = sys.argv[1]
-    print password
-    
     message=MIMEMultipart("alternative")
-    message["Subject"]=title
+    message["Subject"]=''.join(title)
     message["From"]=sender_email
     message["To"]=receiver_email
     
