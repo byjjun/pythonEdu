@@ -7,6 +7,9 @@ Created on 2020. 5. 21.
 
 import platform
 from selenium import webdriver
+from datetime import datetime
+from pytz import timezone
+
 
 
 # Initialize
@@ -33,6 +36,49 @@ def getCategory(categorykind):
     else:
         #미분류
         return '//*[@id="editor"]/div/div/div/div[4]/div/div[3]/div[2]/div/div[3]/div/div/span' 
+
+
+def getVolAgainstTime(volume_ratio):
+    result = False
+    
+    KST=datetime.now(timezone('Asia/Seoul'))
+    time_info = KST.strftime('%H%M')
+    if(int(time_info) < 940):
+        if(float(volume_ratio) > 60.0):
+             result=True
+        else:
+            result=False
+    if(int(time_info) < 1010):
+        if(float(volume_ratio) > 100.0):
+             result=True
+        else:
+            result=False
+    if(int(time_info) < 1110):
+        if(float(volume_ratio) > 180.0):
+             result=True
+        else:
+            result=False
+    if(int(time_info) < 1310):
+        if(float(volume_ratio) > 300.0):
+             result=True
+        else:
+            result=False
+    else:
+        if(float(volume_ratio) > 80.0):
+             result=True
+        else:
+            result=False
+    
+    return result
+
+
+def isLinux():
+    result = False
+    if(platform.system() == 'Windows'):
+        result = False
+    else:
+        result = True
+    return result
 
 
 def setPhantomjsPath():
