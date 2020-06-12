@@ -29,7 +29,7 @@ def sendMailtoGmail(title,contents, mail_pw):
     message["To"]=receiver_email
     
     
-    html=contents
+    html=''.join(contents)
     
     part2 = MIMEText(html, "html")
     message.attach(part2)
