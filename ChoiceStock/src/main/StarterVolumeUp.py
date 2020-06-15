@@ -7,6 +7,7 @@ Created on 2020. 5. 21.
 @author: 073860
 '''
 
+from time import time
 import sys
 import traceback
 from datetime import datetime
@@ -58,7 +59,8 @@ def main(login_pw):
         if(count>1):
             if(Preference.isLinux()):
                 SendEmail.sendMailtoGmail(title_name, result_html, login_pw)
-            
+                
+            time.sleep(10)
             WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), Preference.getCategory("거래폭발"), title_name, "", result_html)
         else:
             print "Nothing Catched"
