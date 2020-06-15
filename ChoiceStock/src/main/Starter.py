@@ -8,6 +8,7 @@ Created on 2020. 5. 21.
 '''
 
 import sys
+import traceback
 from datetime import datetime
 from pytz import timezone
 from src.write import WriteWordPress, HtmlMaker
@@ -56,7 +57,13 @@ def main(login_pw):
         print "--------------------------------"
         
         
-    except:
+    except Exception as e:
+        print '--- stack ---'
+        traceback.print_stack()
+        print '--- exec ---'
+        traceback.print_exc()
+        print '--- e ---'
+        print e
         print "exception"
         
     finally:

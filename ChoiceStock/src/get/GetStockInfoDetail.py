@@ -14,6 +14,8 @@ def getStockDeatilInfofromPaxnet(stock_code):
     stock_info = {}
     request_url = 'http://www.paxnet.co.kr/stock/analysis/presentValue?abbrSymbol='+stock_code   
     
+    print request_url 
+    
     driver = Preference.getWebDriver()
     
     try:

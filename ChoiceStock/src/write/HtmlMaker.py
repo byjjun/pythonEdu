@@ -6,7 +6,7 @@ Created on 2020. 5. 21.
 @author: 073860
 '''
 
-
+import traceback
 from datetime import datetime
 from pytz import timezone
 from src.util import Preference
@@ -38,10 +38,27 @@ def makeSTOCKHtml(stock_dic_list):
         "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+") : "+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
         
-        stock_html += makeStockDetailHtml(stock_dic['stock_code'])
-        
-        pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
-        #print "."
+        try:
+            print stock_dic['stock_code']
+            volume_ratio, detail_html = makeStockDetailHtml(stock_dic['stock_code'])
+            stock_html += detail_html
+
+            #print "."
+        except Exception as e:
+            print '--- stack ---'
+            traceback.print_stack()
+            print '--- exec ---'
+            traceback.print_exc()
+            print 'makestockdetail exception'
+
+        try:
+            pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+        except Exception as e:
+            print '--- stack ---'
+            traceback.print_stack()
+            print '--- exec ---'
+            traceback.print_exc()
+            print 'prestockhtml exception'
 
         count = count+1
 
@@ -89,9 +106,26 @@ def makeUpturnStockHtml(stock_dic_list):
         "<span style=\"font-size: 10pt;\">"+stock_dic['analyst_company'].encode('UTF-8')+"("+stock_dic['analyst_name'].encode('UTF-8')+") : "+stock_dic['update_date'].encode('UTF-8')+"</span><br>"\
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
         
-        stock_html += makeStockDetailHtml(stock_dic['stock_code'])
         
-        pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+        try:
+            volume_ratio, detail_html = makeStockDetailHtml(stock_dic['stock_code'])
+            stock_html += detail_html
+            
+        except Exception as e:
+            print '--- stack ---'
+            traceback.print_stack()
+            print '--- exec ---'
+            traceback.print_exc()
+            print 'makestockdetail exception'
+            
+        try:
+            pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+        except Exception as e:
+            print '--- stack ---'
+            traceback.print_stack()
+            print '--- exec ---'
+            traceback.print_exc()
+            print 'prestockhtml exception'
         #print "."
 
         count = count+1
@@ -126,7 +160,15 @@ def makeVolumeUpHtml(stock_dic_list):
     count = 1
     for stock_dic in stock_dic_list:
         
-        volume_ratio, stockdetailhtml = makeStockDetailHtml(stock_dic['stock_code']) 
+        try:
+            volume_ratio, stockdetailhtml = makeStockDetailHtml(stock_dic['stock_code'])
+        except Exception as e:
+            print '--- stack ---'
+            traceback.print_stack()
+            print '--- exec ---'
+            traceback.print_exc()
+            print 'stockdetail exception'
+         
         if(Preference.getVolAgainstTime(volume_ratio)):
             stock_html += \
             "<hr style=\"border: double 1px black;\">"\
@@ -139,8 +181,15 @@ def makeVolumeUpHtml(stock_dic_list):
             
             stock_html += stockdetailhtml
             
-            pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
-            #print "."
+            try:
+                pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
+                #print "."
+            except Exception as e:
+                print '--- stack ---'
+                traceback.print_stack()
+                print '--- exec ---'
+                traceback.print_exc()
+                print 'prestockhtml exception'
     
             stock_html += pre_stockconsen_html + '<br>'
             
