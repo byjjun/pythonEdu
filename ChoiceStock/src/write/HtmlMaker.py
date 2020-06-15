@@ -158,8 +158,9 @@ def makeVolumeUpHtml(stock_dic_list):
     pre_stockconsen_html =""
     
     count = 1
+    catchedcount = 1
     for stock_dic in stock_dic_list:
-        
+                
         try:
             volume_ratio, stockdetailhtml = makeStockDetailHtml(stock_dic['stock_code'])
         except Exception as e:
@@ -170,6 +171,7 @@ def makeVolumeUpHtml(stock_dic_list):
             print 'stockdetail exception'
          
         if(Preference.getVolAgainstTime(volume_ratio)):
+            catchedcount = catchedcount + 1
             stock_html += \
             "<hr style=\"border: double 1px black;\">"\
             "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")<br>"\
@@ -203,7 +205,7 @@ def makeVolumeUpHtml(stock_dic_list):
     "<span style=\"font-size: 10pt;\">증권 투자는 원금손실의 가능성에 유의하시고, 투자자 본인의 판단과 책임하에 최종 결정을 하셔야 합니다. </span><br>"\
     "<span style=\"font-size: 10pt;\">본 자료는 어떠한 경우에도 증권투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.</span><br>"    
     
-    return count, stock_html
+    return catchedcount, stock_html
 
 
 
