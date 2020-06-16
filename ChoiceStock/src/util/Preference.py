@@ -53,22 +53,22 @@ def getVolAgainstTime(volume_ratio):
         else:
             result=False
     if(int(time_info) < 1010):
-        if(float(volume_ratio) > 100.0):
+        if(float(volume_ratio) > 80.0):
              result=True
         else:
             result=False
     if(int(time_info) < 1110):
-        if(float(volume_ratio) > 150.0):
+        if(float(volume_ratio) > 100.0):
              result=True
         else:
             result=False
     if(int(time_info) < 1310):
-        if(float(volume_ratio) > 200.0):
+        if(float(volume_ratio) > 150.0):
              result=True
         else:
             result=False
     else:
-        if(float(volume_ratio) > 300.0):
+        if(float(volume_ratio) > 250.0):
              result=True
         else:
             result=False
