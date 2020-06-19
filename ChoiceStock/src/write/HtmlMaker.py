@@ -93,8 +93,8 @@ def makeUpturnStockHtml(stock_dic_list):
         
         stock_html += \
         "<hr style=\"border: double 1px black;\">"\
-        "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")"\
-        "<a href=\""+stock_dic['companyinfo_url'].encode('UTF-8')+"\"> [기업]</a></br>"
+        "<span style=\"font-size: 10pt;\"><span style=\"font-size: 18pt;\"><strong><a href=\"https://finance.naver.com/item/main.nhn?code="+stock_dic['stock_code'].encode('UTF-8')+"\" target=\"_blank\">" +stock_dic['stock_name'].encode('UTF-8')+"</a></strong></span>("+stock_dic['stock_code'].encode('UTF-8')+") 현재가 : "+ stock_dic['now_price'].encode('UTF-8')+"("+stock_dic['now_updown_rate'].encode('UTF-8')+")<br>"\
+        "<a href=\""+stock_dic['companyinfo_url'].encode('UTF-8')+"\"> [기업]</a><a href=\""+stock_dic['report_url'].encode('UTF-8')+"\">[report]</a></span><br>"
         #"<a href=\""+stock_dic['report_url'].encode('UTF-8')+"\">[report]</a></span><br>"
         
         stock_html += "<strong>상승률  : "+ stock_dic['upper_rate'].encode('UTF-8') +"%</strong> (<strong>신규"+ stock_dic['new_price'].encode('UTF-8') +"</strong> / 이전 "+stock_dic['old_price'].encode('UTF-8')+")</span><br>"                             

@@ -104,6 +104,7 @@ def getStockGoodBadfromHK(stock_code):
                 
         #목표상향 갯수 추출
         request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
+        print request_url
         
         driver.get(request_url)        
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
@@ -113,10 +114,16 @@ def getStockGoodBadfromHK(stock_code):
         stock_element_list = soup.find_all('tr')
         
         for stock_element in stock_element_list:
-            count_good=count_good+1
-        
+            result_msg = stock_element.find('td').text
+            #print result_msg
+            #if(result_msg.find("결과가".decode('UTF-8'))):
+            if "결과가".decode('UTF-8') in result_msg:
+                print "None"
+            else:
+                count_bad=count_bad+1        
         #목표하향 갯수 추출
         request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_bad&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
+        print request_url
         
         driver.get(request_url)        
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
@@ -126,11 +133,17 @@ def getStockGoodBadfromHK(stock_code):
         stock_element_list = soup.find_all('tr')
         
         for stock_element in stock_element_list:
-            count_bad=count_bad+1
+            result_msg = stock_element.find('td').text
+            #print result_msg
+            #if(result_msg.find("결과가".decode('UTF-8'))):
+            if "결과가".decode('UTF-8') in result_msg:
+                print "None"
+            else:
+                count_bad=count_bad+1
         
     except Exception as e:
         print(e)        
 
-    return (count_good-1), (count_bad-1)
+    return count_good, count_bad
 
 #getStockDeatilInfofromPaxnet('228760')

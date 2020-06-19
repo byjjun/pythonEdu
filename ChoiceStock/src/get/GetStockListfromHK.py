@@ -262,9 +262,9 @@ def getUpturnStockFromHK():
     
     
     
+    
     table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
     tablebody_html = table_element.get_attribute('innerHTML')
-    
     
     soup = BeautifulSoup(tablebody_html, "html.parser")
     
@@ -278,11 +278,26 @@ def getUpturnStockFromHK():
         stock_dic ={}
         i = 1
         for astock_data in stock_data:
+            
             if(i==1):
                 #print astock_data.text
                 stock_dic['update_date']=astock_data.text
-            if(i==2):                
-                #print astock_data.find('strong').text
+            if(i==2):
+                #print '---'
+                stock_dic['report_url']=''
+                try:
+                    spl1 = str(astock_data).split("\n")
+                    #print spl1
+                    spl2 = spl1[3].split("\"")
+                    #print spl2
+                    spl3 = spl2[3].split("_")
+                    #print spl3
+                    report_index = spl3[1]
+                    #print report_index
+                    stock_dic['report_url']='http://consensus.hankyung.com/apps.analysis/analysis.downpdf?report_idx='+report_index
+                except:
+                    stock_dic['report_url']=''
+                    
                 stock_dic['all_title'] = astock_data.find('strong').text
                 all_title = stock_dic['all_title']
                 start = all_title.find('(')+1
@@ -350,6 +365,41 @@ def getUpturnStockFromHK():
 
 
     
+def tester():
     
+
+    today = date.today()   
+    yesterday = today - timedelta(1)
+    yesterday_str = yesterday.strftime('%Y-%m-%d')
+    
+    today_str = datetime.today().strftime('%Y-%m-%d')
+    
+    request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+yesterday_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
+    print request_url
+        
+    
+    driver = Preference.getWebDriver()   
+    driver.get(request_url)
+    
+    report_index_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody/tr/td[2]/div')
+    report_index_html = report_index_element.get_attribute('innerHTML')
+    spl = report_index_html.split("\"")
+    spl2 = spl[1].split("_")
+    report_index = spl2[1]
+    
+    
+    '''
+    soup = BeautifulSoup(tablebody_html, "html.parser")
+    div_list = soup.find_all('div')
+    
+    for _div in div_list:
+        print _div
+        print '---'
+    '''
+
+    #print tablebody_html
+    
+    
+    return True
     
 
