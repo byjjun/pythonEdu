@@ -104,7 +104,7 @@ def getStockGoodBadfromHK(stock_code):
                 
         #목표상향 갯수 추출
         request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
-        print request_url
+        #print request_url
         
         driver.get(request_url)        
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
@@ -123,7 +123,7 @@ def getStockGoodBadfromHK(stock_code):
                 count_good=count_good+1        
         #목표하향 갯수 추출
         request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_bad&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
-        print request_url
+        #print request_url
         
         driver.get(request_url)        
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')

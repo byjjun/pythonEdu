@@ -310,7 +310,7 @@ def getUpturnStockFromHK():
                 stock_dic['title']=title
                 #print stock_dic['all_title']
                 #print stock_dic['stock_code']
-                print stock_dic['stock_name']
+                #print stock_dic['stock_name']
                 #print stock_dic['title']
             if(i==3):
                 #print astock_data.text
