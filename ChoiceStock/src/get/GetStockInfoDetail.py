@@ -120,7 +120,7 @@ def getStockGoodBadfromHK(stock_code):
             if "결과가".decode('UTF-8') in result_msg:
                 print "None"
             else:
-                count_bad=count_bad+1        
+                count_good=count_good+1        
         #목표하향 갯수 추출
         request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_bad&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
         print request_url
