@@ -261,6 +261,12 @@ def makeStockDetailHtml(stockcode):
     html_str += makeMarkTagStart('10', stock_info['PER'], 'PER', '')
     html_str += 'PER:'+stock_info['PER'].encode('UTF-8')
     html_str += makeMarkTagEnd()
+    html_str += ' / '
+    html_str += makeMarkTagStart(stock_info['GOOD'], 0.1, 'GOOD', '')
+    html_str += 'G:'+stock_info['GOOD'].encode('UTF-8')
+    html_str += makeMarkTagEnd()
+    html_str += ' / '
+    html_str += 'B:'+stock_info['BAD'].encode('UTF-8')
     html_str += '<span><br>'
     
     #print html_str

@@ -7,6 +7,8 @@ Created on 2020. 5. 22.
 '''
 
 from src.util import Preference
+from datetime import date, timedelta
+from bs4 import BeautifulSoup
 
 def getStockDeatilInfofromPaxnet(stock_code):
     
@@ -71,7 +73,13 @@ def getStockDeatilInfofromPaxnet(stock_code):
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[2]')
         stock_info['PBR']= stock_info_element.get_attribute('innerHTML')
         print stock_info['PBR'] 
-            
+        
+        good_count = 0
+        bad_count = 0
+        
+        good_count, bad_count = getStockGoodBadfromHK(stock_code)
+        stock_info['GOOD']=str(good_count)
+        stock_info['BAD']=str(bad_count)
     
     except Exception as e:
         print(e)
@@ -79,5 +87,50 @@ def getStockDeatilInfofromPaxnet(stock_code):
     return stock_info
     
 
+def getStockGoodBadfromHK(stock_code):
+    
+    count_good = 0
+    count_bad = 0
+    
+    try:
+        
+        driver = Preference.getWebDriver()
+        
+        today = date.today()
+        pre_1month = today - timedelta(30)
+        
+        today_str = today.strftime('%Y-%m-%d')
+        pre_1month_str = pre_1month.strftime('%Y-%m-%d')
+                
+        #목표상향 갯수 추출
+        request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
+        
+        driver.get(request_url)        
+        table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
+        tablebody_html = table_element.get_attribute('innerHTML')
+        
+        soup = BeautifulSoup(tablebody_html, "html.parser")
+        stock_element_list = soup.find_all('tr')
+        
+        for stock_element in stock_element_list:
+            count_good=count_good+1
+        
+        #목표하향 갯수 추출
+        request_url = 'http://consensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_bad&search_text='+stock_code+'&sdate='+pre_1month_str+'&edate='+today_str
+        
+        driver.get(request_url)        
+        table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
+        tablebody_html = table_element.get_attribute('innerHTML')
+        
+        soup = BeautifulSoup(tablebody_html, "html.parser")
+        stock_element_list = soup.find_all('tr')
+        
+        for stock_element in stock_element_list:
+            count_bad=count_bad+1
+        
+    except Exception as e:
+        print(e)        
+
+    return (count_good-1), (count_bad-1)
 
 #getStockDeatilInfofromPaxnet('228760')
