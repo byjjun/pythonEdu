@@ -45,14 +45,15 @@ def getVolAgainstTime(volume_ratio):
     time_info = KST.strftime('%H%M')
     print "-----"
     print time_info
+    print volume_ratio
     print "-----"
     
-    if(int(time_info) < 940):
+    if(int(time_info) < 950):
         if(float(volume_ratio) > 50.0):
              result=True
         else:
             result=False
-    if(int(time_info) < 1010):
+    if(int(time_info) < 1020):
         if(float(volume_ratio) > 80.0):
              result=True
         else:
