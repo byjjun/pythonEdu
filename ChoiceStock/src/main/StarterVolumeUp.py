@@ -7,7 +7,7 @@ Created on 2020. 5. 21.
 @author: 073860
 '''
 
-from time import time
+import time
 import sys
 import traceback
 from datetime import datetime
