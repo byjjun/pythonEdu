@@ -51,7 +51,7 @@ def main(login_pw):
         print "--------------------------------"
         
         KST=datetime.now(timezone('Asia/Seoul'))
-        title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 거래 폭증종목 Catcher'
+        title_name = KST.strftime('%Y년 %m월 %d일 %H시 '),' 저평가 거래 폭증종목 Catcher'
         
         driver = Preference.getWebDriver()
         
