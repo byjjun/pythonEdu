@@ -48,29 +48,40 @@ def getVolAgainstTime(volume_ratio):
     print volume_ratio
     print "-----"
     
-    if(int(time_info) < 950):
+    if(int(time_info) < 930):
         if(float(volume_ratio) > 50.0):
              result=True
+             print "catch"
         else:
             result=False
-    if(int(time_info) < 1020):
+    elif(int(time_info) < 950):
+        if(float(volume_ratio) > 60.0):
+             result=True
+             print "catch"
+        else:
+            result=False
+    elif(int(time_info) < 1020):
         if(float(volume_ratio) > 80.0):
              result=True
+             print "catch"
         else:
             result=False
-    if(int(time_info) < 1110):
+    elif(int(time_info) < 1110):
         if(float(volume_ratio) > 100.0):
              result=True
+             print "catch"
         else:
             result=False
-    if(int(time_info) < 1310):
+    elif(int(time_info) < 1310):
         if(float(volume_ratio) > 150.0):
              result=True
+             print "catch"
         else:
             result=False
     else:
         if(float(volume_ratio) > 250.0):
              result=True
+             print "catch"
         else:
             result=False
     
