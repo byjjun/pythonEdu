@@ -80,7 +80,7 @@ def ReqeustData(obj):
         vol = obj.GetDataValue(6, i)  # 거래량
         kodex_price['vol']=vol
         all_kodex_price_list.append(kodex_price)
-        #print(date, open, high, low, close, diff, vol) 
+        print(date, open, high, low, close, diff, vol) 
     return True
 
 
