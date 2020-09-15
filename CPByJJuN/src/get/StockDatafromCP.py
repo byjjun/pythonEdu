@@ -7,6 +7,8 @@ Created on 2020. 9. 11.
 '''
  
 import win32com.client
+from util import ToCSV
+from conf import ConfigConsts
 
 
 class GetStockData:
@@ -39,6 +41,9 @@ class GetStockData:
         if rqStatus != 0:
             return False
      
+        ''' 파일OPEN '''
+        file=ToCSV.openCsvFile(self.stockCode)
+
         # 일자별 정보 데이터 처리
         count = obj.GetHeaderValue(1)  # 데이터 개수
         for i in range(count):
@@ -48,9 +53,16 @@ class GetStockData:
             low = obj.GetDataValue(3, i)  # 저가
             close = obj.GetDataValue(4, i)  # 종가
             diff = obj.GetDataValue(5, i)  # 차이
-            #vol = obj.GetDataValue(6, i)  # 거래량
-            print(date, open, high, low, close, diff)
-     
+            vol = obj.GetDataValue(6, i)  # 거래량
+            
+            '''파일로 Write'''
+            csvdataline=str(date)+','+str(open)+','+str(high)+','+str(low)+','+str(close)+','+str(diff)+','+str(vol)+'\n'
+            ToCSV.writeFile(file, csvdataline)
+            '''파일로 Write 끝'''
+            #print(date, open, high, low, close, diff, vol)
+         
+        ToCSV.closeCsvFile(file)
+         
         return True
     
     
@@ -61,7 +73,6 @@ class GetStockData:
          
         # 최초 데이터 요청
         ret = self.__reqeustData(objStockWeek)
-        
         # 연속 조회
         NextCount = 1
         while objStockWeek.Continue:  #연속 조회처리
