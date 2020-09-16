@@ -50,7 +50,8 @@ def sell_stock():
     a = ''
  
 def ReqeustData(obj):
-    print "make A122630 price list"
+    
+    print("make A122630 price list")
     # 데이터 요청
     obj.BlockRequest()
  
@@ -85,7 +86,7 @@ def ReqeustData(obj):
 
 
 def import_kodexprice(): 
-    print "Conneting Creon Plus"
+    print("Conneting Creon Plus")
     
     # 연결 여부 체크
     objCpCybos = win32com.client.Dispatch("CpUtil.CpCybos")
@@ -116,7 +117,7 @@ def import_kodexprice():
 
 def print_kodexprice():
     for all_kodex_price in all_kodex_price_list:
-        print all_kodex_price
+        print(all_kodex_price)
 
 
 import_kodexprice()

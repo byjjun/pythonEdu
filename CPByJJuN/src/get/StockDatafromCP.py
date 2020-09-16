@@ -13,10 +13,6 @@ from conf import ConfigConsts
 
 class GetStockData:
 
-    '''
-    --주요 코드 --
-    A122630 : KODEX레버리지
-    '''
     
     def __init__(self, stockCode, dataAmount):
         self.stockCode = stockCode
