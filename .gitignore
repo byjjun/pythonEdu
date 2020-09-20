@@ -1,1 +1,10 @@
 *.pyc
+ChoiceStock/src/__init__.pyc
+ChoiceStock/src/get/__init__.pyc
+ChoiceStock/src/get/GetStockListfromHK.pyc
+ChoiceStock/src/util/__init__.pyc
+ChoiceStock/src/util/Preference.pyc
+ChoiceStock/src/write/__init__.pyc
+ChoiceStock/src/write/HtmlMaker.pyc
+ChoiceStock/src/write/WriteWordPress.pyc
+CPByJJuN/.settings/org.eclipse.core.resources.prefs

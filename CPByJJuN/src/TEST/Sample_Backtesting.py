@@ -9,6 +9,8 @@ import datetime
 import backtrader as bt
 import backtrader.feeds as btfeed
 
+'''
+#SAMPLE
 class SmaCross(bt.Strategy): # bt.Strategy를 상속한 class로 생성해야 함.
     params = dict(
         pfast=5, # period for the fast moving average
@@ -27,6 +29,19 @@ class SmaCross(bt.Strategy): # bt.Strategy를 상속한 class로 생성해야 �
                 
         elif self.crossover < 0: # in the market & cross to the downside
             self.close() # 매도
+'''
+
+
+class SmaCross(bt.Strategy): # bt.Strategy를 상속한 class로 생성해야 함.
+    param = dict(
+        
+        
+    )
+
+
+
+
+
 cerebro = bt.Cerebro() # create a "Cerebro" engine instance
 
 
@@ -36,8 +51,8 @@ data = btfeed.GenericCSVData(
     
     dataname = "D:\\cpbyjjun\\data\\A122630.csv",
     
-    fromdate = datetime.datetime(2019, 1, 1),
-    todate = datetime.datetime(2019, 12, 31),
+    fromdate = datetime.datetime(2016, 4, 30),
+    todate = datetime.datetime(2020, 9, 15),
 
     nullvalue=0.0,
 
@@ -55,8 +70,8 @@ data = btfeed.GenericCSVData(
 
 
 cerebro.adddata(data)
-cerebro.broker.setcash(1000000) # 초기 자본 설정
-cerebro.broker.setcommission(commission=0.00015) # 매매 수수료는 0.015% 설정
+cerebro.broker.setcash(20000000) # 초기 자본 설정 20,000,000
+cerebro.broker.setcommission(commission=0.003) # 매매 수수료는 0.3% 설정
 cerebro.addstrategy(SmaCross) # 자신만의 매매 전략 추가
 cerebro.run() # 백테스팅 시작
 cerebro.plot() # 그래프로 보여주기
