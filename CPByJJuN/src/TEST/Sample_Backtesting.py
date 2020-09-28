@@ -51,7 +51,7 @@ cash_separate_size=20
 #몇일에 한번 살꺼냐(임시)
 date_separate_size=20
 #몇프로 수익나면 팔꺼냐
-selling_point_rate = 7.0
+selling_point_rate = 5.0
 
 
 class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해야 함.
@@ -121,7 +121,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             ### 수익률 계산 -- 끝    
             
             
-            self.log("CLOSE : " + str(close_value) + "$$$ BUYING : " + str(buying_price))
+            self.log("CLOSE : " + str(close_value) + " $$$ BUYING : " + str(buying_price))
             fund_earing_rate= (float(float(fund_everage_price) / float(buying_price))-1.0)*100
             self.log("FUND EARNING RATE : " + str(fund_earing_rate))
             

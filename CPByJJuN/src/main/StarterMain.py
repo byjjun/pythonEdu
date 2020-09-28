@@ -38,8 +38,7 @@ if(CONF.getmakeFile()):
     connect.checkConnect()
     #DATA가져와서 CSV 만들기
     print("MAKE CSV FIle")
-    ToCSV.clearCsvFile(CONF.stockcode)
     kodex = StockDatafromCP.GetStockData(CONF.stockcode,30)
-    kodex.getStockData()
+    kodex.getStockDatatoCSV()
     print("MAKE CSV FIle END")
 
