@@ -37,7 +37,8 @@ class GetStockData:
         if rqStatus != 0:
             return False
      
-        ''' 파일OPEN '''
+
+        ''' 파일 OPEN '''
         file=ToCSV.openCsvFile(self.stockCode)
 
         # 일자별 정보 데이터 처리
@@ -58,11 +59,15 @@ class GetStockData:
             #print(date, open, high, low, close, diff, vol)
          
         ToCSV.closeCsvFile(file)
+        
          
         return True
     
     
-    def getStockData(self):
+    def getStockDatatoCSV(self):
+
+        ''' 파일 초기화 '''
+        ToCSV.clearCsvFile(self.stockCode)
         
         objStockWeek = win32com.client.Dispatch("DsCbo1.StockWeek")
         objStockWeek.SetInputValue(0, self.stockCode)   #종목 코드 - 삼성전자

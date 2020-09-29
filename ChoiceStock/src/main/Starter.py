@@ -40,10 +40,7 @@ def main(login_pw):
         stock_dic_list = GetStockListfromHK.getCurrentStockConsenFromHK()
         
         result_html = HtmlMaker.makeSTOCKHtml(stock_dic_list)
-        
-        print "  "
-        print "--------------------------------"
-        print "  "
+
         
         #print result_html 
         
