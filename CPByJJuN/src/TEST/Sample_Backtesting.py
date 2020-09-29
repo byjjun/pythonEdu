@@ -66,7 +66,7 @@ result_value = 0.0
 #수익률(프로그램 입력)
 earings_rate = 0.0
 #매수한지 몇일 지났는지 확인(프로그램 입력)
-buying_period=0
+buying_period=1
 # 장종류(프로그램 입력)
 market_status="Bull" ##Bull/Bear/Sideway
 # 장 종류가 변할 때 로깅용(프로그램 입력)
@@ -129,8 +129,8 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         ##상승장
         if(market_status=="Bull"):
             
-            #하루 +1
-            buying_period=buying_period+1
+            #하루 감소
+            buying_period=buying_period-1
             
             ## 장종류가 변경되었을때 로깅용 - START
             if(change_market_type):
@@ -140,7 +140,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             ## 장종류가 변경되었을때 로깅용 - END
             
             ''' 펀드 잔고 확인 '''    
-            #self.log(self.getposition(data=self.data, broker=self.broker))
+            self.log(self.getposition(data=self.data, broker=self.broker))
             ''' 펀드 잔고 확인 '''
             position_size=self.getposition(data=self.data, broker=self.broker).size
                     
@@ -150,10 +150,10 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             
             
             ## 매수 날이 들어오면 매수
-            if(buying_period==date_separate_size):
+            if(buying_period < 1):
                 self.buy(size=buying_size)
                 self.log(str(" ## Buy : "+ str(buying_size)))
-                buying_period=0
+                buying_period=date_separate_size
              
             
             
@@ -204,15 +204,19 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         #print("BBB")
 
 
+
+#10일에 1회씩 20등분 해서 6.5% 수익 나면  매도
+#[ 시작 금액 : 10000000.0 // 최종 금액 : 15901855.389999993 // 수익률 : 59.02% ]
+
 '''
 환경세팅 - START
 '''
 #한번에 몇개 살꺼냐
 buying_size=-1
-#몇등분 할꺼냐
-cash_separate_size=20
 #몇일에 한번 살꺼냐(임시)
-date_separate_size=10
+date_separate_size = 10
+#몇등분 할꺼냐
+cash_separate_size = 20
 #몇프로 수익나면 팔꺼냐
 selling_point_rate = 6.5
 # 최초금액
@@ -222,6 +226,7 @@ debug_mode=True
 '''
 환경세팅 - END
 '''
+
 
 
 cerebro = bt.Cerebro() # create a "Cerebro" engine instance
@@ -245,7 +250,7 @@ data = btfeed.GenericCSVData(
 
 cerebro.adddata(data)
 
-cerebro.broker.setcash(start_value) # 초기 자본 설정 500,000
+cerebro.broker.setcash(start_value) # 초기 자본 설정
 cerebro.broker.setcommission(commission=0.003) # 매매 수수료는 0.3% 설정
 cerebro.addstrategy(TestStrategy) # 자신만의 매매 전략 추가
 cerebro.run() # 백테스팅 시작
