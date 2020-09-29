@@ -37,7 +37,8 @@ class SmaCross(bt.Strategy): # bt.Strategy를 상속한 class로 생성해야 �
 
 earings_rate = 0.0
 
-count=0
+#매수한지 몇일 지났는지 확인
+buying_period=0
 
 # 장종류
 market_status="Bull" ##Bull/Bear/Sideway
@@ -69,7 +70,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         print("AAA")
         
     def next(self):
-        global count
+        global buying_period
         global change_market_type
         global market_status
         global buying_size
@@ -77,13 +78,14 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         global date_separate_size
         
         #earings_rate = fundvalue /prev_cash_value
-
         close_value = self.data.close[0] # 종가 값
-        self.log("%%%%%%%%%%%%%%%%%%%%%%%%" +str(close_value) +"%%%%%%%%%%%%%%%%%"+ str(count))
-        
         
         ##상승장
         if(market_status=="Bull"):
+            
+            #하루 +1
+            buying_period=buying_period+1
+            
             ## 장종류가 변경되었을때 로깅용 - START
             if(change_market_type):
                 self.log("####### Bull Market ##### : ")
@@ -94,47 +96,45 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             ## 한방에 구매할 양이 안정해졌을때       
             if(buying_size < 0):
                 buying_size = int((self.broker.getcash() / close_value) / cash_separate_size)
-                
-            count=count+1
             
-            if(count==date_separate_size):
+            ## 매수 날이 들어오면 매수
+            if(buying_period==date_separate_size):
                 self.log(str(" ## Buy : "+ str(buying_size)))
                 self.buy(size=buying_size)
-                count=0
-                
- 
-            #self.log(self.getposition(data=self.data, broker=self.broker).size)
-            self.log(self.getposition(data=self.data, broker=self.broker))
+                buying_period=0
+             
             
-            fund_everage_price=0.0
-            buying_price=1
-            
-            ### 수익률 계산 -- 시작
-            if(self.getposition(data=self.data, broker=self.broker).adjbase!=None):
-                fund_everage_price=self.getposition(data=self.data, broker=self.broker).adjbase
-            #self.log("FUND EVERAGE : " + str(fund_everage_price))
-            
-            if(self.getposition(data=self.data, broker=self.broker).price==0.0):
-                buying_price=0.001
-            else:
-                buying_price=self.getposition(data=self.data, broker=self.broker).price
-            ### 수익률 계산 -- 끝    
-            
-            
-            self.log("CLOSE : " + str(close_value) + " $$$ BUYING : " + str(buying_price))
-            fund_earing_rate= (float(float(fund_everage_price) / float(buying_price))-1.0)*100
-            self.log("FUND EARNING RATE : " + str(fund_earing_rate))
-            
-            
+            ''' 펀드 잔고 확인 '''    
+            #self.log(self.getposition(data=self.data, broker=self.broker))
+
+            ''' 펀드 잔고 확인 '''
             position_size=self.getposition(data=self.data, broker=self.broker).size
-            
+
+            #펀드 잔고가 있을 때
             if(int(position_size)>0):
+            
+                ### 수익률 계산 -- 시작
+                if(self.getposition(data=self.data, broker=self.broker).adjbase!=None):
+                    fund_everage_price=self.getposition(data=self.data, broker=self.broker).adjbase
+                #self.log("FUND EVERAGE : " + str(fund_everage_price))
+                buying_price=self.getposition(data=self.data, broker=self.broker).price
+                fund_earing_rate= (float(float(fund_everage_price) / float(buying_price))-1.0)*100
+                ### 수익률 계산 -- 끝    
+                                
+                self.log("종가 : " + str(close_value) + " @@ 펀드 단가 : " + str(buying_price) + " / 갯수 : " +str(position_size)+ " / 수익률 " + str(round(fund_earing_rate,3)) )
+                
+                #if(fund_earing_rate == -100.0):
+                #    fund_earing_rate = 0.0
+                    
+                #self.log("FUND EARNING RATE : " + str(fund_earing_rate))
+            
+            
+                #selling point 이상 수익이 났을때 전체 매도
                 if(fund_earing_rate > selling_point_rate):
                     selling_size = position_size
                     self.log(str(" ## Sell : "+ str(selling_size)))
                     self.sell(size=selling_size)
-                    count=(date_separate_size-1)
-                
+                    buying_period=(date_separate_size-1)
  
         
         ## 횡보장
@@ -148,7 +148,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             self.log("#######  Unknown Market ####### : ")
         
         
-        now_value = ":: cash:", self.broker.getcash(), " :: fund:", self.broker.getvalue()
+        now_value = "CASH:" + str(self.broker.getcash()) + " :: TOTAL VALUE:" + str(self.broker.getvalue())
         self.log(now_value)
         
         
@@ -164,7 +164,7 @@ data = btfeed.GenericCSVData(
     
     dataname = "D:\\cpbyjjun\\data\\A122630.csv",
     
-    fromdate = datetime.datetime(2016, 4, 30),
+    fromdate = datetime.datetime(2010, 3, 1),
     todate = datetime.datetime(2020, 9, 15),
 
     nullvalue=0.0,
