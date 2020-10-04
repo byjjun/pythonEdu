@@ -61,17 +61,16 @@ result_value = 0.0
 '''
 프로그램 CONF - 손대지 말것 - START
 '''
+#한번에 몇개 살꺼냐
+buying_size=-1
 # 최종 금액(프로그램 입력)
 result_value = 0.0
 #수익률(프로그램 입력)
 earings_rate = 0.0
 #매수한지 몇일 지났는지 확인(프로그램 입력)
 buying_period=1
-# 장종류(프로그램 입력)
-market_status="Bull" ##Bull/Bear/Sideway
 # 장 종류가 변할 때 로깅용(프로그램 입력)
 change_market_type=True
-
 '''
 프로그램 CONF - 손대지 말것 - END
 '''
@@ -100,7 +99,9 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         if(debug_mode):
             print('%s, %s' % (dt.isoformat(), txt))
     
-    param = dict(    
+    params = dict(
+        pfast=20, # period for the fast moving average
+        pslow=40 # period for the slow moving average
     )
     
     def __destroy__(self):
@@ -110,10 +111,13 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         global buying_period
         global buying_size
         global cash_separate_size
-        global date_separate_size
         
-        self.infoLog("===========================================================" )
         
+        sma20 = bt.ind.SMA(period=self.p.pfast) # fast moving average
+        sma40 = bt.ind.SMA(period=self.p.pslow) # slow moving average
+        self.cross_20_40 = bt.ind.CrossOver(sma20, sma40) # crossover signal
+        
+        self.infoLog("===========================================================" )    
         
     def next(self):
         global buying_period
@@ -122,9 +126,29 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         global buying_size
         global cash_separate_size
         global date_separate_size
+        global origin_date_separate_size
         
         #earings_rate = fundvalue /prev_cash_value
         close_value = self.data.close[0] # 종가 값
+        
+        
+        if self.cross_20_40 > 0:    
+            
+            self.log("####### Bull Market 진입 ##### : ")
+            market_status="Bull"
+            change_market_type=True
+            
+            
+            
+            
+        elif self.cross_20_40 < 0:
+            self.log("####### Bear Market START ##### : ")
+            market_status="Bear"
+            change_market_type=True
+           
+            
+            
+        
         
         ##상승장
         if(market_status=="Bull"):
@@ -135,12 +159,19 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             ## 장종류가 변경되었을때 로깅용 - START
             if(change_market_type):
                 self.log("####### Bull Market ##### : ")
+                
+                # 상승장일때는 더 빨리 매수
+                date_separate_size = origin_date_separate_size*0.5
+                # 매수기한 초기화
+                buying_period = date_separate_size
+                self.log("####### Bull Market SETTING  : " + str(date_separate_size) + "일에 " + str(cash_separate_size) + "등분 매수")
+                
                 change_market_type=False
                 market_status="Bull"
             ## 장종류가 변경되었을때 로깅용 - END
             
             ''' 펀드 잔고 확인 '''    
-            self.log(self.getposition(data=self.data, broker=self.broker))
+            #self.log(self.getposition(data=self.data, broker=self.broker))
             ''' 펀드 잔고 확인 '''
             position_size=self.getposition(data=self.data, broker=self.broker).size
                     
@@ -152,10 +183,8 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             ## 매수 날이 들어오면 매수
             if(buying_period < 1):
                 self.buy(size=buying_size)
-                self.log(str(" ## Buy : "+ str(buying_size)))
+                self.log(str("[Bull Market] ## Buy : "+ str(buying_size) + " 다음 매수일 : " + str(date_separate_size) + " 일 후 "))
                 buying_period=date_separate_size
-             
-            
             
             #펀드 잔고가 있을 때
             if(int(position_size)>0):
@@ -173,7 +202,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
                 #selling point 이상 수익이 났을때 전체 매도
                 if(fund_earing_rate > selling_point_rate):
                     selling_size = position_size
-                    self.log(str(" ## Sell : "+ str(selling_size)))
+                    self.log(str("[Bull Market] ## Sell : "+ str(selling_size) + " 다음 매수일 : " + str(date_separate_size) + " 일 후 "))
                     self.sell(size=selling_size)
                     #다팔고 다음날 다시 매수
                     buying_period=(date_separate_size-1)
@@ -186,7 +215,68 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             self.log("####### Sideway Market ##### : ")
         ## 하락장
         elif(market_status=="Bear"):
-            self.log("####### Bear Market ##### : ")
+            
+            ''' Bull과 동일'''           
+             #하루 감소
+            buying_period=buying_period-1
+            
+            ## 장종류가 변경되었을때 로깅용 - START
+            if(change_market_type):
+                self.log("####### Bear Market ##### ")
+                
+                # 하락장일때는 늦게 매수
+                date_separate_size = origin_date_separate_size*100
+                # 매수기한 초기화
+                buying_period = date_separate_size
+                self.log("####### Bear Market SETTING  : " + str(date_separate_size) + "일에 " + str(cash_separate_size) + "등분 매수")
+                
+                change_market_type=False
+                market_status="Bear"
+                #buying_period=date_separate_size
+            ## 장종류가 변경되었을때 로깅용 - END
+            
+            ''' 펀드 잔고 확인 '''    
+            #self.log(self.getposition(data=self.data, broker=self.broker))
+            ''' 펀드 잔고 확인 '''
+            position_size=self.getposition(data=self.data, broker=self.broker).size
+                    
+            ## 한번 구매용 size       
+            if(buying_size < 0):
+                buying_size = int((self.broker.getcash() / close_value) / cash_separate_size)
+            
+            
+            ## 매수 날이 들어오면 매수
+            if(buying_period < 1):
+                self.buy(size=buying_size)
+                self.log(str("[Bear Market] ## Buy : "+ str(buying_size)) + " 다음 매수일 : " + str(date_separate_size) + " 일 후 ")
+                buying_period=date_separate_size
+            
+            #펀드 잔고가 있을 때
+            if(int(position_size)>0):
+            
+                ### 수익률 계산 -- 시작
+                if(self.getposition(data=self.data, broker=self.broker).adjbase!=None):
+                    fund_everage_price=self.getposition(data=self.data, broker=self.broker).adjbase
+                #self.log("FUND EVERAGE : " + str(fund_everage_price))
+                buying_price=self.getposition(data=self.data, broker=self.broker).price
+                fund_earing_rate= (float(float(fund_everage_price) / float(buying_price))-1.0)*100
+                ### 수익률 계산 -- 끝    
+                                
+                self.log("종가 : " + str(close_value) + " @@ 펀드 단가 : " + str(buying_price) + " / 수량 : " +str(position_size)+ " / 수익률 " + str(round(fund_earing_rate,2)) + "%" )
+                
+                #selling point 이상 수익이 났을때 전체 매도
+                if(fund_earing_rate > selling_point_rate):
+                    selling_size = position_size
+                    self.sell(size=selling_size)
+                    #다팔고 다음날 다시 매수
+                    buying_period=(date_separate_size-1)
+                    #한방에 살 수량 다시계산
+                    buying_size=-1
+                    
+                    self.log(str("[Bear Market] ## Sell : "+ str(selling_size)))
+            ''' Bull과 동일'''
+            
+            
         ## 모름장
         else:
             self.log("#######  Unknown Market ####### : ")
@@ -211,23 +301,28 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
 '''
 환경세팅 - START
 '''
-#한번에 몇개 살꺼냐
-buying_size=-1
+# 시작 장 종료 - 20/40 이평선 Cross 기준으로 
+market_status="Bull" ##Bull/Bear/Sideway
+
 #몇일에 한번 살꺼냐(임시)
-date_separate_size = 10
+date_separate_size = origin_date_separate_size = 20
+# 상승장에서 간격을 짧게
+bull_rate = 0.4
+# 하락장에서는 간격을 길게
+bear_rate = 10
+
 #몇등분 할꺼냐
 cash_separate_size = 20
 #몇프로 수익나면 팔꺼냐
-selling_point_rate = 6.5
+selling_point_rate = 12.5
 # 최초금액
 start_value = 10000000.0
 # 일일 Debug모드
 debug_mode=True
+
 '''
 환경세팅 - END
 '''
-
-
 
 cerebro = bt.Cerebro() # create a "Cerebro" engine instance
 
