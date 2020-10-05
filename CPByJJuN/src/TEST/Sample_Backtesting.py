@@ -77,13 +77,8 @@ change_market_type=True
 
 
 def printResult():
-    global start_value
-    global result_value
-    global date_separate_size
-    global cash_separate_size
-    global selling_point_rate
-    
-    print(str(date_separate_size) +"일에 1회씩 " + str(cash_separate_size) + "등분 해서 " + str(selling_point_rate) + "% 수익 나면  매도")
+    print("상승장  : " + str(origin_date_separate_size*bull_rate) +"일에  1회씩 " + str(cash_separate_size) + "등분 해서 " + str(selling_point_rate*bull_selling_point_rate) + "% 수익 나면  매도")
+    print("하락장  : " + str(origin_date_separate_size*bear_rate) +"일에  1회씩 " + str(cash_separate_size) + "등분 해서 " + str(selling_point_rate*bear_selling_point_rate) + "% 수익 나면  매도")       
     print("[ 시작 금액 : " + str(start_value) + " // 최종 금액 : " + str(result_value) + " // 수익률 : " + str(round(float(((result_value/start_value)-1.0)*100),2)) +"% ]")
 
 
@@ -127,6 +122,9 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
         global cash_separate_size
         global date_separate_size
         global origin_date_separate_size
+        global bull_selling_point_rate
+        global bear_selling_point_rate
+        
         
         #earings_rate = fundvalue /prev_cash_value
         close_value = self.data.close[0] # 종가 값
@@ -146,9 +144,6 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
             market_status="Bear"
             change_market_type=True
            
-            
-            
-        
         
         ##상승장
         if(market_status=="Bull"):
@@ -200,7 +195,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
                 self.log("종가 : " + str(close_value) + " @@ 펀드 단가 : " + str(buying_price) + " / 수량 : " +str(position_size)+ " / 수익률 " + str(round(fund_earing_rate,2)) + "%" )
                 
                 #selling point 이상 수익이 났을때 전체 매도
-                if(fund_earing_rate > selling_point_rate):
+                if(fund_earing_rate > (selling_point_rate*bull_selling_point_rate)):
                     selling_size = position_size
                     self.log(str("[Bull Market] ## Sell : "+ str(selling_size) + " 다음 매수일 : " + str(date_separate_size) + " 일 후 "))
                     self.sell(size=selling_size)
@@ -265,7 +260,7 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
                 self.log("종가 : " + str(close_value) + " @@ 펀드 단가 : " + str(buying_price) + " / 수량 : " +str(position_size)+ " / 수익률 " + str(round(fund_earing_rate,2)) + "%" )
                 
                 #selling point 이상 수익이 났을때 전체 매도
-                if(fund_earing_rate > selling_point_rate):
+                if(fund_earing_rate > (selling_point_rate*bear_selling_point_rate)):
                     selling_size = position_size
                     self.sell(size=selling_size)
                     #다팔고 다음날 다시 매수
@@ -305,18 +300,21 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
 market_status="Bull" ##Bull/Bear/Sideway
 
 #몇일에 한번 살꺼냐(임시)
-date_separate_size = origin_date_separate_size = 20
+date_separate_size = origin_date_separate_size = 30
 # 상승장에서 간격을 짧게
-bull_rate = 0.4
+bull_rate = 0.5
 # 하락장에서는 간격을 길게
-bear_rate = 10
-
+bear_rate = 20.0
 #몇등분 할꺼냐
-cash_separate_size = 20
+cash_separate_size = 40
 #몇프로 수익나면 팔꺼냐
-selling_point_rate = 12.5
+selling_point_rate = 10.0
+# 상승장에서 수익 최대화(1.0이상)
+bull_selling_point_rate = 3.5
+# 하락장에선 조금 벌고 팔기(1.0이하)
+bear_selling_point_rate = 0.1
 # 최초금액
-start_value = 10000000.0
+start_value = 100000000.0
 # 일일 Debug모드
 debug_mode=True
 
