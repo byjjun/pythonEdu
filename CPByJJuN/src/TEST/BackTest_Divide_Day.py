@@ -300,13 +300,13 @@ class TestStrategy(bt.Strategy): # bt.Strategy를 상속한 class로 생성해�
 market_status="Bull" ##Bull/Bear/Sideway
 
 #몇일에 한번 살꺼냐(임시)
-date_separate_size = origin_date_separate_size = 30
+date_separate_size = origin_date_separate_size = 20
 # 상승장에서 간격을 짧게
-bull_rate = 0.5
+bull_rate = 0.2
 # 하락장에서는 간격을 길게
 bear_rate = 20.0
 #몇등분 할꺼냐
-cash_separate_size = 40
+cash_separate_size = 38
 #몇프로 수익나면 팔꺼냐
 selling_point_rate = 10.0
 # 상승장에서 수익 최대화(1.0이상)
