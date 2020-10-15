@@ -61,7 +61,7 @@ def main(login_pw):
                 SendEmail.sendMailtoGmail(title_name, result_html, login_pw)
                 
             time.sleep(10)
-            WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), Preference.getCategory("거래폭발"), title_name, "", result_html)
+            #WriteWordPress.write_post(WriteWordPress.write_init(driver,login_pw), Preference.getCategory("거래폭발"), title_name, "", result_html)
         else:
             print "Nothing Catched"
         
