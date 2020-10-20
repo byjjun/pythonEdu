@@ -37,16 +37,19 @@ pip install C:\Users\073860\Downloads\PyQt4-4.11.4-cp27-cp27m-win32.whl
 
 9. py2exe는 쓰레기 개삽질했음.
 
-10. pyinstaller로 해결 - 졸라편함
-디렉토리가서 
-pyinstaller --onefile DaishinAutoLearningStarter.py
-pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org dis3
-
-실행하면 dist폴더에 파일 생김.
 
 10. PyInstaller 설치
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4
 pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org C:\Users\073860\Downloads\PyInstaller-3.6-py2.py3-none-any.whl
+pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org dis3
+
+
+10. pyinstaller로 해결 - 졸라편함
+디렉토리가서 
+pyinstaller --onefile DaishinAutoLearningStarter.py
+
+실행하면 dist폴더에 파일 생김.
+
 
 
 11. 콘솔창 안뜨게하면 크롬호출안되네.->확인중.
