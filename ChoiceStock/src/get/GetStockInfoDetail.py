@@ -65,14 +65,18 @@ def getStockDeatilInfofromPaxnet(stock_code):
         print stock_info['volume_ratio']
                 
         #PER
-        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[2]')
+        #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
+        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
         stock_info['PER']= stock_info_element.get_attribute('innerHTML')
-        print stock_info['PER'] 
+        stock_info['PER']=stock_info['PER'].replace(u'\ubc30','')
+        print stock_info['PER']
         
         #PBR
-        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[2]')
+        #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[2]')
+        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
         stock_info['PBR']= stock_info_element.get_attribute('innerHTML')
-        print stock_info['PBR'] 
+        stock_info['PBR']=stock_info['PBR'].replace(u'\ubc30','')
+        print stock_info['PBR']
         
         good_count = 0
         bad_count = 0
