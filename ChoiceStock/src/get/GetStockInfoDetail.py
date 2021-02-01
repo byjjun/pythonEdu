@@ -70,6 +70,7 @@ def getStockDeatilInfofromPaxnet(stock_code):
         stock_info['PER']= stock_info_element.get_attribute('innerHTML')
         stock_info['PER']=stock_info['PER'].replace(u'\ubc30','')
         stock_info['PER']=stock_info['PER'].replace(' ','')
+        stock_info['PER']=stock_info['PER'].replace('\n','')
         print stock_info['PER']
         
         #PBR
@@ -78,6 +79,7 @@ def getStockDeatilInfofromPaxnet(stock_code):
         stock_info['PBR']= stock_info_element.get_attribute('innerHTML')
         stock_info['PBR']=stock_info['PBR'].replace(u'\ubc30','')
         stock_info['PBR']=stock_info['PBR'].replace(' ','')
+        stock_info['PBR']=stock_info['PBR'].replace('\n','')
         print stock_info['PBR']
         
         good_count = 0
