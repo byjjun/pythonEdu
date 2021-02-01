@@ -60,7 +60,7 @@ def getStockDeatilInfofromPaxnet(stock_code):
         
         #거래량 5일평균 대비
         volume_ratio =  float(stock_info['today_volume'].replace(',',''))/everage_5day_volume
-        volume_ratio = int(volume_ratio*100)
+        volume_ratio = int(volume_ratio*100) 
         stock_info['volume_ratio']=str(volume_ratio)
         print stock_info['volume_ratio']
                 
