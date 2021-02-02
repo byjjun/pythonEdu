@@ -69,8 +69,9 @@ def getStockDeatilInfofromPaxnet(stock_code):
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
         stock_info['PER']= stock_info_element.get_attribute('innerHTML')
         stock_info['PER']=stock_info['PER'].replace(u'\ubc30','')
-        stock_info['PER']=stock_info['PER'].replace(' ','')
-        stock_info['PER']=stock_info['PER'].replace('\n','')
+        temp=stock_info['PER'].splitlines()
+        stock_info['PER']="".join(temp)
+        stock_info['PER']=stock_info['PER'].replace('-','0.0')
         print stock_info['PER']
         
         #PBR
@@ -78,8 +79,9 @@ def getStockDeatilInfofromPaxnet(stock_code):
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
         stock_info['PBR']= stock_info_element.get_attribute('innerHTML')
         stock_info['PBR']=stock_info['PBR'].replace(u'\ubc30','')
-        stock_info['PBR']=stock_info['PBR'].replace(' ','')
-        stock_info['PBR']=stock_info['PBR'].replace('\n','')
+        temp=stock_info['PBR'].splitlines()
+        stock_info['PBR']="".join(temp)
+        stock_info['PBR']=stock_info['PBR'].replace('-','0.0')
         print stock_info['PBR']
         
         good_count = 0
