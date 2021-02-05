@@ -15,6 +15,25 @@ from src.util import Preference
 from src.get import GetStockListfromHK
 
 
+
+a='                 \n AAAAAA \n       '
+print a
+temp=a.splitlines()
+a="".join(temp)
+
+
+print '--------'
+a=a.replace(' ','')
+print a
+print '-----'
+a=a.rstrip('\n')
+print a
+print '----'
+
+
+
+
+'''
 #환경세팅
 Preference.setPhantomjsPath()
 Preference.setChromedriverPath()
@@ -37,5 +56,5 @@ try:
     
 except:
     print "except"
-    
+'''    
     
