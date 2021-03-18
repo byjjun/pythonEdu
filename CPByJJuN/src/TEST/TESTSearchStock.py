@@ -9,8 +9,8 @@ import win32com.client
 
 
 
-
 '''
+엑셀 열어서 쓰기
 excel = win32com.client.Dispatch("Excel.Application")
 excel.Visible = True
 
@@ -19,12 +19,19 @@ ws = wb.Worksheets("Sheet1")
 ws.Cells(1,1).Value = "Hello Hello"
 '''
 
-instCpStockCode = win32com.client.Dispatch("CpUtil.CpStockCode")
-print(instCpStockCode.GetCount())
-print(instCpStockCode.CodeToName("A005930"))
-print(instCpStockCode.NameToCode("아이큐어"))
+
+'''
+#print(instCpStockCode.GetCount())
+#print(instCpStockCode.CodeToName("A005930"))
+#print(instCpStockCode.NameToCode("아이큐어"))
+'''
 
 
+
+'''
+1 전략 목록 가져오기
+'''
+## 8357 종목검색Master 전략목록 Object
 cpsysdiblist = win32com.client.Dispatch("CpSysDib.CssStgList")
 
 ## 전략을 가져올 Type 세팅(나의전략:ord('1')
@@ -37,13 +44,66 @@ cpsysdiblist.BlockRequest()
 count = cpsysdiblist.GetHeaderValue(0)    #0 : (long) 전략목록수
 flag =  cpsysdiblist.GetHeaderValue(1)    #1 : (char) 요청구분
 
-for i in range(count):
-    item = {}
-    item['전략명'] = cpsysdiblist.GetDataValue(0,i);
-    item['전략ID'] = cpsysdiblist.GetDataValue(1,i);
-    print("----")
-    print(item)
+st_items = {}
+strategy_id = ''
+for i in range(count):    
+    st_items['전략명'] = cpsysdiblist.GetDataValue(0,i);
+    st_items['전략ID'] = cpsysdiblist.GetDataValue(1,i);
+    #전략 찾아서 해당전략 ID를 가져옴
+    if(st_items['전략명']=='매집후거래상승'):
+        strategy_id = st_items['전략ID']
+#print(strategy_id)
 
 
+
+'''
+2 전략 검색종목 가져오기
+'''
+## 8357 종목검색Master 전략조회 Object
 cpsysdibfind = win32com.client.Dispatch("CpSysDib.CssStgFind")
+
+#매집후 거래상승 ID 요청
+cpsysdibfind.SetInputValue(0,strategy_id) 
+cpsysdibfind.BlockRequest()
+
+#검색된 결과 종목 수
+cnt = cpsysdibfind.GetHeaderValue(0)
+
+# 총 검색 종목 수
+totcnt = cpsysdibfind.GetHeaderValue(1)
+
+# 종목코드(종목명) 가져오기용 Object
+instCpStockCode = win32com.client.Dispatch("CpUtil.CpStockCode")
+
+item_list = []
+for i in range(cnt):
+    item={}
+    #종목코드
+    item['code'] = cpsysdibfind.GetDataValue(0,i)
+    item['종목명'] = instCpStockCode.CodeToName(item['code'])
+    item_list.append(item)
+    
+#추출된 종목 보기
+#print(item_list)
+'''
+3. 종목 현재가 가져오기 
+'''
+# 주식 종목 현재가 가져오기용 Object
+now_price = win32com.client.Dispatch("Dscbo1.StockMst")
+
+for i in range(len(item_list)):
+    #print(item_list[i])
+    #print(item_list[i]['code'])
+    
+    now_price.SetInputValue(0,item_list[i]['code'])
+    now_price.BlockRequest()
+    
+    print('종목코드 : ', now_price.GetHeaderValue(0))
+    print('현재가 : ',now_price.GetHeaderValue(11))
+    print('전일대비 : ',now_price.GetHeaderValue(12))
+    
+
+
+
+
 
