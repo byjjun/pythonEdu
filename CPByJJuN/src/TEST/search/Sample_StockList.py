@@ -1,11 +1,4 @@
 #-*- coding: utf-8 -*-
-'''
-Created on 2021. 2. 7.
-
-@author: JJ
-'''
-
-#-*- coding: utf-8 -*-
 
 '''
 Created on 2021. 2. 15.
@@ -13,6 +6,104 @@ Created on 2021. 2. 15.
 @author: JJ
 '''
 
+import sys
+import win32com.client
+import pandas as pd
+import os
+ 
+g_objCodeMgr = win32com.client.Dispatch('CpUtil.CpStockCode')
+g_objCpStatus = win32com.client.Dispatch('CpUtil.CpCybos')
+g_objCpTrade = win32com.client.Dispatch('CpTrade.CpTdUtil')
+
+
+
+# Cp8537 : 종목검색 전략 조회
+class Cp8537:
+    def __init__(self):
+        self.objRq = None
+        return
+ 
+    def requestList(self, caller):
+        caller.data8537 = {}
+        self.objRq = None
+        self.objRq = win32com.client.Dispatch("CpSysDib.CssStgList")
+ 
+        # 예제 전략에서 전략 리스트를 가져옵니다.
+        self.objRq.SetInputValue(0, ord('1'))   # '0' : 예제전략, '1': 나의전략
+        self.objRq.BlockRequest()
+ 
+        # 통신 및 통신 에러 처리
+        rqStatus = self.objRq.GetDibStatus()
+        if rqStatus != 0:
+            rqRet = self.objRq.GetDibMsg1()
+            print("통신상태", rqStatus, rqRet)
+            return False
+ 
+        cnt = self.objRq.GetHeaderValue(0) # 0 - (long) 전략 목록 수
+        flag = self.objRq.GetHeaderValue(1) # 1 - (char) 요청구분
+        print('종목검색 전략수:', cnt)
+ 
+ 
+        for i in range(cnt):
+            item = {}
+            item['전략명'] = self.objRq.GetDataValue(0, i)
+            item['ID'] = self.objRq.GetDataValue(1, i)
+            item['전략등록일시'] = self.objRq.GetDataValue(2, i)
+            item['작성자필명'] = self.objRq.GetDataValue(3, i)
+            item['평균종목수'] = self.objRq.GetDataValue(4, i)
+            item['평균승률'] = self.objRq.GetDataValue(5, i)
+            item['평균수익'] = self.objRq.GetDataValue(6, i)
+            caller.data8537[item['전략명']] = item
+            print(item)
+            
+        return True
+ 
+    def requestStgID(self, id, caller):
+        caller.dataStg = []
+        self.objRq = None
+        self.objRq = win32com.client.Dispatch("CpSysDib.CssStgFind")
+        self.objRq.SetInputValue(0, id) # 전략 id 요청
+        self.objRq.BlockRequest()
+        # 통신 및 통신 에러 처리
+        rqStatus = self.objRq.GetDibStatus()
+        if rqStatus != 0:
+            rqRet = self.objRq.GetDibMsg1()
+            print("통신상태", rqStatus, rqRet)
+            return False
+ 
+        cnt = self.objRq.GetHeaderValue(0)  # 0 - (long) 검색된 결과 종목 수
+        totcnt = self.objRq.GetHeaderValue(1)  # 1 - (long) 총 검색 종목 수
+        stime = self.objRq.GetHeaderValue(2)  # 2 - (string) 검색시간
+        print('검색된 종목수:', cnt, '전체종목수:', totcnt, '검색시간:', stime)
+ 
+        for i in range(cnt):
+            item = {}
+            item['code'] = self.objRq.GetDataValue(0, i)
+            item['종목명'] = g_objCodeMgr.CodeToName(item['code'])
+            caller.dataStg.append(item)
+ 
+        return True
+ 
+
+class Starter:
+    def connector(self):
+        search_stock = Cp8537
+        search_stock.requestList(self, self)
+
+
+if __name__ == "__main__":
+    
+    starter = Starter()
+    starter.connector()
+
+    
+    
+
+
+
+
+
+'''
 import sys
 from PyQt5.QtWidgets import *
 import win32com.client
@@ -163,3 +254,4 @@ if __name__ == "__main__":
     myWindow = MyWindow()
     myWindow.show()
     app.exec_()
+'''
