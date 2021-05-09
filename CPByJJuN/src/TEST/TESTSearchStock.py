@@ -91,19 +91,27 @@ for i in range(cnt):
 # 주식 종목 현재가 가져오기용 Object
 now_price = win32com.client.Dispatch("Dscbo1.StockMst")
 
+# 매매 입체분석(투자주체별 현황)
+supplydemand = win32com.client.Dispatch("CpSysDib.CpSvr7254")
+
+
 for i in range(len(item_list)):
     #print(item_list[i])
     #print(item_list[i]['code'])
     
+    ## 현재가 조회 
     now_price.SetInputValue(0,item_list[i]['code'])
     now_price.BlockRequest()
     
-    print('종목코드 : ', now_price.GetHeaderValue(0))
-    print('현재가 : ',now_price.GetHeaderValue(11))
-    print('전일대비 : ',now_price.GetHeaderValue(12))
+    ## 수급현황 조회 ##
+    supplydemand.SetInputValue(0,item_list[i]['code'])  # 종목코드
+    supplydemand.SetInputValue(1,6) # 일자별 조회
+    supplydemand.SetInputValue(4,ord('0')) #순매수량 (1:매매비중) 
+    supplydemand.SetInputValue(5,0) #전체투자자 조회
+    supplydemand.SetInputValue(6,ord('1')) # 순매수량
+    supplydemand.BlockRequest()
     
-
-
-
-
-
+    print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ',now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
+    print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
+    print('---')
+    
