@@ -91,8 +91,12 @@ for i in range(cnt):
 # 주식 종목 현재가 가져오기용 Object
 now_price = win32com.client.Dispatch("Dscbo1.StockMst")
 
-# 매매 입체분석(투자주체별 현황)
+# 매매 입체분석(투자주체별 현황) -> 수급조회용
 supplydemand = win32com.client.Dispatch("CpSysDib.CpSvr7254")
+
+
+# 마켓아이 -> 체결강도
+marketeye = win32com.client.Dispatch("CpSysDib.MarketEye")
 
 
 for i in range(len(item_list)):
@@ -111,7 +115,36 @@ for i in range(len(item_list)):
     supplydemand.SetInputValue(6,ord('1')) # 순매수량
     supplydemand.BlockRequest()
     
+    
     print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ',now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
     print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
-    print('---')
+    
+    ## 마켓아이 종목정보 조회 ##
+    
+    # 10(거래량) , 24(체결강도),67(PER),  96(분기BPS), 110(분기부채비율), 116(프로그램순매수), 117(잠정외국인), 119(잠정기관)
+    marketeye.SetInputValue(0, [10, 24, 67, 96, 110, 116, 117, 119 ])
+    marketeye.SetInputValue(1, item_list[i]['code'])
+    marketeye.Blockrequest()
+    
+    ## 마켓아이 
+    # 종목 리턴 갯수
+    #cnt = marketeye.GetHeaderValue(2)
+    
+    volume = marketeye.GetDataValue(0,0) # 거래량
+    power = marketeye.GetDataValue(1,0) # 체결강도
+    per = marketeye.GetDataValue(2,0) # PER
+    bps = marketeye.GetDataValue(3,0) # 분기BPS
+    debt_rate = marketeye.GetDataValue(4,0) # 분기부채비율
+    program_buy = marketeye.GetDataValue(5,0) # 프로그램 
+    foreigner = marketeye.GetDataValue(6,0) # 잠정외국
+    organ = marketeye.GetDataValue(7,0) # 잠정기관
+    
+    print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  체결강도 : ', per, '  |  분기BPS : ', bps) 
+    print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy, '  |  잠정외국 : ', foreigner, '  |  잠정기관 : ', organ) 
+    print ('-----')
+    
+    
+    
+    
+    
     
