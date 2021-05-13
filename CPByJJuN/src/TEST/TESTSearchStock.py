@@ -140,4 +140,3 @@ for i in range(len(item_list)):
     print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  체결강도 : ', per, '  |  분기BPS : ', bps) 
     print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy, '  |  잠정외국 : ', foreigner, '  |  잠정기관 : ', organ) 
     print ('-----')
-    
