@@ -113,12 +113,7 @@ for i in range(len(item_list)):
     supplydemand.SetInputValue(6,ord('1')) # 순매수량
     supplydemand.BlockRequest()
     
-    
-    print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ',now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
-    print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
-    
     ## 마켓아이 종목정보 조회 ##
-    
     # 10(거래량) , 24(체결강도),67(PER),  96(분기BPS), 110(분기부채비율), 116(프로그램순매수), 117(잠정외국인), 119(잠정기관)
     marketeye.SetInputValue(0, [10, 24, 67, 96, 110, 116, 117, 119 ])
     marketeye.SetInputValue(1, item_list[i]['code'])
@@ -137,6 +132,14 @@ for i in range(len(item_list)):
     foreigner = marketeye.GetDataValue(6,0) # 잠정외국
     organ = marketeye.GetDataValue(7,0) # 잠정기관
     
+
+    ## 현재가 출력
+    print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ',now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
+    
+    ## 수급 출력
+    print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
+
+    ## 마켓아이 데이터 출력    
     print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  체결강도 : ', per, '  |  분기BPS : ', bps) 
     print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy, '  |  잠정외국 : ', foreigner, '  |  잠정기관 : ', organ) 
     print ('-----')
