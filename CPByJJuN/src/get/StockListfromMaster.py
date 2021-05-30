@@ -1,30 +1,14 @@
 #-*- coding: utf-8 -*-
+
 '''
-Created on 2021. 3. 6.
+Created on 2021. 5. 30.
 
 @author: JJ
 '''
 
+
+
 import win32com.client
-
-
-
-'''
-엑셀 열어서 쓰기
-excel = win32com.client.Dispatch("Excel.Application")
-excel.Visible = True
-
-wb = excel.WorkBooks.Add()
-ws = wb.Worksheets("Sheet1")
-ws.Cells(1,1).Value = "Hello Hello"
-'''
-
-
-'''
-#print(instCpStockCode.GetCount())
-#print(instCpStockCode.CodeToName("A005930"))
-#print(instCpStockCode.NameToCode("아이큐어"))
-'''
 
 
 
@@ -141,9 +125,5 @@ for i in range(len(item_list)):
     print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  PER : ', per, '  |  PBR : ', pbr) 
     print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy) 
     print ('-----')
-    
-    
-    
-    
     
     
