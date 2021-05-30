@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 '''
 Created on 2021. 3. 6.
-
 @author: JJ
 '''
 
@@ -13,7 +12,6 @@ import win32com.client
 엑셀 열어서 쓰기
 excel = win32com.client.Dispatch("Excel.Application")
 excel.Visible = True
-
 wb = excel.WorkBooks.Add()
 ws = wb.Worksheets("Sheet1")
 ws.Cells(1,1).Value = "Hello Hello"
@@ -115,12 +113,7 @@ for i in range(len(item_list)):
     supplydemand.SetInputValue(6,ord('1')) # 순매수량
     supplydemand.BlockRequest()
     
-    
-    print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ', now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
-    print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
-    
     ## 마켓아이 종목정보 조회 ##
-    
     # 10(거래량) , 24(체결강도),67(PER),  96(분기BPS), 110(분기부채비율), 116(프로그램순매수), 117(잠정외국인), 119(잠정기관)
     marketeye.SetInputValue(0, [10, 24, 67, 96, 110, 116, 117, 119 ])
     marketeye.SetInputValue(1, item_list[i]['code'])
@@ -131,19 +124,22 @@ for i in range(len(item_list)):
     #cnt = marketeye.GetHeaderValue(2)
     
     volume = marketeye.GetDataValue(0,0) # 거래량
-    power = round(marketeye.GetDataValue(1,0),2) # 체결강도
-    per = round(marketeye.GetDataValue(2,0),2) # PER
+    power = marketeye.GetDataValue(1,0) # 체결강도
+    per = marketeye.GetDataValue(2,0) # PER
     bps = marketeye.GetDataValue(3,0) # 분기BPS
-    pbr = round(now_price.GetHeaderValue(11)/bps,2) #PBR
-    debt_rate = round(marketeye.GetDataValue(4,0),2) # 분기부채비율
+    debt_rate = marketeye.GetDataValue(4,0) # 분기부채비율
     program_buy = marketeye.GetDataValue(5,0) # 프로그램 
+    foreigner = marketeye.GetDataValue(6,0) # 잠정외국
+    organ = marketeye.GetDataValue(7,0) # 잠정기관
     
-    print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  PER : ', per, '  |  PBR : ', pbr) 
-    print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy) 
+
+    ## 현재가 출력
+    print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ',now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
+    
+    ## 수급 출력
+    print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
+
+    ## 마켓아이 데이터 출력    
+    print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  체결강도 : ', per, '  |  분기BPS : ', bps) 
+    print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy, '  |  잠정외국 : ', foreigner, '  |  잠정기관 : ', organ) 
     print ('-----')
-    
-    
-    
-    
-    
-    
