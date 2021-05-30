@@ -6,7 +6,7 @@ Created on 2020. 9. 12.
 @author: JJ
 '''
 import connect.ConnectCP as connect
-import get.StockDatafromCP as StockDatafromCP
+import TEST.StockDatafromCP as StockDatafromCP
 from conf import ConfigConsts as CONF
 from util import ToCSV
 
