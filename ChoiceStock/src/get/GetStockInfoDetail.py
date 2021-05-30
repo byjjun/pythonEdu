@@ -66,7 +66,8 @@ def getStockDeatilInfofromPaxnet(stock_code):
                 
         #PER
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
-        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
+        #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
+        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
         stock_info['PER']= stock_info_element.get_attribute('innerHTML')
         stock_info['PER']=stock_info['PER'].replace(u'\ubc30','')
         temp=stock_info['PER'].splitlines()
@@ -76,7 +77,8 @@ def getStockDeatilInfofromPaxnet(stock_code):
         
         #PBR
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[2]')
-        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
+        #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
+        stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[14]/td[1]')
         stock_info['PBR']= stock_info_element.get_attribute('innerHTML')
         stock_info['PBR']=stock_info['PBR'].replace(u'\ubc30','')
         temp=stock_info['PBR'].splitlines()
