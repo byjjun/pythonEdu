@@ -38,7 +38,7 @@ def getCurrentStockConsenFromHK():
     #http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=business&sdate=2019-04-03&edate=2019-04-09&pagenum=1000&order_type=12000001&now_page=1
     request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=business&sdate='+startday_str+'&edate='+today_str+'&pagenum='+stock_count+'&order_type=12000001&now_page=1'
     
-    print request_url
+    print(request_url)
     
     driver = Preference.getWebDriver()
     
@@ -163,7 +163,7 @@ def getPreStockConsenFromHK(stock_code):
         pre_2month_str = pre_2month.strftime('%Y-%m-%d')
         
         request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?sdate='+pre_2month_str+'&edate='+yesterday_str+'&now_page=1&search_value=&report_type=CO&pagenum=50&search_text='+stock_code+'&business_code='
-        #print request_url
+        print request_url
         
         #driver = webdriver.PhantomJS(phantomjs)
         driver=Preference.getWebDriver()
@@ -202,6 +202,11 @@ def getPreStockConsenFromHK(stock_code):
                 if(i==6):
                     #print astock_data.text
                     stock_pre_consen['analyst_company']=astock_data.text
+                
+                if(i==9):
+                    stock_pre_consen['report_url']=astock_data.text
+                    print stock_pre_consen['report_url']
+                
                 i=i+1
                 #print "."
             
