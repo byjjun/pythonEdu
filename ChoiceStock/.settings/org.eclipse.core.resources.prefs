@@ -1,8 +1,12 @@
 eclipse.preferences.version=1
 encoding//src/get/GetStockInfoDetail.py=utf-8
 encoding//src/get/GetStockListfromHK.py=utf-8
+encoding//src/get/GetStockListfromMaster.py=utf-8
 encoding//src/get/GetStockPrice.py=utf-8
 encoding//src/main/Starter.py=utf-8
+encoding//src/main/StarterUpturn.py=utf-8
+encoding//src/main/StarterVolumeUp.py=utf-8
+encoding//src/main/Tester.py=utf-8
 encoding//src/util/Preference.py=utf-8
 encoding//src/write/HtmlMaker.py=utf-8
 encoding//src/write/WriteWordPress.py=utf-8
