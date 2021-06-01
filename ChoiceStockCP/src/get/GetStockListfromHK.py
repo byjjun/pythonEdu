@@ -84,10 +84,10 @@ def getCurrentStockConsenFromHK():
             if(i==3):
                 #적정가격
                 #print astock_data.text
-                stock_dic['new_price']=astock_data.text                
+                stock_dic['new_price']=astock_data.text
             if(i==4):
                 #print astock_data.text
-                stock_dic['opinion']=astock_data.text    
+                stock_dic['opinion']=astock_data.text
             if(i==5):
                 #print astock_data.text
                 stock_dic['analyst_name']=astock_data.text
@@ -115,15 +115,15 @@ def getCurrentStockConsenFromHK():
             stock_dic['now_price']=now_stock_price['now_price']
             stock_dic['now_updown_rate']=now_stock_price['updown_rate']
             
-            print(stock_dic['stock_name'])
-            print(stock_dic['new_price'])
-            print(stock_dic['now_price'])
+            print((stock_dic['stock_name']))
+            print((stock_dic['new_price']))
+            print((stock_dic['now_price']))
                   
             diff_rate=float(stock_dic['now_price'].replace(',',''))/float(stock_dic['new_price'].replace(',',''))    
             diff_rate=int(diff_rate*100)
             stock_dic['diff_rate']=str(diff_rate)
             
-            print(stock_dic['diff_rate'])
+            print((stock_dic['diff_rate']))
             
             if(diff_rate > 20 and diff_rate < 100):
                 stock_dic_list.append(stock_dic)
@@ -141,16 +141,6 @@ def getCurrentStockConsenFromHK():
 '''
 def getPreStockConsenFromHK(stock_code):
     
-    #driver = webdriver.PhantomJS(phantomjs, service_args=['--cookies-file=/tmp/cookies.txt'])
-    #driver.delete_all_cookies()
-    '''
-    opt = webdriver.ChromeOptions()
-    opt.add_argument('headless')
-    opt.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(chromedrive, chrome_options=opt)
-    '''
-    
-    
     try:
         stock_pre_consen_list = []
         
@@ -163,21 +153,16 @@ def getPreStockConsenFromHK(stock_code):
         pre_2month_str = pre_2month.strftime('%Y-%m-%d')
         
         request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?sdate='+pre_2month_str+'&edate='+yesterday_str+'&now_page=1&search_value=&report_type=CO&pagenum=50&search_text='+stock_code+'&business_code='
-        print request_url
+        print(request_url)
         
-        #driver = webdriver.PhantomJS(phantomjs)
-        
-        print "!!!!!! DEBUG1 !!!!!!!"
         driver=Preference.getWebDriver()
         driver.get(request_url)
-        print "!!!!!! DEBUG1 !!!!!!!"
+
         
         table_element = driver.find_element_by_xpath('//*[@id="contents"]/div[2]/table/tbody')
         tablebody_html = table_element.get_attribute('innerHTML')
-        
-        print "!!!!!! DEBUG2 !!!!!!!"
-        print tablebody_html
-        print "!!!!!!!!!!!!!"
+        #print tablebody_html
+
         
         
         soup = BeautifulSoup(tablebody_html, "html.parser")
@@ -198,10 +183,25 @@ def getPreStockConsenFromHK(stock_code):
                 if(i==1):
                     #print astock_data.text
                     stock_pre_consen['update_date']=astock_data.text
+                if(i==2):                
+                    #print astock_data.find('strong').text
+                    stock_pre_consen['all_title'] = astock_data.find('strong').text
+                    all_title = stock_pre_consen['all_title']
+                    start = all_title.find('(')+1
+                    end = start+6    
+                    stock_code = all_title[start:end]
+                    stock_pre_consen['stock_code']=stock_code
+                    #stockcode=stock_code
+                    
+                    stock_name = all_title[0:all_title.find('(')] 
+                    stock_pre_consen['stock_name']=stock_name
+                    title = all_title[end+1:len(all_title)]
+                    stock_pre_consen['title']=title
+                
                 if(i==3):
                     #print astock_data.text
                     stock_pre_consen['consen_price']=astock_data.text
-                    print '###'+stock_pre_consen['consen_price']
+                    print('###'+stock_pre_consen['consen_price'])
                                     
                 if(i==4):
                     #print astock_data.text
@@ -212,13 +212,13 @@ def getPreStockConsenFromHK(stock_code):
                 
                 if(i==9):
                     stock_pre_consen['report_url']=astock_data.text
-                    print stock_pre_consen['report_url']
+                    print(stock_pre_consen['report_url'])
                 
                 i=i+1
                 #print "."
             
             if(stock_pre_consen['consen_price']=='0'):
-                print 'Not Rated'
+                print('Not Rated')
                 
             else:
                 stock_pre_consen_list.append(stock_pre_consen)
@@ -229,16 +229,17 @@ def getPreStockConsenFromHK(stock_code):
             #print count
                  
             if (count > Preference.getPrePriceCount()):
-                print Preference.getPrePriceCount() + ' line limited'
+                print(Preference.getPrePriceCount() + ' line limited')
                 break
                 
-    except Exception, e:
+    except Exception as e:
         
-        print 'No Pre Consen'
-        print str(e)
+        print('No Pre Consen')
+        print(str(e))
     
-    #driver.service.process.send_signal(signal.SIGTERM)          
-    #driver.quit()
+
+    print(stock_pre_consen_list)
+    
     return stock_pre_consen_list
 
 
@@ -266,7 +267,7 @@ def getUpturnStockFromHK():
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate=2018-05-08&edate=2018-05-08&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
     #request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+today_str+'&edate='+today_str+'&up_down_type=1&pagenum=150&order_type=&now_page=1&order_type=10010000'
     request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+yesterday_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
-    print request_url
+    print(request_url)
         
     
     driver = Preference.getWebDriver()   
@@ -355,15 +356,15 @@ def getUpturnStockFromHK():
             stock_dic['now_price']=now_stock_price['now_price']
             stock_dic['now_updown_rate']=now_stock_price['updown_rate']
             
-            print(stock_dic['stock_name'])
-            print(stock_dic['new_price'])
-            print(stock_dic['now_price'])
+            print((stock_dic['stock_name']))
+            print((stock_dic['new_price']))
+            print((stock_dic['now_price']))
                   
             diff_rate=float(stock_dic['now_price'].replace(',',''))/float(stock_dic['new_price'].replace(',',''))    
             diff_rate=int(diff_rate*100)
             stock_dic['diff_rate']=str(diff_rate)
             
-            print(stock_dic['diff_rate'])
+            print((stock_dic['diff_rate']))
             
             if(diff_rate > 20 and diff_rate < 100):
                 stock_dic_list.append(stock_dic)
@@ -387,7 +388,7 @@ def tester():
     today_str = datetime.today().strftime('%Y-%m-%d')
     
     request_url = 'http://hkconsensus.hankyung.com/apps.analysis/analysis.list?skinType=stock_good&sdate='+yesterday_str+'&edate='+today_str+'&order_type=10010000&pagenum=150'
-    print request_url
+    print(request_url)
         
     
     driver = Preference.getWebDriver()   

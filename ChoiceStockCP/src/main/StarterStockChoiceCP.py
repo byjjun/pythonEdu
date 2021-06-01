@@ -30,20 +30,12 @@ def main(login_pw):
         stock_dic_list = GetStockListfromMaster.getStockListfromCreonPlus()
         
         for astock in stock_dic_list:
-            print astock['종목명']
-            print astock['종목코드']
-            
+            print(astock['종목명'])
+            print(astock['종목코드'])
         
         #print result_html 
         
-        
-        
-        
-        
-        
-        
         '''
-        
         
         print "--------------------------------"
         
@@ -57,13 +49,13 @@ def main(login_pw):
         '''
         
     except Exception as e:
-        print '--- stack ---'
+        print('--- stack ---')
         traceback.print_stack()
-        print '--- exec ---'
+        print('--- exec ---')
         traceback.print_exc()
-        print '--- e ---'
-        print e
-        print "exception"
+        print('--- e ---')
+        print(e)
+        print("exception")
         
     finally:
         #Driver 닫기
@@ -71,12 +63,12 @@ def main(login_pw):
         
 
 if __name__ == '__main__':
-    print "=========================="
-    print "========[ START ]========="    
-    print "=========================="
+    print("==========================")
+    print("========[ START ]=========")    
+    print("==========================")
     
     main(sys.argv[1])
 
-    print "=========================="
-    print "========[ SUCCESS ]========="    
-    print "=========================="
+    print("==========================")
+    print("========[ SUCCESS ]=========")    
+    print("==========================")

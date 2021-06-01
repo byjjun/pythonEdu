@@ -34,7 +34,7 @@ def write_init(driver, login_pw):
     login_id = 'choicestock'
     
     
-    print login_id
+    print(login_id)
     driver.implicitly_wait(1000)
     driver.find_element_by_id('user_login').click()
     driver.find_element_by_id('user_login').send_keys(login_id)

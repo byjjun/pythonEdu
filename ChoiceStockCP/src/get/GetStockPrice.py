@@ -41,15 +41,15 @@ def getCurrentStockPriceNaver(stock_code):
         #print stock_updown_rate.text
         plusminus = stock_price_info_array[5]
         
-        if(plusminus == u'플러스'):
-            plusminus = u'+'
+        if(plusminus == '플러스'):
+            plusminus = '+'
             #print '+'
-        elif(plusminus == u'마이너스'):
-            plusminus = u'-'
+        elif(plusminus == '마이너스'):
+            plusminus = '-'
             #print '-'
                 
         stock_price['now_price'] = stock_price_info_array[1].encode('utf-8')
-        stock_price['updown_rate'] = plusminus.encode('utf-8')+stock_price_info_array[6].encode('utf-8')+u'%'.encode('utf-8')
+        stock_price['updown_rate'] = plusminus.encode('utf-8')+stock_price_info_array[6].encode('utf-8')+'%'.encode('utf-8')
     
     except Exception as e:
         print(e)

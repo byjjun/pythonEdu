@@ -39,26 +39,26 @@ def makeSTOCKHtml(stock_dic_list):
         "<span style=\"font-size: 10pt;\">   - "+stock_dic['title'].encode('UTF-8')+"</span>"
         
         try:
-            print stock_dic['stock_code']
+            print(stock_dic['stock_code'])
             volume_ratio, detail_html = makeStockDetailHtml(stock_dic['stock_code'])
             stock_html += detail_html
 
             #print "."
         except Exception as e:
-            print '--- stack ---'
+            print('--- stack ---')
             traceback.print_stack()
-            print '--- exec ---'
+            print('--- exec ---')
             traceback.print_exc()
-            print 'makestockdetail exception'
+            print('makestockdetail exception')
 
         try:
             pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
         except Exception as e:
-            print '--- stack ---'
+            print('--- stack ---')
             traceback.print_stack()
-            print '--- exec ---'
+            print('--- exec ---')
             traceback.print_exc()
-            print 'prestockhtml exception'
+            print('prestockhtml exception')
 
         count = count+1
 
@@ -112,27 +112,27 @@ def makeUpturnStockHtml(stock_dic_list):
             stock_html += detail_html
             
         except Exception as e:
-            print '--- stack ---'
+            print('--- stack ---')
             traceback.print_stack()
-            print '--- exec ---'
+            print('--- exec ---')
             traceback.print_exc()
-            print 'makestockdetail exception'
+            print('makestockdetail exception')
             
         try:
             pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
         except Exception as e:
-            print '--- stack ---'
+            print('--- stack ---')
             traceback.print_stack()
-            print '--- exec ---'
+            print('--- exec ---')
             traceback.print_exc()
-            print 'prestockhtml exception'
+            print('prestockhtml exception')
         #print "."
 
         count = count+1
 
         stock_html += pre_stockconsen_html + '<br>'
         
-        print '-------'
+        print('-------')
                 
     stock_html += \
     "<br><br>"\
@@ -164,11 +164,11 @@ def makeVolumeUpHtml(stock_dic_list):
         try:
             volume_ratio, stockdetailhtml = makeStockDetailHtml(stock_dic['stock_code'])
         except Exception as e:
-            print '--- stack ---'
+            print('--- stack ---')
             traceback.print_stack()
-            print '--- exec ---'
+            print('--- exec ---')
             traceback.print_exc()
-            print 'stockdetail exception'
+            print('stockdetail exception')
          
         if(Preference.getVolAgainstTime(volume_ratio)):
             catchedcount = catchedcount + 1
@@ -187,11 +187,11 @@ def makeVolumeUpHtml(stock_dic_list):
                 pre_stockconsen_html=makePreSTOCKHtml(stock_dic['stock_code'])
                 #print "."
             except Exception as e:
-                print '--- stack ---'
+                print('--- stack ---')
                 traceback.print_stack()
-                print '--- exec ---'
+                print('--- exec ---')
                 traceback.print_exc()
-                print 'prestockhtml exception'
+                print('prestockhtml exception')
     
             stock_html += pre_stockconsen_html + '<br>'
             

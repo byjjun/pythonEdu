@@ -16,7 +16,7 @@ def getStockDeatilInfofromPaxnet(stock_code):
     stock_info = {}
     request_url = 'http://www.paxnet.co.kr/stock/analysis/presentValue?abbrSymbol='+stock_code   
     
-    print request_url 
+    print(request_url) 
     
     driver = Preference.getWebDriver()
     
@@ -27,12 +27,12 @@ def getStockDeatilInfofromPaxnet(stock_code):
         #시가총액
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[8]/td[1]')
         stock_info['total_cap']= stock_info_element.get_attribute('innerHTML')
-        print stock_info['total_cap'] 
+        print(stock_info['total_cap']) 
         
         #당일 거래량
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[4]/td[1]')
         stock_info['today_volume']= stock_info_element.get_attribute('innerHTML')
-        print stock_info['today_volume']
+        print(stock_info['today_volume'])
         
         #전일 거래량 -> 5일평균으로 변경
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[8]/td[2]')
@@ -62,29 +62,29 @@ def getStockDeatilInfofromPaxnet(stock_code):
         volume_ratio =  float(stock_info['today_volume'].replace(',',''))/everage_5day_volume
         volume_ratio = int(volume_ratio*100) 
         stock_info['volume_ratio']=str(volume_ratio)
-        print stock_info['volume_ratio']
+        print(stock_info['volume_ratio'])
                 
         #PER
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[12]/td[1]')
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
         stock_info['PER']= stock_info_element.get_attribute('innerHTML')
-        stock_info['PER']=stock_info['PER'].replace(u'\ubc30','')
+        stock_info['PER']=stock_info['PER'].replace('\ubc30','')
         temp=stock_info['PER'].splitlines()
         stock_info['PER']="".join(temp)
         stock_info['PER']=stock_info['PER'].replace('-','0.0')
-        print stock_info['PER']
+        print(stock_info['PER'])
         
         #PBR
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[2]')
         #stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[13]/td[1]')
         stock_info_element = driver.find_element_by_xpath('//*[@id="contents"]/div[1]/div[2]/div[1]/div/table/tbody/tr[14]/td[1]')
         stock_info['PBR']= stock_info_element.get_attribute('innerHTML')
-        stock_info['PBR']=stock_info['PBR'].replace(u'\ubc30','')
+        stock_info['PBR']=stock_info['PBR'].replace('\ubc30','')
         temp=stock_info['PBR'].splitlines()
         stock_info['PBR']="".join(temp)
         stock_info['PBR']=stock_info['PBR'].replace('-','0.0')
-        print stock_info['PBR']
+        print(stock_info['PBR'])
         
         good_count = 0
         bad_count = 0
@@ -130,7 +130,7 @@ def getStockGoodBadfromHK(stock_code):
             #print result_msg
             #if(result_msg.find("결과가".decode('UTF-8'))):
             if "결과가".decode('UTF-8') in result_msg:
-                print "None"
+                print("None")
             else:
                 count_good=count_good+1        
         #목표하향 갯수 추출
@@ -149,7 +149,7 @@ def getStockGoodBadfromHK(stock_code):
             #print result_msg
             #if(result_msg.find("결과가".decode('UTF-8'))):
             if "결과가".decode('UTF-8') in result_msg:
-                print "None"
+                print("None")
             else:
                 count_bad=count_bad+1
         

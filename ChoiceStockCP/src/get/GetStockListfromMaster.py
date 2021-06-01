@@ -33,7 +33,7 @@ def getStockListfromCreonPlus():
         st_items['전략명'] = cpsysdiblist.GetDataValue(0,i);
         st_items['전략ID'] = cpsysdiblist.GetDataValue(1,i);
         #전략 찾아서 해당전략 ID를 가져옴
-        if(st_items['전략명']==u'매집후거래상승'):
+        if(st_items['전략명']=='매집후거래상승'):
             strategy_id = st_items['전략ID']
     #print(strategy_id)
     
@@ -110,11 +110,11 @@ def getStockListfromCreonPlus():
         foriegner = supplydemand.GetDataValue(2,0)  #외국인
         
         astock['종목코드']=stockcode
-        print stockcode
+        print(stockcode)
         astock['종목명']=stockname
-        print stockname
+        print(stockname)
         astock['현재가']=stockprice
-        print stockprice
+        print(stockprice)
         
         #print('종목코드 : ', now_price.GetHeaderValue(0), ' | 종목명 : ' , item_list[i]['종목명'], ' | 현재가 : ', now_price.GetHeaderValue(11), ' | 전일대비 : ',now_price.GetHeaderValue(12) )
         #print('기관  : ', supplydemand.GetDataValue(3,0), '외국인  : ', supplydemand.GetDataValue(2,0), '개인  : ', supplydemand.GetDataValue(1,0))
@@ -143,8 +143,8 @@ def getStockListfromCreonPlus():
         debt_rate = round(marketeye.GetDataValue(4,0),2) # 분기부채비율
         program_buy = marketeye.GetDataValue(5,0) # 프로그램 
         
-        print ('거래량 : ', volume, '  |  체결강도 : ', power, '  |  PER : ', per, '  |  PBR : ', pbr) 
-        print ('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy) 
+        print(('거래량 : ', volume, '  |  체결강도 : ', power, '  |  PER : ', per, '  |  PBR : ', pbr)) 
+        print(('분기부채비율 : ', debt_rate, '  |  프로그램 : ', program_buy)) 
         print ('-----')
         
         ### 최근 6개월 종목리포트 조회

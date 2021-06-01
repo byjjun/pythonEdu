@@ -5,3 +5,5 @@ encoding//src/get/GetStockListfromMaster.py=utf-8
 encoding//src/get/GetStockPrice.py=utf-8
 encoding//src/main/StarterStockChoiceCP.py=utf-8
 encoding//src/util/Preference.py=utf-8
+encoding//src/write/HtmlMaker.py=utf-8
+encoding//src/write/WriteWordPress.py=utf-8
